@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FITHAUI.ATMSystem
 {
-    class Account
+    public class Account
     {
         /// <summary>
         /// Mã tài khoản

@@ -39,7 +39,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnServiceBalance = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -145,7 +145,7 @@
             this.grAcceptLeft.Controls.Add(this.button4);
             this.grAcceptLeft.Controls.Add(this.button3);
             this.grAcceptLeft.Controls.Add(this.button2);
-            this.grAcceptLeft.Controls.Add(this.button1);
+            this.grAcceptLeft.Controls.Add(this.btnServiceBalance);
             this.grAcceptLeft.Location = new System.Drawing.Point(10, 132);
             this.grAcceptLeft.Name = "grAcceptLeft";
             this.grAcceptLeft.Size = new System.Drawing.Size(66, 292);
@@ -182,15 +182,16 @@
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnServiceBalance
             // 
-            this.button1.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(8, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 46);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnServiceBalance.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
+            this.btnServiceBalance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnServiceBalance.Location = new System.Drawing.Point(8, 27);
+            this.btnServiceBalance.Name = "btnServiceBalance";
+            this.btnServiceBalance.Size = new System.Drawing.Size(50, 46);
+            this.btnServiceBalance.TabIndex = 0;
+            this.btnServiceBalance.UseVisualStyleBackColor = true;
+            this.btnServiceBalance.Click += new System.EventHandler(this.btnServiceBalance_Click);
             // 
             // panel2
             // 
@@ -499,6 +500,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChooseBalanceStatement";
             this.Text = "ATM Techcombank";
+            this.Load += new System.EventHandler(this.frmChooseBalanceStatement_Load);
             this.grAcceptRight.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.grAcceptLeft.ResumeLayout(false);
@@ -524,7 +526,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnServiceBalance;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
