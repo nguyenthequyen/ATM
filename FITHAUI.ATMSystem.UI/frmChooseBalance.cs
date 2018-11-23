@@ -1,8 +1,11 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,9 +30,23 @@ namespace FITHAUI.ATMSystem.UI
             balanceScreen.Show();
         }
 
-        private void frmChooseBalance_Load(object sender, EventArgs e)
+        private void btnPrintPdf_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Document doc = new Document();
+                PdfWriter.GetInstance(doc, new FileStream("F:/SystemATM/FITHAUI.ATMSystem/Balance.pdf", FileMode.Create));
+                doc.Open();
+                Paragraph pr = new Paragraph("NGUYEN THE QUYEN");
+                doc.Add(pr);
+                doc.Close();
+                MessageBox.Show("In file thành công");
+            }
+            catch (Exception ex)
+            {
 
+                Console.WriteLine("Có lỗi xảy ra trong quá trình tạo File: " + ex.Message);
+            }
         }
     }
 }
