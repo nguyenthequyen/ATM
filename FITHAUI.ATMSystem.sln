@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FITHAUI.ATMSystem.BULs", "FITHAUI.ATMSystem.BULs\FITHAUI.ATMSystem.BULs.csproj", "{EAC941D4-2F07-4621-88E2-2A20DBFD2D1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FITHAUI.ATMSystem.DALs", "FITHAUI.ATMSystem.DALs\FITHAUI.ATMSystem.DALs.csproj", "{87BC349D-EF62-469C-A23C-249A69BA0EEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FITHAUI.ATMSystem.DTOs", "FITHAUI.ATMSystem.DTOs\FITHAUI.ATMSystem.DTOs.csproj", "{D291E3F8-A625-4BD6-85A9-E8CE6FAC4AA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FITHAUI.ATMSystem.UI", "FITHAUI.ATMSystem.UI\FITHAUI.ATMSystem.UI.csproj", "{0D439CDC-32EA-412B-AF6F-98FF6D6E1490}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAC941D4-2F07-4621-88E2-2A20DBFD2D1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAC941D4-2F07-4621-88E2-2A20DBFD2D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAC941D4-2F07-4621-88E2-2A20DBFD2D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAC941D4-2F07-4621-88E2-2A20DBFD2D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87BC349D-EF62-469C-A23C-249A69BA0EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87BC349D-EF62-469C-A23C-249A69BA0EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87BC349D-EF62-469C-A23C-249A69BA0EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87BC349D-EF62-469C-A23C-249A69BA0EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D291E3F8-A625-4BD6-85A9-E8CE6FAC4AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D291E3F8-A625-4BD6-85A9-E8CE6FAC4AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D291E3F8-A625-4BD6-85A9-E8CE6FAC4AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D291E3F8-A625-4BD6-85A9-E8CE6FAC4AA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D439CDC-32EA-412B-AF6F-98FF6D6E1490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D439CDC-32EA-412B-AF6F-98FF6D6E1490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D439CDC-32EA-412B-AF6F-98FF6D6E1490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D439CDC-32EA-412B-AF6F-98FF6D6E1490}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D265B8F-7BB7-449C-AF71-15CAF1868559}
+	EndGlobalSection
+EndGlobal
