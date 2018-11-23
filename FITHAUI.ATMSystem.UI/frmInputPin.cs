@@ -33,6 +33,7 @@ namespace FITHAUI.ATMSystem.UI
             {
                 listServices.CardNo = CardNo;
                 listServices.Show();
+                this.Close();
             }
             else
             {

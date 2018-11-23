@@ -31,5 +31,13 @@ namespace FITHAUI.ATMSystem.UI
             chooseBalance.Show();
             this.Close();
         }
+
+        private void btnStatement_Click(object sender, EventArgs e)
+        {
+            frmChooseStatement chooseStatement = new frmChooseStatement();
+            chooseStatement.CardNo = CardNo;
+            chooseStatement.Show();
+            this.Close();
+        }
     }
 }

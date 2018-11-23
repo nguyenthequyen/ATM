@@ -1,5 +1,4 @@
-﻿using FITHAUI.ATMSystem.BULs.CheckBalance;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

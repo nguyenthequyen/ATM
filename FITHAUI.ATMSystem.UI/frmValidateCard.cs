@@ -20,6 +20,7 @@ namespace FITHAUI.ATMSystem.UI
 
         public frmValidateCard()
         {
+            this.ControlBox = false;
             InitializeComponent();
         }
         /// <summary>
@@ -112,7 +113,7 @@ namespace FITHAUI.ATMSystem.UI
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            timer.Interval = 100;
+            timer.Interval = 10;
             var maThe = "123456789";
             if (txtCardNo.Text == maThe)
             {

@@ -542,6 +542,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmListServices";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ATM Techcombank";
             this.Load += new System.EventHandler(this.frmListServices_Load);
             this.grAcceptRight.ResumeLayout(false);
