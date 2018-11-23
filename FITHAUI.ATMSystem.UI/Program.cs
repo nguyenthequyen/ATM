@@ -16,7 +16,7 @@ namespace FITHAUI.ATMSystem.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAwait());
+            Application.Run(new frmValidateCard());
         }
     }
 }

@@ -19,14 +19,17 @@ namespace FITHAUI.ATMSystem.UI
             InitializeComponent();
         }
 
+        private void btnBalanceStatement_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmChooseBalanceStatement chooseBalanceStatement = new frmChooseBalanceStatement();
+            chooseBalanceStatement.CardNo = CardNo;
+            chooseBalanceStatement.Show();
+        }
+
         private void frmListServices_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void button21_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(CardNo,"Card No");
         }
     }
 }
