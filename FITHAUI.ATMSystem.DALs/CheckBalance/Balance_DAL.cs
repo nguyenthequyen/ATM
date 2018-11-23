@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FITHAUI.ATMSystem.DALs.CheckBalance
+namespace FITHAUI.ATMSystem
 {
     public class Balance_DAL
     {

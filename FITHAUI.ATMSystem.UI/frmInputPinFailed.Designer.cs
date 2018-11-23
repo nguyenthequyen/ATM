@@ -472,6 +472,7 @@
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInputPinFailed";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ATM Techcombank";
             this.panel1.ResumeLayout(false);
             this.grAcceptRight.ResumeLayout(false);

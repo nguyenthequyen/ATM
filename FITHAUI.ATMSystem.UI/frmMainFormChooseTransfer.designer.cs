@@ -462,6 +462,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMainFormChooseTransfer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ATM Techcombank";
             this.panel3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
