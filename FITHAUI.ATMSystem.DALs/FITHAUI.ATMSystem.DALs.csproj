@@ -42,13 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CheckBalance\Balance.cs" />
+    <Compile Include="DatabaseContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CashTransfer\" />
     <Folder Include="ChangePIN\" />
-    <Folder Include="CheckBalance\" />
     <Folder Include="Logging\" />
     <Folder Include="Validation\" />
     <Folder Include="ViewHistory\" />

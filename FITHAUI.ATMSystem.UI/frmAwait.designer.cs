@@ -57,9 +57,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnAccept = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
+            this.btnEmpty = new System.Windows.Forms.Button();
+            this.btnCorrect = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtCardNo = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -359,9 +359,9 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Silver;
             this.groupBox2.Controls.Add(this.btnAccept);
-            this.groupBox2.Controls.Add(this.button22);
-            this.groupBox2.Controls.Add(this.button23);
-            this.groupBox2.Controls.Add(this.button24);
+            this.groupBox2.Controls.Add(this.btnEmpty);
+            this.groupBox2.Controls.Add(this.btnCorrect);
+            this.groupBox2.Controls.Add(this.btnCancel);
             this.groupBox2.Location = new System.Drawing.Point(251, 11);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(130, 237);
@@ -379,34 +379,34 @@
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
-            // button22
+            // btnEmpty
             // 
-            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button22.Location = new System.Drawing.Point(15, 119);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(101, 48);
-            this.button22.TabIndex = 17;
-            this.button22.UseVisualStyleBackColor = true;
+            this.btnEmpty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpty.Location = new System.Drawing.Point(15, 119);
+            this.btnEmpty.Name = "btnEmpty";
+            this.btnEmpty.Size = new System.Drawing.Size(101, 48);
+            this.btnEmpty.TabIndex = 17;
+            this.btnEmpty.UseVisualStyleBackColor = true;
             // 
-            // button23
+            // btnCorrect
             // 
-            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.Location = new System.Drawing.Point(15, 64);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(101, 48);
-            this.button23.TabIndex = 18;
-            this.button23.Text = "CORRECTION";
-            this.button23.UseVisualStyleBackColor = true;
+            this.btnCorrect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCorrect.Location = new System.Drawing.Point(15, 64);
+            this.btnCorrect.Name = "btnCorrect";
+            this.btnCorrect.Size = new System.Drawing.Size(101, 48);
+            this.btnCorrect.TabIndex = 18;
+            this.btnCorrect.Text = "CORRECTION";
+            this.btnCorrect.UseVisualStyleBackColor = true;
             // 
-            // button24
+            // btnCancel
             // 
-            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.Location = new System.Drawing.Point(15, 12);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(101, 48);
-            this.button24.TabIndex = 19;
-            this.button24.Text = "CANCEL";
-            this.button24.UseVisualStyleBackColor = true;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(15, 12);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(101, 48);
+            this.btnCancel.TabIndex = 19;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
@@ -511,8 +511,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button btnAccept;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button btnEmpty;
+        private System.Windows.Forms.Button btnCorrect;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
