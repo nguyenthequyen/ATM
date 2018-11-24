@@ -39,7 +39,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnBalanceStatement = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnWithDraw = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button12 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
@@ -148,7 +148,7 @@
             this.grAcceptLeft.Controls.Add(this.button4);
             this.grAcceptLeft.Controls.Add(this.button3);
             this.grAcceptLeft.Controls.Add(this.btnBalanceStatement);
-            this.grAcceptLeft.Controls.Add(this.button1);
+            this.grAcceptLeft.Controls.Add(this.btnWithDraw);
             this.grAcceptLeft.Location = new System.Drawing.Point(10, 132);
             this.grAcceptLeft.Name = "grAcceptLeft";
             this.grAcceptLeft.Size = new System.Drawing.Size(66, 292);
@@ -186,15 +186,16 @@
             this.btnBalanceStatement.UseVisualStyleBackColor = true;
             this.btnBalanceStatement.Click += new System.EventHandler(this.btnBalanceStatement_Click);
             // 
-            // button1
+            // btnWithDraw
             // 
-            this.button1.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(8, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 46);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnWithDraw.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
+            this.btnWithDraw.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnWithDraw.Location = new System.Drawing.Point(8, 27);
+            this.btnWithDraw.Name = "btnWithDraw";
+            this.btnWithDraw.Size = new System.Drawing.Size(50, 46);
+            this.btnWithDraw.TabIndex = 0;
+            this.btnWithDraw.UseVisualStyleBackColor = true;
+            this.btnWithDraw.Click += new System.EventHandler(this.btnWithDraw_Click);
             // 
             // panel2
             // 
@@ -569,7 +570,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnBalanceStatement;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnWithDraw;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.GroupBox groupBox1;
