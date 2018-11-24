@@ -12,6 +12,9 @@ namespace FITHAUI.ATMSystem.UI
 {
     public partial class frmChoosePrintReceipt : Form
     {
+        private static string _cardNo;
+        public string CardNo { get => _cardNo; set => _cardNo = value; }
+
         public frmChoosePrintReceipt()
         {
             InitializeComponent();
@@ -20,6 +23,7 @@ namespace FITHAUI.ATMSystem.UI
         private void btnChoosePrintReceipt_Click(object sender, EventArgs e)
         {
             frmPayTransactionInBank frmPayTransactionInBank = new frmPayTransactionInBank();
+            frmPayTransactionInBank.CardNo = CardNo;
             frmPayTransactionInBank.Show();
             this.Hide();
         }

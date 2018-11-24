@@ -23,7 +23,7 @@ namespace FITHAUI.ATMSystem.UI
 
         private void frmInputPin_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(_cardNo,"Card No");
+            //MessageBox.Show(_cardNo,"Card No");
         }
 
         private void btnAccept_Click(object sender, EventArgs e)

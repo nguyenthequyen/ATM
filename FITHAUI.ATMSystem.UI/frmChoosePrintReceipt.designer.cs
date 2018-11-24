@@ -53,9 +53,9 @@
             this.btnOne = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grAcceptRight = new System.Windows.Forms.GroupBox();
+            this.btn = new System.Windows.Forms.Button();
             this.btnChooseDontPrintReceipt = new System.Windows.Forms.Button();
             this.btnChoosePrintReceipt = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.grAcceptLeft = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -65,6 +65,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -315,9 +317,9 @@
             // 
             // grAcceptRight
             // 
+            this.grAcceptRight.Controls.Add(this.btn);
             this.grAcceptRight.Controls.Add(this.btnChooseDontPrintReceipt);
             this.grAcceptRight.Controls.Add(this.btnChoosePrintReceipt);
-            this.grAcceptRight.Controls.Add(this.button7);
             this.grAcceptRight.Controls.Add(this.button8);
             this.grAcceptRight.Location = new System.Drawing.Point(719, 132);
             this.grAcceptRight.Name = "grAcceptRight";
@@ -325,37 +327,37 @@
             this.grAcceptRight.TabIndex = 4;
             this.grAcceptRight.TabStop = false;
             // 
+            // btn
+            // 
+            this.btn.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
+            this.btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn.Location = new System.Drawing.Point(9, 225);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(50, 46);
+            this.btn.TabIndex = 3;
+            this.btn.UseVisualStyleBackColor = true;
+            this.btn.Click += new System.EventHandler(this.btnChooseDontPrintReceipt_Click);
+            // 
             // btnChooseDontPrintReceipt
             // 
             this.btnChooseDontPrintReceipt.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
             this.btnChooseDontPrintReceipt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChooseDontPrintReceipt.Location = new System.Drawing.Point(9, 225);
+            this.btnChooseDontPrintReceipt.Location = new System.Drawing.Point(9, 157);
             this.btnChooseDontPrintReceipt.Name = "btnChooseDontPrintReceipt";
             this.btnChooseDontPrintReceipt.Size = new System.Drawing.Size(50, 46);
-            this.btnChooseDontPrintReceipt.TabIndex = 3;
+            this.btnChooseDontPrintReceipt.TabIndex = 2;
             this.btnChooseDontPrintReceipt.UseVisualStyleBackColor = true;
-            this.btnChooseDontPrintReceipt.Click += new System.EventHandler(this.btnChooseDontPrintReceipt_Click);
+            this.btnChooseDontPrintReceipt.Click += new System.EventHandler(this.btnChoosePrintReceipt_Click);
             // 
             // btnChoosePrintReceipt
             // 
             this.btnChoosePrintReceipt.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
             this.btnChoosePrintReceipt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChoosePrintReceipt.Location = new System.Drawing.Point(9, 157);
+            this.btnChoosePrintReceipt.Location = new System.Drawing.Point(9, 91);
             this.btnChoosePrintReceipt.Name = "btnChoosePrintReceipt";
             this.btnChoosePrintReceipt.Size = new System.Drawing.Size(50, 46);
-            this.btnChoosePrintReceipt.TabIndex = 2;
+            this.btnChoosePrintReceipt.TabIndex = 1;
             this.btnChoosePrintReceipt.UseVisualStyleBackColor = true;
-            this.btnChoosePrintReceipt.Click += new System.EventHandler(this.btnChoosePrintReceipt_Click);
-            // 
-            // button7
-            // 
-            this.button7.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.Location = new System.Drawing.Point(9, 91);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(50, 46);
-            this.button7.TabIndex = 1;
-            this.button7.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
@@ -423,6 +425,8 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.button15);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Location = new System.Drawing.Point(82, 3);
@@ -449,6 +453,28 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(631, 63);
             this.panel4.TabIndex = 3;
+            // 
+            // button15
+            // 
+            this.button15.Enabled = false;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.Location = new System.Drawing.Point(479, 220);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(154, 46);
+            this.button15.TabIndex = 36;
+            this.button15.Text = "In biên lai";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(479, 286);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 46);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Không in biên lai";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmChoosePrintReceipt
             // 
@@ -501,9 +527,9 @@
         private System.Windows.Forms.Button btnOne;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox grAcceptRight;
+        private System.Windows.Forms.Button btn;
         private System.Windows.Forms.Button btnChooseDontPrintReceipt;
         private System.Windows.Forms.Button btnChoosePrintReceipt;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.GroupBox grAcceptLeft;
         private System.Windows.Forms.Button button4;
@@ -517,5 +543,7 @@
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button15;
     }
 }

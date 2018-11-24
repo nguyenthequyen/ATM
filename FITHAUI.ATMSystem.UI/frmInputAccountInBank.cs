@@ -10,9 +10,13 @@ using System.Windows.Forms;
 
 namespace FITHAUI.ATMSystem.UI
 {
-    public partial class frmInputAccountReceiver : Form
+    public partial class frmInputAccountInBank : Form
     {
-        public frmInputAccountReceiver()
+
+        private static string _cardNo;
+        public string CardNo { get => _cardNo; set => _cardNo = value; }
+
+        public frmInputAccountInBank()
         {
             InitializeComponent();
         }
@@ -20,6 +24,7 @@ namespace FITHAUI.ATMSystem.UI
         private void btnChooseTrue_Click(object sender, EventArgs e)
         {
             var frmInputAmountMoneyInBank = new frmInputAmountMoneyInBank();
+            frmInputAmountMoneyInBank.CardNo = CardNo;
             frmInputAmountMoneyInBank.Show();
             this.Hide();
         }

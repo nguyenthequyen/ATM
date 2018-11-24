@@ -124,17 +124,17 @@
     <Compile Include="frmInputAccountOtherBank.designer.cs">
       <DependentUpon>frmInputAccountOtherBank.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInputAccountReceiver.cs">
+    <Compile Include="frmInputAccountInBank.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInputAccountReceiver.designer.cs">
-      <DependentUpon>frmInputAccountReceiver.cs</DependentUpon>
+    <Compile Include="frmInputAccountInBank.designer.cs">
+      <DependentUpon>frmInputAccountInBank.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInputAccountValid.cs">
+    <Compile Include="frmCashTransferAccountReceived.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInputAccountValid.Designer.cs">
-      <DependentUpon>frmInputAccountValid.cs</DependentUpon>
+    <Compile Include="frmCashTransferAccountReceived.Designer.cs">
+      <DependentUpon>frmCashTransferAccountReceived.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInputAccountWrong.cs">
       <SubType>Form</SubType>
@@ -292,11 +292,11 @@
     <EmbeddedResource Include="frmInputAccountOtherBank.resx">
       <DependentUpon>frmInputAccountOtherBank.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInputAccountReceiver.resx">
-      <DependentUpon>frmInputAccountReceiver.cs</DependentUpon>
+    <EmbeddedResource Include="frmInputAccountInBank.resx">
+      <DependentUpon>frmInputAccountInBank.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInputAccountValid.resx">
-      <DependentUpon>frmInputAccountValid.cs</DependentUpon>
+    <EmbeddedResource Include="frmCashTransferAccountReceived.resx">
+      <DependentUpon>frmCashTransferAccountReceived.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInputAccountWrong.resx">
       <DependentUpon>frmInputAccountWrong.cs</DependentUpon>

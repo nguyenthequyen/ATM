@@ -12,6 +12,9 @@ namespace FITHAUI.ATMSystem.UI
 {
     public partial class frmPayTransactionInBank : Form
     {
+        private static string _cardNo;
+        public string CardNo { get => _cardNo; set => _cardNo = value; }
+
         public frmPayTransactionInBank()
         {
             InitializeComponent();
@@ -20,6 +23,7 @@ namespace FITHAUI.ATMSystem.UI
         private void btnChooseYes_Click(object sender, EventArgs e)
         {
             frmWaitCashTransfer frmWaitCashTransfer = new frmWaitCashTransfer();
+            frmWaitCashTransfer.CardNo = CardNo;
             frmWaitCashTransfer.Show();
             this.Hide();
         }
