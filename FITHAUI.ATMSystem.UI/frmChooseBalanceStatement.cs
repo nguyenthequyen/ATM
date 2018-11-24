@@ -12,9 +12,32 @@ namespace FITHAUI.ATMSystem.UI
 {
     public partial class frmChooseBalanceStatement : Form
     {
+        private static string _cardNo;
+        public string CardNo { get => _cardNo; set => _cardNo = value; }
         public frmChooseBalanceStatement()
         {
             InitializeComponent();
+        }
+
+        private void frmChooseBalanceStatement_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnServiceBalance_Click(object sender, EventArgs e)
+        {
+            frmChooseBalance chooseBalance = new frmChooseBalance();
+            chooseBalance.CardNo = CardNo;
+            chooseBalance.Show();
+            this.Close();
+        }
+
+        private void btnStatement_Click(object sender, EventArgs e)
+        {
+            frmChooseStatement chooseStatement = new frmChooseStatement();
+            chooseStatement.CardNo = CardNo;
+            chooseStatement.Show();
+            this.Close();
         }
     }
 }

@@ -50,7 +50,7 @@
             this.btnTwo = new System.Windows.Forms.Button();
             this.btnOne = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnDisplayScreen = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -293,15 +293,16 @@
             this.panel5.Size = new System.Drawing.Size(125, 123);
             this.panel5.TabIndex = 62;
             // 
-            // button5
+            // btnDisplayScreen
             // 
-            this.button5.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.Location = new System.Drawing.Point(9, 225);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(50, 46);
-            this.button5.TabIndex = 3;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnDisplayScreen.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
+            this.btnDisplayScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDisplayScreen.Location = new System.Drawing.Point(9, 225);
+            this.btnDisplayScreen.Name = "btnDisplayScreen";
+            this.btnDisplayScreen.Size = new System.Drawing.Size(50, 46);
+            this.btnDisplayScreen.TabIndex = 3;
+            this.btnDisplayScreen.UseVisualStyleBackColor = true;
+            this.btnDisplayScreen.Click += new System.EventHandler(this.btnDisplayScreen_Click);
             // 
             // button6
             // 
@@ -346,7 +347,7 @@
             // 
             // grAcceptRight
             // 
-            this.grAcceptRight.Controls.Add(this.button5);
+            this.grAcceptRight.Controls.Add(this.btnDisplayScreen);
             this.grAcceptRight.Controls.Add(this.button6);
             this.grAcceptRight.Controls.Add(this.button7);
             this.grAcceptRight.Controls.Add(this.button8);
@@ -486,6 +487,7 @@
             this.Controls.Add(this.button25);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChooseStatement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ATM Techcombank";
             this.panel3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -518,7 +520,7 @@
         private System.Windows.Forms.Button btnTwo;
         private System.Windows.Forms.Button btnOne;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnDisplayScreen;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;

@@ -41,6 +41,10 @@
             this.btnFour = new System.Windows.Forms.Button();
             this.btnTwo = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnCardNo = new System.Windows.Forms.TextBox();
             this.btnOne = new System.Windows.Forms.Button();
@@ -70,10 +74,6 @@
             this.button9 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button25 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -201,6 +201,45 @@
             this.groupBox2.Size = new System.Drawing.Size(130, 237);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // button21
+            // 
+            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button21.Location = new System.Drawing.Point(15, 177);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(101, 48);
+            this.button21.TabIndex = 16;
+            this.button21.Text = "ACCEPT";
+            this.button21.UseVisualStyleBackColor = true;
+            // 
+            // button22
+            // 
+            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button22.Location = new System.Drawing.Point(15, 119);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(101, 48);
+            this.button22.TabIndex = 17;
+            this.button22.UseVisualStyleBackColor = true;
+            // 
+            // button23
+            // 
+            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.Location = new System.Drawing.Point(15, 64);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(101, 48);
+            this.button23.TabIndex = 18;
+            this.button23.Text = "CORECTION";
+            this.button23.UseVisualStyleBackColor = true;
+            // 
+            // button24
+            // 
+            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button24.Location = new System.Drawing.Point(15, 12);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(101, 48);
+            this.button24.TabIndex = 19;
+            this.button24.Text = "CANCEL";
+            this.button24.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
@@ -523,45 +562,6 @@
             this.button25.TabIndex = 54;
             this.button25.UseVisualStyleBackColor = true;
             // 
-            // button21
-            // 
-            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button21.Location = new System.Drawing.Point(15, 177);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(101, 48);
-            this.button21.TabIndex = 16;
-            this.button21.Text = "ACCEPT";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
-            // button22
-            // 
-            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button22.Location = new System.Drawing.Point(15, 119);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(101, 48);
-            this.button22.TabIndex = 17;
-            this.button22.UseVisualStyleBackColor = true;
-            // 
-            // button23
-            // 
-            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.Location = new System.Drawing.Point(15, 64);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(101, 48);
-            this.button23.TabIndex = 18;
-            this.button23.Text = "CORECTION";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.Location = new System.Drawing.Point(15, 12);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(101, 48);
-            this.button24.TabIndex = 19;
-            this.button24.Text = "CANCEL";
-            this.button24.UseVisualStyleBackColor = true;
-            // 
             // frmWithdrawMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -576,6 +576,7 @@
             this.Enabled = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmWithdrawMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ATM Techcombank";
             this.groupBox2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

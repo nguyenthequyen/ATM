@@ -56,5 +56,11 @@ namespace FITHAUI.ATMSystem
             ATMID = aTMID;
             CardNo = cardNo;
         }
+        public Log(DateTime logDate,  string details, decimal amount)
+        {
+            LogDate = logDate;
+            Amount = amount;
+            Details = details;
+        }
     }
 }

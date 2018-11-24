@@ -59,8 +59,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grAcceptRight = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnDisplayScreen = new System.Windows.Forms.Button();
+            this.btnPrintPdf = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -380,8 +380,8 @@
             // 
             // grAcceptRight
             // 
-            this.grAcceptRight.Controls.Add(this.button5);
-            this.grAcceptRight.Controls.Add(this.button6);
+            this.grAcceptRight.Controls.Add(this.btnDisplayScreen);
+            this.grAcceptRight.Controls.Add(this.btnPrintPdf);
             this.grAcceptRight.Controls.Add(this.button7);
             this.grAcceptRight.Controls.Add(this.button8);
             this.grAcceptRight.Location = new System.Drawing.Point(719, 132);
@@ -390,25 +390,27 @@
             this.grAcceptRight.TabIndex = 4;
             this.grAcceptRight.TabStop = false;
             // 
-            // button5
+            // btnDisplayScreen
             // 
-            this.button5.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.Location = new System.Drawing.Point(9, 225);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(50, 46);
-            this.button5.TabIndex = 3;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnDisplayScreen.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
+            this.btnDisplayScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDisplayScreen.Location = new System.Drawing.Point(9, 225);
+            this.btnDisplayScreen.Name = "btnDisplayScreen";
+            this.btnDisplayScreen.Size = new System.Drawing.Size(50, 46);
+            this.btnDisplayScreen.TabIndex = 3;
+            this.btnDisplayScreen.UseVisualStyleBackColor = true;
+            this.btnDisplayScreen.Click += new System.EventHandler(this.btnDisplayScreen_Click);
             // 
-            // button6
+            // btnPrintPdf
             // 
-            this.button6.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.Location = new System.Drawing.Point(9, 157);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(50, 46);
-            this.button6.TabIndex = 2;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnPrintPdf.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
+            this.btnPrintPdf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPrintPdf.Location = new System.Drawing.Point(9, 157);
+            this.btnPrintPdf.Name = "btnPrintPdf";
+            this.btnPrintPdf.Size = new System.Drawing.Size(50, 46);
+            this.btnPrintPdf.TabIndex = 2;
+            this.btnPrintPdf.UseVisualStyleBackColor = true;
+            this.btnPrintPdf.Click += new System.EventHandler(this.btnPrintPdf_Click);
             // 
             // button7
             // 
@@ -486,6 +488,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChooseBalance";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CORRECTION";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -532,8 +535,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox grAcceptRight;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnDisplayScreen;
+        private System.Windows.Forms.Button btnPrintPdf;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel1;

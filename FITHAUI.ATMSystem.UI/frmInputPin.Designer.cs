@@ -538,6 +538,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmInputPin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ATM Techcombank";
             this.Load += new System.EventHandler(this.frmInputPin_Load);
             this.panel3.ResumeLayout(false);

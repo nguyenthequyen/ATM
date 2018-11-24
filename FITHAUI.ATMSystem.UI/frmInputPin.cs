@@ -19,11 +19,11 @@ namespace FITHAUI.ATMSystem.UI
             InitializeComponent();
         }
 
-        public static string CardNo { get => _cardNo; set => _cardNo = value; }
+        public string CardNo { get => _cardNo; set => _cardNo = value; }
 
         private void frmInputPin_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(_cardNo,"Card No");
+            //MessageBox.Show(_cardNo,"Card No");
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
@@ -33,6 +33,7 @@ namespace FITHAUI.ATMSystem.UI
             {
                 listServices.CardNo = CardNo;
                 listServices.Show();
+                this.Close();
             }
             else
             {
