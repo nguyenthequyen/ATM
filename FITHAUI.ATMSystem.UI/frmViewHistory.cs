@@ -14,7 +14,7 @@ namespace FITHAUI.ATMSystem.UI
     {
         private static string _cardNo;
         public string CardNo { get => _cardNo; set => _cardNo = value; }
-        ViewHistory_BUL history_BUL = new ViewHistory_BUL();
+        Log_BUL log_BUL = new Log_BUL();
         public frmViewHistory()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace FITHAUI.ATMSystem.UI
 
         public void DisplayHistory(string cardNo)
         {
-            dgvHistory.DataSource = history_BUL.GetListLog(cardNo);
+            dgvHistory.DataSource = log_BUL.GetListLog(cardNo);
             dgvHistory.Columns["LogID"].Visible = false;
             dgvHistory.Columns["LogTypeID"].Visible = false;
             dgvHistory.Columns["ATMID"].Visible = false;
