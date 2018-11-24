@@ -1,6 +1,6 @@
 ﻿namespace FITHAUI.ATMSystem.UI
 {
-    partial class frmChangePINSuccess
+    partial class frmChangePIN2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChangePINSuccess));
             this.button25 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtCardNo = new System.Windows.Forms.TextBox();
@@ -63,6 +62,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtNewPINAgain = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
@@ -97,6 +99,7 @@
             // 
             // txtCardNo
             // 
+            this.txtCardNo.Enabled = false;
             this.txtCardNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCardNo.Location = new System.Drawing.Point(860, 788);
             this.txtCardNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -457,6 +460,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Controls.Add(this.txtNewPINAgain);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Location = new System.Drawing.Point(123, 5);
@@ -465,17 +471,50 @@
             this.panel2.Size = new System.Drawing.Size(946, 648);
             this.panel2.TabIndex = 0;
             // 
+            // txtNewPINAgain
+            // 
+            this.txtNewPINAgain.BackColor = System.Drawing.Color.Green;
+            this.txtNewPINAgain.Enabled = false;
+            this.txtNewPINAgain.Location = new System.Drawing.Point(287, 298);
+            this.txtNewPINAgain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNewPINAgain.Multiline = true;
+            this.txtNewPINAgain.Name = "txtNewPINAgain";
+            this.txtNewPINAgain.Size = new System.Drawing.Size(389, 47);
+            this.txtNewPINAgain.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(182, 575);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(598, 29);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "(Ấn Correction để nhập lại hoặc Cancel để hủy bỏ)";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(360, 175);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(262, 36);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "sau đó ấn Accept";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(290, 323);
+            this.label9.Location = new System.Drawing.Point(281, 129);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(398, 36);
+            this.label9.Size = new System.Drawing.Size(420, 36);
             this.label9.TabIndex = 4;
-            this.label9.Text = "Bạn đã đổi PIN thành công";
+            this.label9.Text = "Vui lòng nhập lại số PIN mới";
             // 
             // panel4
             // 
@@ -487,7 +526,7 @@
             this.panel4.Size = new System.Drawing.Size(946, 97);
             this.panel4.TabIndex = 3;
             // 
-            // frmChangePINSuccess
+            // frmChangePIN2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -498,11 +537,10 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.txtCardNo);
             this.Controls.Add(this.panel3);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmChangePINSuccess";
+            this.Name = "frmChangePIN2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ATM Techcombank";
             this.panel3.ResumeLayout(false);
@@ -552,6 +590,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNewPINAgain;
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnEmpty;
         private System.Windows.Forms.Button btnCorrection;

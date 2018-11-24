@@ -76,6 +76,12 @@
     <Compile Include="frmChangePIN.designer.cs">
       <DependentUpon>frmChangePIN.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChangePIN2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePIN2.Designer.cs">
+      <DependentUpon>frmChangePIN2.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChangePINFail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmChangePIN.resx">
       <DependentUpon>frmChangePIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePIN2.resx">
+      <DependentUpon>frmChangePIN2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChangePINFail.resx">
       <DependentUpon>frmChangePINFail.cs</DependentUpon>

@@ -16,5 +16,6 @@ namespace FITHAUI.ATMSystem.UI
         {
             InitializeComponent();
         }
+
     }
 }
