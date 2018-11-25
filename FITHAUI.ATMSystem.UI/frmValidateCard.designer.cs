@@ -40,6 +40,8 @@
             this.btnNine = new System.Windows.Forms.Button();
             this.btnSix = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblExpiredCard = new System.Windows.Forms.Label();
+            this.lblCheckCardNo = new System.Windows.Forms.Label();
             this.txtThanks = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnThree = new System.Windows.Forms.Button();
@@ -173,6 +175,7 @@
             this.btnNine.Size = new System.Drawing.Size(78, 74);
             this.btnNine.TabIndex = 13;
             this.btnNine.UseVisualStyleBackColor = true;
+            this.btnNine.Click += new System.EventHandler(this.btnNine_Click);
             // 
             // btnSix
             // 
@@ -184,12 +187,15 @@
             this.btnSix.Size = new System.Drawing.Size(78, 74);
             this.btnSix.TabIndex = 14;
             this.btnSix.UseVisualStyleBackColor = true;
+            this.btnSix.Click += new System.EventHandler(this.btnSix_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.techcombank_bg;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Controls.Add(this.lblExpiredCard);
+            this.panel2.Controls.Add(this.lblCheckCardNo);
             this.panel2.Controls.Add(this.txtThanks);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Location = new System.Drawing.Point(123, 5);
@@ -197,6 +203,30 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(946, 648);
             this.panel2.TabIndex = 0;
+            // 
+            // lblExpiredCard
+            // 
+            this.lblExpiredCard.AutoSize = true;
+            this.lblExpiredCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpiredCard.Location = new System.Drawing.Point(123, 488);
+            this.lblExpiredCard.Name = "lblExpiredCard";
+            this.lblExpiredCard.Size = new System.Drawing.Size(332, 32);
+            this.lblExpiredCard.TabIndex = 6;
+            this.lblExpiredCard.Text = "Thẻ của bạn đã bị khóa";
+            this.lblExpiredCard.Visible = false;
+            this.lblExpiredCard.Click += new System.EventHandler(this.lblExpiredCard_Click);
+            // 
+            // lblCheckCardNo
+            // 
+            this.lblCheckCardNo.AutoSize = true;
+            this.lblCheckCardNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckCardNo.Location = new System.Drawing.Point(123, 488);
+            this.lblCheckCardNo.Name = "lblCheckCardNo";
+            this.lblCheckCardNo.Size = new System.Drawing.Size(764, 32);
+            this.lblCheckCardNo.TabIndex = 5;
+            this.lblCheckCardNo.Text = "Mã thẻ bạn nhập không đúng. Vui lòng nhập lại mã thẻ.";
+            this.lblCheckCardNo.Visible = false;
+            this.lblCheckCardNo.Click += new System.EventHandler(this.lblCheckCardNo_Click);
             // 
             // txtThanks
             // 
@@ -228,6 +258,7 @@
             this.btnThree.Size = new System.Drawing.Size(78, 74);
             this.btnThree.TabIndex = 15;
             this.btnThree.UseVisualStyleBackColor = true;
+            this.btnThree.Click += new System.EventHandler(this.btnThree_Click);
             // 
             // btnZero
             // 
@@ -239,6 +270,7 @@
             this.btnZero.Size = new System.Drawing.Size(78, 74);
             this.btnZero.TabIndex = 8;
             this.btnZero.UseVisualStyleBackColor = true;
+            this.btnZero.Click += new System.EventHandler(this.btnZero_Click);
             // 
             // button18
             // 
@@ -259,6 +291,7 @@
             this.btnEight.Size = new System.Drawing.Size(78, 74);
             this.btnEight.TabIndex = 9;
             this.btnEight.UseVisualStyleBackColor = true;
+            this.btnEight.Click += new System.EventHandler(this.btnEight_Click);
             // 
             // btnSeven
             // 
@@ -270,6 +303,7 @@
             this.btnSeven.Size = new System.Drawing.Size(78, 74);
             this.btnSeven.TabIndex = 5;
             this.btnSeven.UseVisualStyleBackColor = true;
+            this.btnSeven.Click += new System.EventHandler(this.btnSeven_Click);
             // 
             // btnFive
             // 
@@ -281,6 +315,7 @@
             this.btnFive.Size = new System.Drawing.Size(78, 74);
             this.btnFive.TabIndex = 10;
             this.btnFive.UseVisualStyleBackColor = true;
+            this.btnFive.Click += new System.EventHandler(this.btnFive_Click);
             // 
             // btnFour
             // 
@@ -292,6 +327,7 @@
             this.btnFour.Size = new System.Drawing.Size(78, 74);
             this.btnFour.TabIndex = 6;
             this.btnFour.UseVisualStyleBackColor = true;
+            this.btnFour.Click += new System.EventHandler(this.btnFour_Click);
             // 
             // btnTwo
             // 
@@ -303,6 +339,7 @@
             this.btnTwo.Size = new System.Drawing.Size(78, 74);
             this.btnTwo.TabIndex = 11;
             this.btnTwo.UseVisualStyleBackColor = true;
+            this.btnTwo.Click += new System.EventHandler(this.btnTwo_Click);
             // 
             // button5
             // 
@@ -351,6 +388,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1191, 668);
             this.panel1.TabIndex = 45;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnOne
             // 
@@ -412,6 +450,7 @@
             this.btnAccept.TabIndex = 16;
             this.btnAccept.Text = "ACCEPT";
             this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // btnEmpty
             // 
@@ -433,6 +472,7 @@
             this.btnCorrect.TabIndex = 18;
             this.btnCorrect.Text = "CORRECTION";
             this.btnCorrect.UseVisualStyleBackColor = true;
+            this.btnCorrect.Click += new System.EventHandler(this.btnCorrect_Click);
             // 
             // btnCancel
             // 
@@ -444,6 +484,7 @@
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // panel5
             // 
@@ -557,5 +598,7 @@
         private System.Windows.Forms.Button btnCorrect;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label txtThanks;
+        private System.Windows.Forms.Label lblCheckCardNo;
+        private System.Windows.Forms.Label lblExpiredCard;
     }
 }

@@ -144,6 +144,7 @@
             this.btnAccept.TabIndex = 12;
             this.btnAccept.Text = "ACCEPT";
             this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // btnEmpty
             // 
@@ -165,6 +166,7 @@
             this.btnCorrection.TabIndex = 14;
             this.btnCorrection.Text = "CORRECTION";
             this.btnCorrection.UseVisualStyleBackColor = true;
+            this.btnCorrection.Click += new System.EventHandler(this.btnCorrection_Click);
             // 
             // btnCancel
             // 
@@ -176,6 +178,7 @@
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // groupBox1
             // 
@@ -474,13 +477,16 @@
             // txtNewPINAgain
             // 
             this.txtNewPINAgain.BackColor = System.Drawing.Color.Green;
-            this.txtNewPINAgain.Enabled = false;
+            this.txtNewPINAgain.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNewPINAgain.Location = new System.Drawing.Point(287, 298);
             this.txtNewPINAgain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNewPINAgain.MaxLength = 6;
             this.txtNewPINAgain.Multiline = true;
             this.txtNewPINAgain.Name = "txtNewPINAgain";
+            this.txtNewPINAgain.PasswordChar = '*';
             this.txtNewPINAgain.Size = new System.Drawing.Size(389, 47);
             this.txtNewPINAgain.TabIndex = 12;
+            this.txtNewPINAgain.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 

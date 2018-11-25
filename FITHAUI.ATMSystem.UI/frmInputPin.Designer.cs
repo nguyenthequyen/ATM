@@ -165,6 +165,7 @@
             this.btnCorrection.TabIndex = 22;
             this.btnCorrection.Text = "CORRECTION";
             this.btnCorrection.UseVisualStyleBackColor = true;
+            this.btnCorrection.Click += new System.EventHandler(this.btnCorrection_Click);
             // 
             // btnCancel
             // 
@@ -176,6 +177,7 @@
             this.btnCancel.TabIndex = 23;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // groupBox1
             // 
@@ -483,12 +485,15 @@
             // txtPin
             // 
             this.txtPin.BackColor = System.Drawing.Color.Green;
+            this.txtPin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPin.Location = new System.Drawing.Point(278, 262);
             this.txtPin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPin.Multiline = true;
             this.txtPin.Name = "txtPin";
+            this.txtPin.PasswordChar = '*';
             this.txtPin.Size = new System.Drawing.Size(408, 47);
             this.txtPin.TabIndex = 5;
+            this.txtPin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 

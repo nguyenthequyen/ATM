@@ -16,5 +16,12 @@ namespace FITHAUI.ATMSystem.UI
         {
             InitializeComponent();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            frmValidateCard validateCard = new frmValidateCard();
+            validateCard.Show();
+            this.Close();
+        }
     }
 }

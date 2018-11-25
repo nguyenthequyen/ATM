@@ -41,12 +41,12 @@ namespace FITHAUI.ATMSystem
         /// </summary>
         public string CardNoTo { get; set; }
 
-        public Log()
-        {
+        //public Log(string v, object )
+        //{
 
-        }
+        //}
 
-        public Log(string logID, DateTime logDate, decimal amount, string details, string logTypeID, string aTMID, string cardNo)
+        public Log(string logID, DateTime logDate, decimal amount, string details, string logTypeID, string aTMID, string cardNo,string cardNoTo)
         {
             LogID = logID;
             LogDate = logDate;
@@ -55,6 +55,7 @@ namespace FITHAUI.ATMSystem
             LogTypeID = logTypeID;
             ATMID = aTMID;
             CardNo = cardNo;
+            CardNoTo = cardNoTo;
         }
         public Log(DateTime logDate,  string details, decimal amount)
         {

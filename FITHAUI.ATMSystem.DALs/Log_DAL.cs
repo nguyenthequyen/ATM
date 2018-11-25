@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FITHAUI.ATMSystem
+using FITHAUI.ATMSystem.DTOs;
+namespace FITHAUI.ATMSystem.DALs
 {
     public class Log_DAL
     {
@@ -36,6 +33,70 @@ namespace FITHAUI.ATMSystem
             }
             dbContext.CloseConnection();
             return logs;
+        }
+        public void createLog(string logID, string logDate, decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo )
+        {
+            try
+            {
+                string sqlInsert = "Insert into Log Values(Convert(UNIQUEIDENTIFIER,@logID), @logDate, @amount, @details, @logTypeID, @atmID, @cardNo, @cardNoTo)";
+                dbContext.OpenConnection();
+                SqlCommand cmd = new SqlCommand(sqlInsert, dbContext.Connect);
+                cmd.Parameters.AddWithValue("logID", logID);
+                cmd.Parameters.AddWithValue("logDate", logDate);
+                cmd.Parameters.AddWithValue("amount", amount);
+                cmd.Parameters.AddWithValue("details", details);
+                cmd.Parameters.AddWithValue("logTypeID", logTypeID);
+                cmd.Parameters.AddWithValue("atmID", atmID);
+                cmd.Parameters.AddWithValue("cardNo", cardNo);
+                cmd.Parameters.AddWithValue("cardNoTo", cardNoTo);
+                cmd.ExecuteNonQuery();
+                dbContext.CloseConnection();
+                //return true;
+            }
+            catch 
+            {
+                if (dbContext.CHECK_OPEN)
+                {
+                    dbContext.CloseConnection();
+                }
+                //return false;
+            }            
+        }
+        public List<Log> getAllLog(string cardNo)
+        {
+            try
+            {
+                List<Log> listLog = new List<Log>();
+                string sql = "Select*From Log Where CardNo =@cardNo";
+                dbContext.OpenConnection();
+                SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
+                cmd.Parameters.AddWithValue("cardNo", cardNo);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Log log = new Log(dr["LogID"].ToString(),
+                        DateTime.Parse(dr["LogDate"].ToString()),
+                        decimal.Parse(dr["Amount"].ToString()),
+                        dr["Details"].ToString(),
+                        dr["LogTypeID"].ToString(),
+                        dr["ATMID"].ToString(),
+                        dr["CardNo"].ToString(),
+                        dr["CardNoTo"].ToString());
+                    listLog.Add(log);
+                }
+                dbContext.CloseConnection();
+                return listLog;
+            }
+            catch 
+            {
+                if (dbContext.CHECK_OPEN)
+                {
+                    dbContext.CloseConnection();
+                }
+                return null;
+            }
+            
+              
         }
     }
 }
