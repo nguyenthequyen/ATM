@@ -27,8 +27,8 @@ namespace FITHAUI.ATMSystem.DALs
                 DateTime.Parse(sqlDataReader["LogDate"].ToString());
                 Log log = new Log(
                     DateTime.Parse(sqlDataReader["LogDate"].ToString()),
-                    sqlDataReader["Details"].ToString(),
-                    decimal.Parse(sqlDataReader["Amount"].ToString()));
+                    decimal.Parse(sqlDataReader["Amount"].ToString()),
+                    sqlDataReader["Description"].ToString());
                 logs.Add(log);
             }
             dbContext.CloseConnection();

@@ -22,7 +22,6 @@ namespace FITHAUI.ATMSystem.UI
 
         public frmValidateCard()
         {
-            
             InitializeComponent();
         }
         /// <summary>

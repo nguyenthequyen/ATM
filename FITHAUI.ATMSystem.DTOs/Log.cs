@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FITHAUI.ATMSystem
 {
-    public class Log
+    public class Log:LogType
     {
         /// <summary>
         /// Mã của bản ghi log
@@ -24,10 +24,6 @@ namespace FITHAUI.ATMSystem
         /// Mô tả về giao dịch
         /// </summary>
         public string Details { get; set; }
-        /// <summary>
-        /// Mã loại log
-        /// </summary>
-        public string LogTypeID { get; set; }
         /// <summary>
         /// Mã máy ATM
         /// </summary>
@@ -57,11 +53,11 @@ namespace FITHAUI.ATMSystem
             CardNo = cardNo;
             CardNoTo = cardNoTo;
         }
-        public Log(DateTime logDate,  string details, decimal amount)
+        public Log(DateTime logDate,  decimal amount, string description) :base(description)
         {
             LogDate = logDate;
             Amount = amount;
-            Details = details;
+            Description = description;
         }
     }
 }
