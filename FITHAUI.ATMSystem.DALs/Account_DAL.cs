@@ -11,6 +11,34 @@ namespace FITHAUI.ATMSystem
     public class Account_DAL
     {
         Databasecontext dbContext = new Databasecontext();
+        /// <summary>
+        /// Số dư tài khoản
+        /// </summary>
+        /// <param name="cardNo"></param>
+        /// <returns></returns>
+        //public int CheckBalance(string cardNo)
+        //{
+        //    int balance = -1;
+        //    try
+        //    {
+        //        string query = "select Balance from Account as a inner join Card as c on a.AccountID = c.AccountID where @CardNo  =  c.CardNo";
+        //        dbContext.OpenConnection();
+        //        SqlCommand sqlCommand = new SqlCommand(query, dbContext.Connect);
+        //        sqlCommand.Parameters.AddWithValue("CardNo", cardNo);
+        //        SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+        //        while (sqlDataReader.Read())
+        //        {
+        //            balance = Convert.ToInt32(sqlDataReader["Balance"]);
+        //        }
+        //    }
+        //    catch (SqlException ex)
+        //    {
+        //        Console.WriteLine("Có lỗi xảy ra: " + ex.Message);
+        //    }
+        //    dbContext.CloseConnection();
+        //    return balance;
+        //}
+        /// <summary>
         /// Số dư tài khoản sử dụng store procedure
         /// </summary>
         /// <param name="cardNo"></param>
