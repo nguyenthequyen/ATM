@@ -537,3 +537,5 @@ $RECYCLE.BIN/
 /FITHAUI.ATMSystem.DTOs/packages.config
 /FITHAUI.ATMSystem.DALs/packages.config
 /FITHAUI.ATMSystem.BULs/packages.config
+/Balance.pdf
+/cash_transfer.pdf

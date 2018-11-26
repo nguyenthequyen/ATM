@@ -23,15 +23,27 @@ namespace FITHAUI.ATMSystem
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.Parameters.Add("@CardNo", SqlDbType.NVarChar).Value = cardNo.Trim();
             dbContext.OpenConnection();
-            //DataTableReader sqlDataReader = sqlCommand.ExecuteReader();
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {
+                var description = sqlDataReader["Description"].ToString();
+                if (description == "RUTIEN")
+                {
+                    description = "-";
+                }
+                else if (description == "NHANTIEN")
+                {
+                    description = "+";
+                }
+                else if (description == "CHUYENTIEN")
+                {
+                    description = "-";
+                }
                 DateTime.Parse(sqlDataReader["LogDate"].ToString());
                 Log log = new Log(
                     DateTime.Parse(sqlDataReader["LogDate"].ToString()),
                     decimal.Parse(sqlDataReader["Amount"].ToString()),
-                    sqlDataReader["Description"].ToString());
+                    description);
                 logs.Add(log);
             }
             dbContext.CloseConnection();
