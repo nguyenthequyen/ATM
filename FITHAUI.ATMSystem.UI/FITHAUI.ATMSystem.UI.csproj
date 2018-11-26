@@ -70,6 +70,18 @@
     <Compile Include="frmCancel.designer.cs">
       <DependentUpon>frmCancel.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCashTransferAccountReceivedOtherBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCashTransferAccountReceivedOtherBank.Designer.cs">
+      <DependentUpon>frmCashTransferAccountReceivedOtherBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCashTransferAccountWrong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCashTransferAccountWrong.Designer.cs">
+      <DependentUpon>frmCashTransferAccountWrong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChangePIN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,11 +118,17 @@
     <Compile Include="frmChooseKindTransfer.designer.cs">
       <DependentUpon>frmChooseKindTransfer.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChoosePrintReceipt.cs">
+    <Compile Include="frmChoosePrintReceiptInBank.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChoosePrintReceipt.designer.cs">
-      <DependentUpon>frmChoosePrintReceipt.cs</DependentUpon>
+    <Compile Include="frmChoosePrintReceiptInBank.designer.cs">
+      <DependentUpon>frmChoosePrintReceiptInBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChoosePrintReceiptOtherBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChoosePrintReceiptOtherBank.Designer.cs">
+      <DependentUpon>frmChoosePrintReceiptOtherBank.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChooseStatement.cs">
       <SubType>Form</SubType>
@@ -130,11 +148,11 @@
     <Compile Include="frmInputAccountInBank.designer.cs">
       <DependentUpon>frmInputAccountInBank.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCashTransferAccountReceived.cs">
+    <Compile Include="frmCashTransferAccountReceivedInBank.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCashTransferAccountReceived.Designer.cs">
-      <DependentUpon>frmCashTransferAccountReceived.cs</DependentUpon>
+    <Compile Include="frmCashTransferAccountReceivedInBank.Designer.cs">
+      <DependentUpon>frmCashTransferAccountReceivedInBank.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInputAccountWrong.cs">
       <SubType>Form</SubType>
@@ -265,6 +283,12 @@
     <EmbeddedResource Include="frmCancel.resx">
       <DependentUpon>frmCancel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCashTransferAccountReceivedOtherBank.resx">
+      <DependentUpon>frmCashTransferAccountReceivedOtherBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCashTransferAccountWrong.resx">
+      <DependentUpon>frmCashTransferAccountWrong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChangePIN.resx">
       <DependentUpon>frmChangePIN.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,8 +307,11 @@
     <EmbeddedResource Include="frmChooseKindTransfer.resx">
       <DependentUpon>frmChooseKindTransfer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChoosePrintReceipt.resx">
-      <DependentUpon>frmChoosePrintReceipt.cs</DependentUpon>
+    <EmbeddedResource Include="frmChoosePrintReceiptInBank.resx">
+      <DependentUpon>frmChoosePrintReceiptInBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChoosePrintReceiptOtherBank.resx">
+      <DependentUpon>frmChoosePrintReceiptOtherBank.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChooseStatement.resx">
       <DependentUpon>frmChooseStatement.cs</DependentUpon>
@@ -295,8 +322,8 @@
     <EmbeddedResource Include="frmInputAccountInBank.resx">
       <DependentUpon>frmInputAccountInBank.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCashTransferAccountReceived.resx">
-      <DependentUpon>frmCashTransferAccountReceived.cs</DependentUpon>
+    <EmbeddedResource Include="frmCashTransferAccountReceivedInBank.resx">
+      <DependentUpon>frmCashTransferAccountReceivedInBank.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInputAccountWrong.resx">
       <DependentUpon>frmInputAccountWrong.cs</DependentUpon>

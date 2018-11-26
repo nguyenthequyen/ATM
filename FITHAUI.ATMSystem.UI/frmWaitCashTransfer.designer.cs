@@ -458,7 +458,6 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.btnCardNo);
             this.Controls.Add(this.panel3);
-            this.Enabled = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

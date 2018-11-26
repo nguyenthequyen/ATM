@@ -29,7 +29,8 @@ namespace FITHAUI.ATMSystem.UI
         private void btnAccept_Click(object sender, EventArgs e)
         {
             frmListServices listServices = new frmListServices();
-            if (txtPin.Text == "123")
+            this.Hide();
+            if (txtPin.Text == "23456")
             {
                 listServices.CardNo = CardNo;
                 listServices.Show();

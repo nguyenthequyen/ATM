@@ -12,7 +12,7 @@ namespace FITHAUI.ATMSystem.DALs.CheckBalance
         Databasecontext dbContext = new Databasecontext();
         public void CheckBalance(string cardNo)
         {
-            dbContext.OpenConection();
+            dbContext.OpenConnection();
             SqlCommand sqlCommand = new SqlCommand();
         }
     }

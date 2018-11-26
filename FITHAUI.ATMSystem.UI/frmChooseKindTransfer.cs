@@ -22,17 +22,17 @@ namespace FITHAUI.ATMSystem.UI
 
         private void btnTransferInBank_Click(object sender, EventArgs e)
         {
-            var frmInputAccountInBank = new frmInputAccountInBank();
-            frmInputAccountInBank.CardNo = CardNo;
-            frmInputAccountInBank.Show();
+            var inputAccountInBank = new frmInputAccountInBank();
+            inputAccountInBank.CardNo = CardNo;
+            inputAccountInBank.Show();
             this.Hide();
         }
 
         private void btnChooseTransferOtherBank_Click_1(object sender, EventArgs e)
         {
-            var frmInputAccountOtherBank = new frmInputAccountOtherBank();
-            frmInputAccountOtherBank.CardNo = CardNo;
-            frmInputAccountOtherBank.Show();
+            var inputAccountOtherBank = new frmInputAccountOtherBank();
+            inputAccountOtherBank.CardNo = CardNo;
+            inputAccountOtherBank.Show();
             this.Hide();
         }
     }

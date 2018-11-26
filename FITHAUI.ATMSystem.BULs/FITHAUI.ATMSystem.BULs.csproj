@@ -41,10 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CashTransfer\CashTransferBUL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CashTransfer\" />
     <Folder Include="ChangePIN\" />
     <Folder Include="CheckBalance\" />
     <Folder Include="Logging\" />

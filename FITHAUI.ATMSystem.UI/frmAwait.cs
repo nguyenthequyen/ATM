@@ -108,8 +108,8 @@ namespace FITHAUI.ATMSystem.UI
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            timer.Interval = 3000;
-            var maThe = "0123456";
+            timer.Interval = 1;
+            var maThe = "234567891";
             if (txtCardNo.Text == maThe)
             {
                 timer.Tick += new EventHandler(checkCardSuccess);

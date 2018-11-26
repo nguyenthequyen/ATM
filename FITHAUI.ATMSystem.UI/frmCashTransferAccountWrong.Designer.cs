@@ -1,6 +1,6 @@
 ﻿namespace FITHAUI.ATMSystem.UI
 {
-    partial class frmChoosePrintReceipt
+    partial class frmCashTransferAccountWrong
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChoosePrintReceipt));
             this.button25 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnCardNo = new System.Windows.Forms.TextBox();
@@ -54,8 +53,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.grAcceptRight = new System.Windows.Forms.GroupBox();
             this.btn = new System.Windows.Forms.Button();
-            this.btnChooseDontPrintReceipt = new System.Windows.Forms.Button();
-            this.btnChoosePrintReceipt = new System.Windows.Forms.Button();
+            this.btnNo = new System.Windows.Forms.Button();
+            this.btnYes = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.grAcceptLeft = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -63,10 +62,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnBalance = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -318,8 +319,8 @@
             // grAcceptRight
             // 
             this.grAcceptRight.Controls.Add(this.btn);
-            this.grAcceptRight.Controls.Add(this.btnChooseDontPrintReceipt);
-            this.grAcceptRight.Controls.Add(this.btnChoosePrintReceipt);
+            this.grAcceptRight.Controls.Add(this.btnNo);
+            this.grAcceptRight.Controls.Add(this.btnYes);
             this.grAcceptRight.Controls.Add(this.button8);
             this.grAcceptRight.Location = new System.Drawing.Point(719, 132);
             this.grAcceptRight.Name = "grAcceptRight";
@@ -336,28 +337,26 @@
             this.btn.Size = new System.Drawing.Size(50, 46);
             this.btn.TabIndex = 3;
             this.btn.UseVisualStyleBackColor = true;
-            this.btn.Click += new System.EventHandler(this.btnChooseDontPrintReceipt_Click);
             // 
-            // btnChooseDontPrintReceipt
+            // btnNo
             // 
-            this.btnChooseDontPrintReceipt.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
-            this.btnChooseDontPrintReceipt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChooseDontPrintReceipt.Location = new System.Drawing.Point(9, 157);
-            this.btnChooseDontPrintReceipt.Name = "btnChooseDontPrintReceipt";
-            this.btnChooseDontPrintReceipt.Size = new System.Drawing.Size(50, 46);
-            this.btnChooseDontPrintReceipt.TabIndex = 2;
-            this.btnChooseDontPrintReceipt.UseVisualStyleBackColor = true;
-            this.btnChooseDontPrintReceipt.Click += new System.EventHandler(this.btnChoosePrintReceipt_Click);
+            this.btnNo.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
+            this.btnNo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNo.Location = new System.Drawing.Point(9, 157);
+            this.btnNo.Name = "btnNo";
+            this.btnNo.Size = new System.Drawing.Size(50, 46);
+            this.btnNo.TabIndex = 2;
+            this.btnNo.UseVisualStyleBackColor = true;
             // 
-            // btnChoosePrintReceipt
+            // btnYes
             // 
-            this.btnChoosePrintReceipt.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
-            this.btnChoosePrintReceipt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChoosePrintReceipt.Location = new System.Drawing.Point(9, 91);
-            this.btnChoosePrintReceipt.Name = "btnChoosePrintReceipt";
-            this.btnChoosePrintReceipt.Size = new System.Drawing.Size(50, 46);
-            this.btnChoosePrintReceipt.TabIndex = 1;
-            this.btnChoosePrintReceipt.UseVisualStyleBackColor = true;
+            this.btnYes.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
+            this.btnYes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnYes.Location = new System.Drawing.Point(9, 91);
+            this.btnYes.Name = "btnYes";
+            this.btnYes.Size = new System.Drawing.Size(50, 46);
+            this.btnYes.TabIndex = 1;
+            this.btnYes.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
@@ -425,6 +424,8 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button15);
             this.panel2.Controls.Add(this.label1);
@@ -434,6 +435,28 @@
             this.panel2.Size = new System.Drawing.Size(631, 421);
             this.panel2.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(479, 286);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 46);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Không";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Enabled = false;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.Location = new System.Drawing.Point(479, 220);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(154, 46);
+            this.button15.TabIndex = 36;
+            this.button15.Text = "Có";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -441,9 +464,8 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(89, 97);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(445, 85);
+            this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 5;
-            this.label1.Text = resources.GetString("label1.Text");
             // 
             // panel4
             // 
@@ -454,29 +476,29 @@
             this.panel4.Size = new System.Drawing.Size(631, 63);
             this.panel4.TabIndex = 3;
             // 
-            // button15
+            // label2
             // 
-            this.button15.Enabled = false;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(479, 220);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(154, 46);
-            this.button15.TabIndex = 36;
-            this.button15.Text = "In biên lai";
-            this.button15.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(192, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(243, 34);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Xin lỗi, bạn đã thực hiện sai giao dịch\r\nhoặc tài khoản của bạn không đúng";
             // 
-            // button1
+            // label3
             // 
-            this.button1.Enabled = false;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(479, 286);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 46);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Không in biên lai";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(29, 185);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(256, 17);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Bạn có muốn thực hiên giao dịch khác?";
             // 
-            // frmChoosePrintReceipt
+            // frmCashTransferAccountWrong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -487,10 +509,9 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.btnCardNo);
             this.Controls.Add(this.panel3);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmChoosePrintReceipt";
+            this.Name = "frmCashTransferAccountWrong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CORRECTION";
             this.panel3.ResumeLayout(false);
@@ -528,8 +549,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox grAcceptRight;
         private System.Windows.Forms.Button btn;
-        private System.Windows.Forms.Button btnChooseDontPrintReceipt;
-        private System.Windows.Forms.Button btnChoosePrintReceipt;
+        private System.Windows.Forms.Button btnNo;
+        private System.Windows.Forms.Button btnYes;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.GroupBox grAcceptLeft;
         private System.Windows.Forms.Button button4;
@@ -545,5 +566,7 @@
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
