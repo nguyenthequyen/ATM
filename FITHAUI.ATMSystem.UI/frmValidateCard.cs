@@ -20,7 +20,7 @@ namespace FITHAUI.ATMSystem.UI
 
         public frmValidateCard()
         {
-            this.ControlBox = false;
+            //this.ControlBox = false;
             InitializeComponent();
         }
         /// <summary>
@@ -127,9 +127,9 @@ namespace FITHAUI.ATMSystem.UI
             }
         }
 
-        private void frmAwait_Load(object sender, EventArgs e)
+        private void frmValidateCard_Load(object sender, EventArgs e)
         {
-            txtThanks.Text = Message;
+
         }
     }
 }
