@@ -272,6 +272,7 @@
             // 
             this.button13.Enabled = false;
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button13.Location = new System.Drawing.Point(477, 156);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(154, 46);

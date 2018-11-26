@@ -37,7 +37,10 @@ namespace FITHAUI.ATMSystem.UI
 
         private void btnYes_Click(object sender, EventArgs e)
         {
-            
+            frmListServices listServices = new frmListServices();
+            this.Close();
+            listServices.CardNo = CardNo;
+            listServices.Show();
         }
     }
 }

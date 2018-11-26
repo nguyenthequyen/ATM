@@ -40,6 +40,7 @@
             this.btnNine = new System.Windows.Forms.Button();
             this.btnSix = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtThanks = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnThree = new System.Windows.Forms.Button();
             this.btnZero = new System.Windows.Forms.Button();
@@ -64,7 +65,6 @@
             this.txtCardNo = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button25 = new System.Windows.Forms.Button();
-            this.txtThanks = new System.Windows.Forms.Label();
             this.grAcceptLeft.SuspendLayout();
             this.panel2.SuspendLayout();
             this.grAcceptRight.SuspendLayout();
@@ -187,6 +187,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(631, 421);
             this.panel2.TabIndex = 0;
+            // 
+            // txtThanks
+            // 
+            this.txtThanks.AutoSize = true;
+            this.txtThanks.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThanks.Location = new System.Drawing.Point(79, 248);
+            this.txtThanks.Name = "txtThanks";
+            this.txtThanks.Size = new System.Drawing.Size(0, 31);
+            this.txtThanks.TabIndex = 4;
             // 
             // panel4
             // 
@@ -403,6 +412,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.Location = new System.Drawing.Point(15, 12);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(101, 48);
@@ -448,16 +458,7 @@
             this.button25.TabIndex = 44;
             this.button25.UseVisualStyleBackColor = true;
             // 
-            // txtThanks
-            // 
-            this.txtThanks.AutoSize = true;
-            this.txtThanks.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThanks.Location = new System.Drawing.Point(79, 248);
-            this.txtThanks.Name = "txtThanks";
-            this.txtThanks.Size = new System.Drawing.Size(0, 31);
-            this.txtThanks.TabIndex = 4;
-            // 
-            // frmAwait
+            // frmValidateCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -471,10 +472,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmAwait";
+            this.Name = "frmValidateCard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ATM Techcombank";
-            this.Load += new System.EventHandler(this.frmAwait_Load);
+            this.Load += new System.EventHandler(this.frmValidateCard_Load);
             this.grAcceptLeft.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
