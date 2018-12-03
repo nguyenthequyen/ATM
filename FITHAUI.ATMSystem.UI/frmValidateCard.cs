@@ -139,25 +139,5 @@ namespace FITHAUI.ATMSystem.UI
         {
             txtCardNo.Text = "";
         }
-
-        private void lblCheckCardNo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblExpiredCard_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

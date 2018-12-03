@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FITHAUI.ATMSystem.DALs;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -11,33 +12,7 @@ namespace FITHAUI.ATMSystem
     public class Account_DAL
     {
         Databasecontext dbContext = new Databasecontext();
-        /// <summary>
-        /// Số dư tài khoản
-        /// </summary>
-        /// <param name="cardNo"></param>
-        /// <returns></returns>
-        //public int CheckBalance(string cardNo)
-        //{
-        //    int balance = -1;
-        //    try
-        //    {
-        //        string query = "select Balance from Account as a inner join Card as c on a.AccountID = c.AccountID where @CardNo  =  c.CardNo";
-        //        dbContext.OpenConnection();
-        //        SqlCommand sqlCommand = new SqlCommand(query, dbContext.Connect);
-        //        sqlCommand.Parameters.AddWithValue("CardNo", cardNo);
-        //        SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-        //        while (sqlDataReader.Read())
-        //        {
-        //            balance = Convert.ToInt32(sqlDataReader["Balance"]);
-        //        }
-        //    }
-        //    catch (SqlException ex)
-        //    {
-        //        Console.WriteLine("Có lỗi xảy ra: " + ex.Message);
-        //    }
-        //    dbContext.CloseConnection();
-        //    return balance;
-        //}
+        Log_DAL log_DAL = new Log_DAL();
         /// <summary>
         /// Số dư tài khoản sử dụng store procedure
         /// </summary>
@@ -46,16 +21,26 @@ namespace FITHAUI.ATMSystem
         public int CheckBalance(string cardNo)
         {
             int balance = -1;
-            SqlCommand sqlCommand = new SqlCommand("Proc_CheckBalance", dbContext.Connect);
-            sqlCommand.CommandType = CommandType.StoredProcedure;
-            sqlCommand.Parameters.Add("@CardNo", SqlDbType.NVarChar).Value = cardNo.Trim();
-            dbContext.OpenConnection();
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-            while (sqlDataReader.Read())
+            try
             {
-                balance = Convert.ToInt32(sqlDataReader["Balance"]);
+                SqlCommand sqlCommand = new SqlCommand("Proc_CheckBalance", dbContext.Connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add("@CardNo", SqlDbType.NVarChar).Value = cardNo.Trim();
+                dbContext.OpenConnection();
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    balance = Convert.ToInt32(sqlDataReader["Balance"]);
+                }
+                dbContext.CloseConnection();
+                log_DAL.createLog(DateTime.Now, 1100, "ERROR", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
             }
-            dbContext.CloseConnection();
+            catch (Exception ex)
+            {
+                Console.WriteLine("Có lỗi xảy ra: " + ex.Message);
+                log_DAL.createLog(DateTime.Now, 1100, "ERROR", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
+                return balance;
+            }
             return balance;
         }
     }

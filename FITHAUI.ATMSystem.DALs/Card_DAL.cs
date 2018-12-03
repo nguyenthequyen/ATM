@@ -10,6 +10,7 @@ namespace FITHAUI.ATMSystem.DALs
 {
     public class Card_DAL
     {
+        Log_DAL log = new Log_DAL();
         Databasecontext dbContext = new Databasecontext();
         public bool CheckCardNo(string cardNo)
         {
@@ -91,6 +92,7 @@ namespace FITHAUI.ATMSystem.DALs
                 cmd.Parameters.AddWithValue("cardNo", cardNo);
                 cmd.ExecuteNonQuery();
                 dbContext.CloseConnection();
+                log.createLog(DateTime.Now, 1100, "SUCCESS", "abcf9247-c548-45eb-9660-b6c8bc8c7f27", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
                 //return true;
             }
             catch

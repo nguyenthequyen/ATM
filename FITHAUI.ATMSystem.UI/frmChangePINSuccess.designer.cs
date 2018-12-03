@@ -79,30 +79,27 @@
             this.button25.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.Techcombank_logo;
             this.button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button25.Enabled = false;
-            this.button25.Location = new System.Drawing.Point(860, 725);
-            this.button25.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button25.Location = new System.Drawing.Point(573, 471);
             this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(350, 54);
+            this.button25.Size = new System.Drawing.Size(233, 35);
             this.button25.TabIndex = 23;
             this.button25.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(640, 682);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel5.Location = new System.Drawing.Point(427, 443);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(188, 189);
+            this.panel5.Size = new System.Drawing.Size(125, 123);
             this.panel5.TabIndex = 21;
             // 
             // txtCardNo
             // 
             this.txtCardNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCardNo.Location = new System.Drawing.Point(860, 788);
-            this.txtCardNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCardNo.Location = new System.Drawing.Point(573, 512);
             this.txtCardNo.Multiline = true;
             this.txtCardNo.Name = "txtCardNo";
-            this.txtCardNo.Size = new System.Drawing.Size(348, 58);
+            this.txtCardNo.Size = new System.Drawing.Size(233, 39);
             this.txtCardNo.TabIndex = 22;
             // 
             // panel3
@@ -110,10 +107,9 @@
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.Controls.Add(this.groupBox2);
             this.panel3.Controls.Add(this.groupBox1);
-            this.panel3.Location = new System.Drawing.Point(18, 682);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel3.Location = new System.Drawing.Point(12, 443);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(592, 400);
+            this.panel3.Size = new System.Drawing.Size(395, 260);
             this.panel3.TabIndex = 20;
             // 
             // groupBox2
@@ -123,21 +119,18 @@
             this.groupBox2.Controls.Add(this.btnEmpty);
             this.groupBox2.Controls.Add(this.btnCorrection);
             this.groupBox2.Controls.Add(this.btnCancel);
-            this.groupBox2.Location = new System.Drawing.Point(376, 17);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Location = new System.Drawing.Point(251, 11);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(195, 365);
+            this.groupBox2.Size = new System.Drawing.Size(130, 237);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
             // btnAccept
             // 
             this.btnAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccept.Location = new System.Drawing.Point(22, 272);
-            this.btnAccept.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAccept.Location = new System.Drawing.Point(15, 177);
             this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(152, 74);
+            this.btnAccept.Size = new System.Drawing.Size(101, 48);
             this.btnAccept.TabIndex = 12;
             this.btnAccept.Text = "ACCEPT";
             this.btnAccept.UseVisualStyleBackColor = true;
@@ -145,20 +138,18 @@
             // btnEmpty
             // 
             this.btnEmpty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpty.Location = new System.Drawing.Point(22, 183);
-            this.btnEmpty.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEmpty.Location = new System.Drawing.Point(15, 119);
             this.btnEmpty.Name = "btnEmpty";
-            this.btnEmpty.Size = new System.Drawing.Size(152, 74);
+            this.btnEmpty.Size = new System.Drawing.Size(101, 48);
             this.btnEmpty.TabIndex = 13;
             this.btnEmpty.UseVisualStyleBackColor = true;
             // 
             // btnCorrection
             // 
             this.btnCorrection.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCorrection.Location = new System.Drawing.Point(22, 98);
-            this.btnCorrection.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCorrection.Location = new System.Drawing.Point(15, 64);
             this.btnCorrection.Name = "btnCorrection";
-            this.btnCorrection.Size = new System.Drawing.Size(152, 74);
+            this.btnCorrection.Size = new System.Drawing.Size(101, 48);
             this.btnCorrection.TabIndex = 14;
             this.btnCorrection.Text = "CORRECTION";
             this.btnCorrection.UseVisualStyleBackColor = true;
@@ -166,10 +157,9 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(22, 18);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCancel.Location = new System.Drawing.Point(15, 12);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(152, 74);
+            this.btnCancel.Size = new System.Drawing.Size(101, 48);
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -190,20 +180,17 @@
             this.groupBox1.Controls.Add(this.btnFour);
             this.groupBox1.Controls.Add(this.btnTwo);
             this.groupBox1.Controls.Add(this.btnOne);
-            this.groupBox1.Location = new System.Drawing.Point(18, 17);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(12, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(336, 365);
+            this.groupBox1.Size = new System.Drawing.Size(224, 237);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // button20
             // 
-            this.button20.Location = new System.Drawing.Point(232, 269);
-            this.button20.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button20.Location = new System.Drawing.Point(155, 175);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(78, 74);
+            this.button20.Size = new System.Drawing.Size(52, 48);
             this.button20.TabIndex = 12;
             this.button20.UseVisualStyleBackColor = true;
             // 
@@ -211,10 +198,9 @@
             // 
             this.btnNine.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.btnNine;
             this.btnNine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNine.Location = new System.Drawing.Point(232, 180);
-            this.btnNine.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNine.Location = new System.Drawing.Point(155, 117);
             this.btnNine.Name = "btnNine";
-            this.btnNine.Size = new System.Drawing.Size(78, 74);
+            this.btnNine.Size = new System.Drawing.Size(52, 48);
             this.btnNine.TabIndex = 13;
             this.btnNine.UseVisualStyleBackColor = true;
             // 
@@ -222,10 +208,9 @@
             // 
             this.btnSix.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.btnSix;
             this.btnSix.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSix.Location = new System.Drawing.Point(232, 95);
-            this.btnSix.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSix.Location = new System.Drawing.Point(155, 62);
             this.btnSix.Name = "btnSix";
-            this.btnSix.Size = new System.Drawing.Size(78, 74);
+            this.btnSix.Size = new System.Drawing.Size(52, 48);
             this.btnSix.TabIndex = 14;
             this.btnSix.UseVisualStyleBackColor = true;
             // 
@@ -233,10 +218,9 @@
             // 
             this.btnThree.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.btnThree;
             this.btnThree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnThree.Location = new System.Drawing.Point(232, 15);
-            this.btnThree.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnThree.Location = new System.Drawing.Point(155, 10);
             this.btnThree.Name = "btnThree";
-            this.btnThree.Size = new System.Drawing.Size(78, 74);
+            this.btnThree.Size = new System.Drawing.Size(52, 48);
             this.btnThree.TabIndex = 15;
             this.btnThree.UseVisualStyleBackColor = true;
             // 
@@ -244,19 +228,17 @@
             // 
             this.btnZero.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.btnZero;
             this.btnZero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnZero.Location = new System.Drawing.Point(123, 269);
-            this.btnZero.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnZero.Location = new System.Drawing.Point(82, 175);
             this.btnZero.Name = "btnZero";
-            this.btnZero.Size = new System.Drawing.Size(78, 74);
+            this.btnZero.Size = new System.Drawing.Size(52, 48);
             this.btnZero.TabIndex = 8;
             this.btnZero.UseVisualStyleBackColor = true;
             // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(18, 269);
-            this.button18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button18.Location = new System.Drawing.Point(12, 175);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(78, 74);
+            this.button18.Size = new System.Drawing.Size(52, 48);
             this.button18.TabIndex = 4;
             this.button18.UseVisualStyleBackColor = true;
             // 
@@ -264,10 +246,9 @@
             // 
             this.btnEight.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.btnEight;
             this.btnEight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEight.Location = new System.Drawing.Point(123, 180);
-            this.btnEight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEight.Location = new System.Drawing.Point(82, 117);
             this.btnEight.Name = "btnEight";
-            this.btnEight.Size = new System.Drawing.Size(78, 74);
+            this.btnEight.Size = new System.Drawing.Size(52, 48);
             this.btnEight.TabIndex = 9;
             this.btnEight.UseVisualStyleBackColor = true;
             // 
@@ -275,10 +256,9 @@
             // 
             this.btnSeven.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.btnSeven;
             this.btnSeven.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSeven.Location = new System.Drawing.Point(18, 180);
-            this.btnSeven.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSeven.Location = new System.Drawing.Point(12, 117);
             this.btnSeven.Name = "btnSeven";
-            this.btnSeven.Size = new System.Drawing.Size(78, 74);
+            this.btnSeven.Size = new System.Drawing.Size(52, 48);
             this.btnSeven.TabIndex = 5;
             this.btnSeven.UseVisualStyleBackColor = true;
             // 
@@ -286,10 +266,9 @@
             // 
             this.btnFive.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.btnFive;
             this.btnFive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFive.Location = new System.Drawing.Point(123, 95);
-            this.btnFive.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnFive.Location = new System.Drawing.Point(82, 62);
             this.btnFive.Name = "btnFive";
-            this.btnFive.Size = new System.Drawing.Size(78, 74);
+            this.btnFive.Size = new System.Drawing.Size(52, 48);
             this.btnFive.TabIndex = 10;
             this.btnFive.UseVisualStyleBackColor = true;
             // 
@@ -297,10 +276,9 @@
             // 
             this.btnFour.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.btnFour;
             this.btnFour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFour.Location = new System.Drawing.Point(18, 95);
-            this.btnFour.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnFour.Location = new System.Drawing.Point(12, 62);
             this.btnFour.Name = "btnFour";
-            this.btnFour.Size = new System.Drawing.Size(78, 74);
+            this.btnFour.Size = new System.Drawing.Size(52, 48);
             this.btnFour.TabIndex = 6;
             this.btnFour.UseVisualStyleBackColor = true;
             // 
@@ -308,10 +286,9 @@
             // 
             this.btnTwo.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.btnTwo;
             this.btnTwo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnTwo.Location = new System.Drawing.Point(123, 15);
-            this.btnTwo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTwo.Location = new System.Drawing.Point(82, 10);
             this.btnTwo.Name = "btnTwo";
-            this.btnTwo.Size = new System.Drawing.Size(78, 74);
+            this.btnTwo.Size = new System.Drawing.Size(52, 48);
             this.btnTwo.TabIndex = 11;
             this.btnTwo.UseVisualStyleBackColor = true;
             // 
@@ -319,10 +296,9 @@
             // 
             this.btnOne.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.btnOne;
             this.btnOne.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnOne.Location = new System.Drawing.Point(18, 15);
-            this.btnOne.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnOne.Location = new System.Drawing.Point(12, 10);
             this.btnOne.Name = "btnOne";
-            this.btnOne.Size = new System.Drawing.Size(78, 74);
+            this.btnOne.Size = new System.Drawing.Size(52, 48);
             this.btnOne.TabIndex = 7;
             this.btnOne.UseVisualStyleBackColor = true;
             // 
@@ -332,10 +308,9 @@
             this.panel1.Controls.Add(this.grAcceptRight);
             this.panel1.Controls.Add(this.grAcceptLeft);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(18, 5);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(12, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1191, 668);
+            this.panel1.Size = new System.Drawing.Size(794, 434);
             this.panel1.TabIndex = 25;
             // 
             // grAcceptRight
@@ -344,11 +319,9 @@
             this.grAcceptRight.Controls.Add(this.button6);
             this.grAcceptRight.Controls.Add(this.button7);
             this.grAcceptRight.Controls.Add(this.button8);
-            this.grAcceptRight.Location = new System.Drawing.Point(1078, 203);
-            this.grAcceptRight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grAcceptRight.Location = new System.Drawing.Point(719, 132);
             this.grAcceptRight.Name = "grAcceptRight";
-            this.grAcceptRight.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grAcceptRight.Size = new System.Drawing.Size(99, 449);
+            this.grAcceptRight.Size = new System.Drawing.Size(66, 292);
             this.grAcceptRight.TabIndex = 4;
             this.grAcceptRight.TabStop = false;
             // 
@@ -356,10 +329,9 @@
             // 
             this.btnNo.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
             this.btnNo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNo.Location = new System.Drawing.Point(14, 346);
-            this.btnNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNo.Location = new System.Drawing.Point(9, 225);
             this.btnNo.Name = "btnNo";
-            this.btnNo.Size = new System.Drawing.Size(75, 71);
+            this.btnNo.Size = new System.Drawing.Size(50, 46);
             this.btnNo.TabIndex = 3;
             this.btnNo.UseVisualStyleBackColor = true;
             // 
@@ -367,10 +339,9 @@
             // 
             this.button6.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.Location = new System.Drawing.Point(14, 242);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button6.Location = new System.Drawing.Point(9, 157);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 71);
+            this.button6.Size = new System.Drawing.Size(50, 46);
             this.button6.TabIndex = 2;
             this.button6.UseVisualStyleBackColor = true;
             // 
@@ -378,10 +349,9 @@
             // 
             this.button7.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.Location = new System.Drawing.Point(14, 140);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button7.Location = new System.Drawing.Point(9, 91);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 71);
+            this.button7.Size = new System.Drawing.Size(50, 46);
             this.button7.TabIndex = 1;
             this.button7.UseVisualStyleBackColor = true;
             // 
@@ -389,10 +359,9 @@
             // 
             this.button8.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button8.Location = new System.Drawing.Point(14, 42);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button8.Location = new System.Drawing.Point(9, 27);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 71);
+            this.button8.Size = new System.Drawing.Size(50, 46);
             this.button8.TabIndex = 0;
             this.button8.UseVisualStyleBackColor = true;
             // 
@@ -402,11 +371,9 @@
             this.grAcceptLeft.Controls.Add(this.button3);
             this.grAcceptLeft.Controls.Add(this.button2);
             this.grAcceptLeft.Controls.Add(this.button1);
-            this.grAcceptLeft.Location = new System.Drawing.Point(15, 203);
-            this.grAcceptLeft.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grAcceptLeft.Location = new System.Drawing.Point(10, 132);
             this.grAcceptLeft.Name = "grAcceptLeft";
-            this.grAcceptLeft.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grAcceptLeft.Size = new System.Drawing.Size(99, 449);
+            this.grAcceptLeft.Size = new System.Drawing.Size(66, 292);
             this.grAcceptLeft.TabIndex = 1;
             this.grAcceptLeft.TabStop = false;
             // 
@@ -414,10 +381,9 @@
             // 
             this.button4.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Location = new System.Drawing.Point(12, 346);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Location = new System.Drawing.Point(8, 225);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 71);
+            this.button4.Size = new System.Drawing.Size(50, 46);
             this.button4.TabIndex = 3;
             this.button4.UseVisualStyleBackColor = true;
             // 
@@ -425,10 +391,9 @@
             // 
             this.button3.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(12, 242);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Location = new System.Drawing.Point(8, 157);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 71);
+            this.button3.Size = new System.Drawing.Size(50, 46);
             this.button3.TabIndex = 2;
             this.button3.UseVisualStyleBackColor = true;
             // 
@@ -436,10 +401,9 @@
             // 
             this.button2.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Location = new System.Drawing.Point(12, 140);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Location = new System.Drawing.Point(8, 91);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 71);
+            this.button2.Size = new System.Drawing.Size(50, 46);
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -447,10 +411,9 @@
             // 
             this.button1.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(12, 42);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(8, 27);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 71);
+            this.button1.Size = new System.Drawing.Size(50, 46);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -460,10 +423,9 @@
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Location = new System.Drawing.Point(123, 5);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel2.Location = new System.Drawing.Point(82, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(946, 648);
+            this.panel2.Size = new System.Drawing.Size(631, 421);
             this.panel2.TabIndex = 0;
             // 
             // label9
@@ -471,10 +433,9 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(290, 323);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(193, 210);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(398, 36);
+            this.label9.Size = new System.Drawing.Size(269, 25);
             this.label9.TabIndex = 4;
             this.label9.Text = "Bạn đã đổi PIN thành công";
             // 
@@ -483,24 +444,22 @@
             this.panel4.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.Logo;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(946, 97);
+            this.panel4.Size = new System.Drawing.Size(631, 63);
             this.panel4.TabIndex = 3;
             // 
             // frmChangePINSuccess
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Red;
-            this.ClientSize = new System.Drawing.Size(1228, 1049);
+            this.ClientSize = new System.Drawing.Size(819, 705);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button25);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.txtCardNo);
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmChangePINSuccess";

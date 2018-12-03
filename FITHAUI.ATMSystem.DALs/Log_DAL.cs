@@ -16,32 +16,55 @@ namespace FITHAUI.ATMSystem.DALs
         public List<Log> ViewHistory(string cardNo)
         {
             List<Log> logs = new List<Log>();
-            SqlCommand sqlCommand = new SqlCommand("Proc_ViewHistory", dbContext.Connect);
-            sqlCommand.CommandType = CommandType.StoredProcedure;
-            sqlCommand.Parameters.Add("@CardNo", SqlDbType.NVarChar).Value = cardNo.Trim();
-            dbContext.OpenConnection();
-            //DataTableReader sqlDataReader = sqlCommand.ExecuteReader();
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-            while (sqlDataReader.Read())
+            try
             {
-                DateTime.Parse(sqlDataReader["LogDate"].ToString());
-                Log log = new Log(
-                    DateTime.Parse(sqlDataReader["LogDate"].ToString()),
-                    decimal.Parse(sqlDataReader["Amount"].ToString()),
-                    sqlDataReader["Description"].ToString());
-                logs.Add(log);
+                SqlCommand sqlCommand = new SqlCommand("Proc_ViewHistory", dbContext.Connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add("@CardNo", SqlDbType.NVarChar).Value = cardNo.Trim();
+                dbContext.OpenConnection();
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    var description = sqlDataReader["Description"].ToString();
+                    switch (description)
+                    {
+                        case "Widthdraw":
+                            description = "-";
+                            break;
+                        case "receiveMoney":
+                            description = "+";
+                            break;
+                        case "Transfer":
+                            description = "-";
+                            break;
+                        default:
+                            break;
+                    }
+                    DateTime.Parse(sqlDataReader["LogDate"].ToString());
+                    Log log = new Log(
+                        DateTime.Parse(sqlDataReader["LogDate"].ToString()),
+                        decimal.Parse(sqlDataReader["Amount"].ToString()),
+                        description);
+                    logs.Add(log);
+                }
+                dbContext.CloseConnection();
+                createLog(DateTime.Now, 1100, "SUCCESS", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
             }
-            dbContext.CloseConnection();
+            catch (Exception ex)
+            {
+                createLog(DateTime.Now, 1100, "ERROR", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
+                Console.WriteLine("Có lỗi xảy ra: " + ex.Message);
+            }
+            
             return logs;
         }
-        public void createLog(string logID, string logDate, decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo )
+        public void createLog(DateTime logDate, decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo )
         {
             try
             {
-                string sqlInsert = "Insert into Log Values(Convert(UNIQUEIDENTIFIER,@logID), @logDate, @amount, @details, @logTypeID, @atmID, @cardNo, @cardNoTo)";
+                string sqlInsert = "insert into Log(LogDate, Amount, Details, LogTypeID, ATMID, CardNo, CardNoTo) Values(@logDate, @amount, @details, @logTypeID, @atmID, @cardNo, @cardNoTo)";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(sqlInsert, dbContext.Connect);
-                cmd.Parameters.AddWithValue("logID", logID);
                 cmd.Parameters.AddWithValue("logDate", logDate);
                 cmd.Parameters.AddWithValue("amount", amount);
                 cmd.Parameters.AddWithValue("details", details);
@@ -53,13 +76,9 @@ namespace FITHAUI.ATMSystem.DALs
                 dbContext.CloseConnection();
                 //return true;
             }
-            catch 
+            catch (Exception ex)
             {
-                if (dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
-                //return false;
+                Console.WriteLine("Có lỗi" + ex.Message);
             }            
         }
         public List<Log> getAllLog(string cardNo)
