@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChangePIN));
             this.button25 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnCardNo = new System.Windows.Forms.TextBox();
+            this.txtCardNo = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnAccept = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
+            this.btnCorrection = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button20 = new System.Windows.Forms.Button();
             this.btnNine = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNewPIN = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -96,15 +96,15 @@
             this.panel5.Size = new System.Drawing.Size(125, 123);
             this.panel5.TabIndex = 21;
             // 
-            // btnCardNo
+            // txtCardNo
             // 
-            this.btnCardNo.Enabled = false;
-            this.btnCardNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCardNo.Location = new System.Drawing.Point(573, 512);
-            this.btnCardNo.Multiline = true;
-            this.btnCardNo.Name = "btnCardNo";
-            this.btnCardNo.Size = new System.Drawing.Size(233, 39);
-            this.btnCardNo.TabIndex = 22;
+            this.txtCardNo.Enabled = false;
+            this.txtCardNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCardNo.Location = new System.Drawing.Point(573, 512);
+            this.txtCardNo.Multiline = true;
+            this.txtCardNo.Name = "txtCardNo";
+            this.txtCardNo.Size = new System.Drawing.Size(233, 39);
+            this.txtCardNo.TabIndex = 22;
             // 
             // panel3
             // 
@@ -121,8 +121,8 @@
             this.groupBox2.BackColor = System.Drawing.Color.Silver;
             this.groupBox2.Controls.Add(this.btnAccept);
             this.groupBox2.Controls.Add(this.button22);
-            this.groupBox2.Controls.Add(this.button23);
-            this.groupBox2.Controls.Add(this.button24);
+            this.groupBox2.Controls.Add(this.btnCorrection);
+            this.groupBox2.Controls.Add(this.btnCancel);
             this.groupBox2.Location = new System.Drawing.Point(251, 11);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(130, 237);
@@ -149,25 +149,27 @@
             this.button22.TabIndex = 13;
             this.button22.UseVisualStyleBackColor = true;
             // 
-            // button23
+            // btnCorrection
             // 
-            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.Location = new System.Drawing.Point(15, 64);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(101, 48);
-            this.button23.TabIndex = 14;
-            this.button23.Text = "CORRECTION";
-            this.button23.UseVisualStyleBackColor = true;
+            this.btnCorrection.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCorrection.Location = new System.Drawing.Point(15, 64);
+            this.btnCorrection.Name = "btnCorrection";
+            this.btnCorrection.Size = new System.Drawing.Size(101, 48);
+            this.btnCorrection.TabIndex = 14;
+            this.btnCorrection.Text = "CORRECTION";
+            this.btnCorrection.UseVisualStyleBackColor = true;
+            this.btnCorrection.Click += new System.EventHandler(this.btnCorrection_Click);
             // 
-            // button24
+            // btnCancel
             // 
-            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.Location = new System.Drawing.Point(15, 12);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(101, 48);
-            this.button24.TabIndex = 15;
-            this.button24.Text = "CANCEL";
-            this.button24.UseVisualStyleBackColor = true;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(15, 12);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(101, 48);
+            this.btnCancel.TabIndex = 15;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // groupBox1
             // 
@@ -207,6 +209,7 @@
             this.btnNine.Size = new System.Drawing.Size(52, 48);
             this.btnNine.TabIndex = 13;
             this.btnNine.UseVisualStyleBackColor = true;
+            this.btnNine.Click += new System.EventHandler(this.btnNine_Click);
             // 
             // btnSix
             // 
@@ -217,6 +220,7 @@
             this.btnSix.Size = new System.Drawing.Size(52, 48);
             this.btnSix.TabIndex = 14;
             this.btnSix.UseVisualStyleBackColor = true;
+            this.btnSix.Click += new System.EventHandler(this.btnSix_Click);
             // 
             // btnThree
             // 
@@ -227,6 +231,7 @@
             this.btnThree.Size = new System.Drawing.Size(52, 48);
             this.btnThree.TabIndex = 15;
             this.btnThree.UseVisualStyleBackColor = true;
+            this.btnThree.Click += new System.EventHandler(this.btnThree_Click);
             // 
             // btnZero
             // 
@@ -237,6 +242,7 @@
             this.btnZero.Size = new System.Drawing.Size(52, 48);
             this.btnZero.TabIndex = 8;
             this.btnZero.UseVisualStyleBackColor = true;
+            this.btnZero.Click += new System.EventHandler(this.btnZero_Click);
             // 
             // button18
             // 
@@ -255,6 +261,7 @@
             this.btnEight.Size = new System.Drawing.Size(52, 48);
             this.btnEight.TabIndex = 9;
             this.btnEight.UseVisualStyleBackColor = true;
+            this.btnEight.Click += new System.EventHandler(this.btnEight_Click);
             // 
             // btnSeven
             // 
@@ -265,6 +272,7 @@
             this.btnSeven.Size = new System.Drawing.Size(52, 48);
             this.btnSeven.TabIndex = 5;
             this.btnSeven.UseVisualStyleBackColor = true;
+            this.btnSeven.Click += new System.EventHandler(this.btnSeven_Click);
             // 
             // btnFive
             // 
@@ -275,6 +283,7 @@
             this.btnFive.Size = new System.Drawing.Size(52, 48);
             this.btnFive.TabIndex = 10;
             this.btnFive.UseVisualStyleBackColor = true;
+            this.btnFive.Click += new System.EventHandler(this.btnFive_Click);
             // 
             // btnFour
             // 
@@ -285,6 +294,7 @@
             this.btnFour.Size = new System.Drawing.Size(52, 48);
             this.btnFour.TabIndex = 6;
             this.btnFour.UseVisualStyleBackColor = true;
+            this.btnFour.Click += new System.EventHandler(this.btnFour_Click);
             // 
             // btnTwo
             // 
@@ -295,6 +305,7 @@
             this.btnTwo.Size = new System.Drawing.Size(52, 48);
             this.btnTwo.TabIndex = 11;
             this.btnTwo.UseVisualStyleBackColor = true;
+            this.btnTwo.Click += new System.EventHandler(this.btnTwo_Click);
             // 
             // btnOne
             // 
@@ -305,6 +316,7 @@
             this.btnOne.Size = new System.Drawing.Size(52, 48);
             this.btnOne.TabIndex = 7;
             this.btnOne.UseVisualStyleBackColor = true;
+            this.btnOne.Click += new System.EventHandler(this.btnOne_Click);
             // 
             // panel1
             // 
@@ -425,7 +437,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtNewPIN);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label9);
@@ -435,26 +447,29 @@
             this.panel2.Size = new System.Drawing.Size(631, 421);
             this.panel2.TabIndex = 0;
             // 
-            // textBox1
+            // txtNewPIN
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Green;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(179, 194);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(273, 32);
-            this.textBox1.TabIndex = 12;
+            this.txtNewPIN.BackColor = System.Drawing.Color.Green;
+            this.txtNewPIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPIN.Location = new System.Drawing.Point(200, 194);
+            this.txtNewPIN.MaxLength = 6;
+            this.txtNewPIN.Multiline = true;
+            this.txtNewPIN.Name = "txtNewPIN";
+            this.txtNewPIN.PasswordChar = '*';
+            this.txtNewPIN.Size = new System.Drawing.Size(252, 32);
+            this.txtNewPIN.TabIndex = 12;
+            this.txtNewPIN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(142, 374);
+            this.label1.Location = new System.Drawing.Point(121, 374);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(390, 20);
+            this.label1.Size = new System.Drawing.Size(411, 20);
             this.label1.TabIndex = 11;
-            this.label1.Text = "(Ấn Change để nhập lại hoặc Cancel để hủy bỏ)";
+            this.label1.Text = "(Ấn Correction để nhập lại hoặc Cancel để hủy bỏ)";
             // 
             // label3
             // 
@@ -492,11 +507,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Red;
-            this.ClientSize = new System.Drawing.Size(819, 682);
+            this.ClientSize = new System.Drawing.Size(819, 705);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button25);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.btnCardNo);
+            this.Controls.Add(this.txtCardNo);
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -521,7 +536,7 @@
 
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox btnCardNo;
+        private System.Windows.Forms.TextBox txtCardNo;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -553,10 +568,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNewPIN;
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button btnCorrection;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

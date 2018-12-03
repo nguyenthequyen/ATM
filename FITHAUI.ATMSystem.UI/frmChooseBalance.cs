@@ -48,15 +48,17 @@ namespace FITHAUI.ATMSystem.UI
             doc.Open();
             iTextSharp.text.Font headerFont = FontFactory.GetFont("Verdana", 8);
             iTextSharp.text.Font emptyFont = FontFactory.GetFont("Verdana", 5);
-            string imageURL = @"F:\SystemATM\FITHAUI.ATMSystem\FITHAUI.ATMSystem.UI\Content\Images\logo-tech.png";
+            //Ảnh header
+            string imageURL = @"F:\SystemATM\FITHAUI.ATMSystem\FITHAUI.ATMSystem.UI\Content\Images\Logo.png";
             iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(imageURL);
             jpg.Alignment = Element.ALIGN_CENTER;
-            jpg.ScaleToFit(240f, 120f);
+            jpg.ScaleToFit(80f, 120f);
             Paragraph receiptNamePara =
                 new Paragraph("LIET KE GIAO DICH", headerFont);
             Paragraph emptyPara = new Paragraph("    ", emptyFont);
             receiptNamePara.Alignment = Element.ALIGN_CENTER;
             doc.Add(jpg);
+
             doc.Add(receiptNamePara);
             doc.Add(emptyPara);
             PdfPTable table = new PdfPTable(3);
@@ -65,7 +67,9 @@ namespace FITHAUI.ATMSystem.UI
             table.WidthPercentage = 95f;
             var dateNow = sub.SubDate(DateTime.Now.ToString().Trim());
             var time = sub.SubTime(DateTime.Now.ToString().Trim());
-            PdfPCell pDays = new PdfPCell(new Phrase(String.Format("NGAY                       :  {0}        GIO     {1}", dateNow, time), headerFont));
+            PdfPCell pDays = new PdfPCell(new Phrase(String.Format("NGAY                       :  {0}        GIO     {1}\n", dateNow, time), headerFont));
+            pDays.Colspan = 3;
+            pDays.Border = iTextSharp.text.Rectangle.NO_BORDER;
             PdfPCell cCardNo = new PdfPCell(new Phrase(String.Format("SO TAI KHOAN                       :  {0}", CardNo), headerFont));
             cCardNo.Colspan = 3;
             cCardNo.Border = iTextSharp.text.Rectangle.NO_BORDER;
@@ -78,7 +82,7 @@ namespace FITHAUI.ATMSystem.UI
             PdfPCell cFee = new PdfPCell(new Phrase(String.Format("PHI DICH VU:  {0} VND", "1100"), headerFont));
             cFee.Colspan = 3;
             cFee.Border = iTextSharp.text.Rectangle.NO_BORDER;
-            PdfPCell cVAT = new PdfPCell(new Phrase("(DA BAO GOM VAT)", headerFont));
+            PdfPCell cVAT = new PdfPCell(new Phrase("                               (DA BAO GOM VAT)", headerFont));
             cVAT.Colspan = 3;
             cVAT.Border = iTextSharp.text.Rectangle.NO_BORDER;
             cVAT.Rowspan = 5;
@@ -93,19 +97,13 @@ namespace FITHAUI.ATMSystem.UI
 
             FileStream fs1 = new FileStream(@"F:\SystemATM\FITHAUI.ATMSystem\FITHAUI.ATMSystem.UI\Content\Images\techcombank_bg.png", FileMode.Open);
             iTextSharp.text.Image watermark = iTextSharp.text.Image.GetInstance(System.Drawing.Image.FromStream(fs1), ImageFormat.Png);
-            watermark.ScalePercent(50f);
-            watermark.SetAbsolutePosition(60f, 70f);
+            watermark.ScalePercent(40f, 43f);
+            watermark.SetAbsolutePosition(-10f, 0f);
             fs1.Close();
-            FileStream fs2 = new FileStream(@"F:\SystemATM\FITHAUI.ATMSystem\FITHAUI.ATMSystem.UI\Content\Images\Techcombank_logo.png", FileMode.Open);
-
-            iTextSharp.text.Image footer = iTextSharp.text.Image.GetInstance(System.Drawing.Image.FromStream(fs2), ImageFormat.Png);
-            footer.ScalePercent(75f);
-            footer.SetAbsolutePosition(3f, 20f);
-            fs2.Close();
-            doc.Add(footer);
             doc.Add(watermark);
             doc.Close();
             MessageBox.Show("GIAO DỊCH THÀNH CÔNG");
+            Application.Exit();
             try
             {
                 Process myProcess = new Process();

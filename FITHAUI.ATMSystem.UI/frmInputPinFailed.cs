@@ -12,9 +12,18 @@ namespace FITHAUI.ATMSystem.UI
 {
     public partial class frmInputPinFailed : Form
     {
+        private static string _cardNo;
+        public string CardNo { get => _cardNo; set => _cardNo = value; }
         public frmInputPinFailed()
         {
             InitializeComponent();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            frmValidateCard validateCard = new frmValidateCard();
+            validateCard.Show();
+            this.Close();
         }
     }
 }
