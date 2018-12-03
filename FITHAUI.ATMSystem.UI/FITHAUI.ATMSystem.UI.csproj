@@ -36,6 +36,10 @@
     <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp.pdfa, Version=5.4.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\thequ\Desktop\GettingStartediTextSharp\Bin\itextsharp.pdfa.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -301,6 +305,7 @@
     <EmbeddedResource Include="frmSystemOutOfMoney.resx">
       <DependentUpon>frmSystemOutOfMoney.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="SubStringDate.cs" />
     <EmbeddedResource Include="frmValidateCard.resx">
       <DependentUpon>frmValidateCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,7 +430,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\btnEight.PNG" />
