@@ -533,3 +533,7 @@ $RECYCLE.BIN/
 # Local History for Visual Studio
 
 # End of https://www.gitignore.io/api/csharp,windows,visualstudio,visualstudiocode
+#/FITHAUI.ATMSystem.UI/packages.config
+#/FITHAUI.ATMSystem.DTOs/packages.config
+#/FITHAUI.ATMSystem.DALs/packages.config
+#/FITHAUI.ATMSystem.BULs/packages.config

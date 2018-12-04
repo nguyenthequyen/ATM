@@ -1,16 +1,17 @@
-﻿using FITHAUI.ATMSystem.DALs.CheckBalance;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FITHAUI.ATMSystem.BULs.CheckBalance
+namespace FITHAUI.ATMSystem
 {
 
-    public class Balance_BUL
+    public class Account_BUL
     {
-        Balance_DAL balance = new Balance_DAL();
+        Account_DAL account = new Account_DAL();
+        OverDraftLimitDAL overDraftLimitDAL = new OverDraftLimitDAL();
+
         /// <summary>
         /// Số dư thực tế
         /// </summary>
@@ -18,7 +19,7 @@ namespace FITHAUI.ATMSystem.BULs.CheckBalance
         /// <returns></returns>
         public string GetBalance(string cardNo)
         {
-            int ba = balance.CheckBalance(cardNo);
+            int ba = account.CheckBalance(cardNo);
             string str = ba + "";
             List<char> arrChar = new List<char>();
             char[] arr = str.ToCharArray();
@@ -59,7 +60,7 @@ namespace FITHAUI.ATMSystem.BULs.CheckBalance
         /// <returns></returns>
         public string GetBalanceRight(string cardNo)
         {
-            int ba = (balance.CheckBalance(cardNo) - 50000);
+            int ba = (account.CheckBalance(cardNo) - 50000);
             string str = ba + "";
             List<char> arrChar = new List<char>();
             char[] arr = str.ToCharArray();
@@ -92,6 +93,21 @@ namespace FITHAUI.ATMSystem.BULs.CheckBalance
                 }
                 return String.Join("", arrChar);
             }
+        }
+
+        public bool CheckBalanceAndOverDraft(string cardNo, int money)
+        {
+            int balance = account.CheckBalance(cardNo);
+            int overDraft = overDraftLimitDAL.GetOverDraft(cardNo);
+            if (money <= balance + overDraft)
+                return true;
+            else
+                return false;
+        }
+
+        public void UpdateBalance(int money, string cardNo)
+        {
+            account.UpdateBalance(money, cardNo);
         }
     }
 }

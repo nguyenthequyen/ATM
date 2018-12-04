@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +52,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmMultiplesError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMultiplesError.Designer.cs">
+      <DependentUpon>frmMultiplesError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOverdraftAndBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOverdraftAndBalance.Designer.cs">
+      <DependentUpon>frmOverdraftAndBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOverMoneyInDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOverMoneyInDay.Designer.cs">
+      <DependentUpon>frmOverMoneyInDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOverMoneySystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOverMoneySystem.Designer.cs">
+      <DependentUpon>frmOverMoneySystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSystemOutOfMoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSystemOutOfMoney.Designer.cs">
+      <DependentUpon>frmSystemOutOfMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckLengthPIN.cs" />
     <Compile Include="frmValidateCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +112,12 @@
     </Compile>
     <Compile Include="frmChangePIN.designer.cs">
       <DependentUpon>frmChangePIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePIN2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePIN2.Designer.cs">
+      <DependentUpon>frmChangePIN2.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChangePINFail.cs">
       <SubType>Form</SubType>
@@ -244,9 +287,31 @@
     <Compile Include="frmWithdrawMain.Designer.cs">
       <DependentUpon>frmWithdrawMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmWithDrawSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWithDrawSuccess.Designer.cs">
+      <DependentUpon>frmWithDrawSuccess.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetTextInput.cs" />
+    <EmbeddedResource Include="frmMultiplesError.resx">
+      <DependentUpon>frmMultiplesError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOverdraftAndBalance.resx">
+      <DependentUpon>frmOverdraftAndBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOverMoneyInDay.resx">
+      <DependentUpon>frmOverMoneyInDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOverMoneySystem.resx">
+      <DependentUpon>frmOverMoneySystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSystemOutOfMoney.resx">
+      <DependentUpon>frmSystemOutOfMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="SubStringDate.cs" />
     <EmbeddedResource Include="frmValidateCard.resx">
       <DependentUpon>frmValidateCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmChangePIN.resx">
       <DependentUpon>frmChangePIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePIN2.resx">
+      <DependentUpon>frmChangePIN2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChangePINFail.resx">
       <DependentUpon>frmChangePINFail.cs</DependentUpon>
@@ -346,6 +414,9 @@
     <EmbeddedResource Include="frmWithdrawMain.resx">
       <DependentUpon>frmWithdrawMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmWithDrawSuccess.resx">
+      <DependentUpon>frmWithDrawSuccess.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -356,6 +427,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -367,7 +439,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\btnEight.PNG" />

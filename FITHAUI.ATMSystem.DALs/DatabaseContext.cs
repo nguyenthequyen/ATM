@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FITHAUI.ATMSystem.DALs
+namespace FITHAUI.ATMSystem
 {
     public class Databasecontext
     {
@@ -17,7 +17,7 @@ namespace FITHAUI.ATMSystem.DALs
         /// Mở kết nối cơ sở dữ liệu
         /// </summary>
         /// 
-        public static bool CHECK_OPEN = false;
+        public  bool CHECK_OPEN = false;
 
         public SqlConnection Connect
         {

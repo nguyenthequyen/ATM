@@ -64,6 +64,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -359,6 +361,7 @@
             this.btnNoPrint.Size = new System.Drawing.Size(50, 46);
             this.btnNoPrint.TabIndex = 2;
             this.btnNoPrint.UseVisualStyleBackColor = true;
+            this.btnNoPrint.Click += new System.EventHandler(this.btnNoPrint_Click);
             // 
             // btnPrint
             // 
@@ -369,6 +372,7 @@
             this.btnPrint.Size = new System.Drawing.Size(50, 46);
             this.btnPrint.TabIndex = 1;
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // button8
             // 
@@ -436,6 +440,8 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.button15);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
@@ -446,6 +452,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(631, 421);
             this.panel2.TabIndex = 0;
+            // 
+            // button5
+            // 
+            this.button5.Enabled = false;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(477, 286);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(154, 46);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "Không In Biên Lai";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Enabled = false;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.Location = new System.Drawing.Point(477, 220);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(154, 46);
+            this.button15.TabIndex = 12;
+            this.button15.Text = "In Biên Lai";
+            this.button15.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -571,5 +599,7 @@
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button15;
     }
 }

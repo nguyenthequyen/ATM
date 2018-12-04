@@ -41,39 +41,39 @@
             this.btnFour = new System.Windows.Forms.Button();
             this.btnTwo = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnCardNo = new System.Windows.Forms.TextBox();
             this.btnOne = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grAcceptRight = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnSoKhac = new System.Windows.Forms.Button();
+            this.btn500 = new System.Windows.Forms.Button();
+            this.btn1tr = new System.Windows.Forms.Button();
+            this.btn2tr = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grAcceptLeft = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn3tr = new System.Windows.Forms.Button();
+            this.btn4tr = new System.Windows.Forms.Button();
+            this.btn5tr = new System.Windows.Forms.Button();
+            this.btn10tr = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnthreeminilon = new System.Windows.Forms.Button();
+            this.btnDifferent = new System.Windows.Forms.Button();
+            this.bt500 = new System.Windows.Forms.Button();
+            this.btnfourminilon = new System.Windows.Forms.Button();
+            this.btnoneminilon = new System.Windows.Forms.Button();
+            this.btnfiveminilon = new System.Windows.Forms.Button();
+            this.btntwominilon = new System.Windows.Forms.Button();
+            this.btnTenMinilon = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button25 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -202,6 +202,45 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // button21
+            // 
+            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button21.Location = new System.Drawing.Point(15, 177);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(101, 48);
+            this.button21.TabIndex = 16;
+            this.button21.Text = "ACCEPT";
+            this.button21.UseVisualStyleBackColor = true;
+            // 
+            // button22
+            // 
+            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button22.Location = new System.Drawing.Point(15, 119);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(101, 48);
+            this.button22.TabIndex = 17;
+            this.button22.UseVisualStyleBackColor = true;
+            // 
+            // button23
+            // 
+            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.Location = new System.Drawing.Point(15, 64);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(101, 48);
+            this.button23.TabIndex = 18;
+            this.button23.Text = "CORECTION";
+            this.button23.UseVisualStyleBackColor = true;
+            // 
+            // button24
+            // 
+            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button24.Location = new System.Drawing.Point(15, 12);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(101, 48);
+            this.button24.TabIndex = 19;
+            this.button24.Text = "CANCEL";
+            this.button24.UseVisualStyleBackColor = true;
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
@@ -262,55 +301,59 @@
             // 
             // grAcceptRight
             // 
-            this.grAcceptRight.Controls.Add(this.button5);
-            this.grAcceptRight.Controls.Add(this.button6);
-            this.grAcceptRight.Controls.Add(this.button7);
-            this.grAcceptRight.Controls.Add(this.button8);
+            this.grAcceptRight.Controls.Add(this.btnSoKhac);
+            this.grAcceptRight.Controls.Add(this.btn500);
+            this.grAcceptRight.Controls.Add(this.btn1tr);
+            this.grAcceptRight.Controls.Add(this.btn2tr);
             this.grAcceptRight.Location = new System.Drawing.Point(719, 132);
             this.grAcceptRight.Name = "grAcceptRight";
             this.grAcceptRight.Size = new System.Drawing.Size(66, 292);
             this.grAcceptRight.TabIndex = 4;
             this.grAcceptRight.TabStop = false;
             // 
-            // button5
+            // btnSoKhac
             // 
-            this.button5.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.Location = new System.Drawing.Point(9, 225);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(50, 46);
-            this.button5.TabIndex = 3;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnSoKhac.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
+            this.btnSoKhac.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSoKhac.Location = new System.Drawing.Point(9, 225);
+            this.btnSoKhac.Name = "btnSoKhac";
+            this.btnSoKhac.Size = new System.Drawing.Size(50, 46);
+            this.btnSoKhac.TabIndex = 3;
+            this.btnSoKhac.UseVisualStyleBackColor = true;
+            this.btnSoKhac.Click += new System.EventHandler(this.btnSoKhac_Click);
             // 
-            // button6
+            // btn500
             // 
-            this.button6.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.Location = new System.Drawing.Point(9, 157);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(50, 46);
-            this.button6.TabIndex = 2;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn500.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
+            this.btn500.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn500.Location = new System.Drawing.Point(9, 157);
+            this.btn500.Name = "btn500";
+            this.btn500.Size = new System.Drawing.Size(50, 46);
+            this.btn500.TabIndex = 2;
+            this.btn500.UseVisualStyleBackColor = true;
+            this.btn500.Click += new System.EventHandler(this.btn500_Click);
             // 
-            // button7
+            // btn1tr
             // 
-            this.button7.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.Location = new System.Drawing.Point(9, 91);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(50, 46);
-            this.button7.TabIndex = 1;
-            this.button7.UseVisualStyleBackColor = true;
+            this.btn1tr.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
+            this.btn1tr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn1tr.Location = new System.Drawing.Point(9, 91);
+            this.btn1tr.Name = "btn1tr";
+            this.btn1tr.Size = new System.Drawing.Size(50, 46);
+            this.btn1tr.TabIndex = 1;
+            this.btn1tr.UseVisualStyleBackColor = true;
+            this.btn1tr.Click += new System.EventHandler(this.btn1tr_Click);
             // 
-            // button8
+            // btn2tr
             // 
-            this.button8.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button8.Location = new System.Drawing.Point(9, 27);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(50, 46);
-            this.button8.TabIndex = 0;
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn2tr.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
+            this.btn2tr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn2tr.Location = new System.Drawing.Point(9, 27);
+            this.btn2tr.Name = "btn2tr";
+            this.btn2tr.Size = new System.Drawing.Size(50, 46);
+            this.btn2tr.TabIndex = 0;
+            this.btn2tr.UseVisualStyleBackColor = true;
+            this.btn2tr.Click += new System.EventHandler(this.btn2tr_Click);
             // 
             // panel1
             // 
@@ -325,55 +368,59 @@
             // 
             // grAcceptLeft
             // 
-            this.grAcceptLeft.Controls.Add(this.button4);
-            this.grAcceptLeft.Controls.Add(this.button3);
-            this.grAcceptLeft.Controls.Add(this.button2);
-            this.grAcceptLeft.Controls.Add(this.button1);
+            this.grAcceptLeft.Controls.Add(this.btn3tr);
+            this.grAcceptLeft.Controls.Add(this.btn4tr);
+            this.grAcceptLeft.Controls.Add(this.btn5tr);
+            this.grAcceptLeft.Controls.Add(this.btn10tr);
             this.grAcceptLeft.Location = new System.Drawing.Point(10, 132);
             this.grAcceptLeft.Name = "grAcceptLeft";
             this.grAcceptLeft.Size = new System.Drawing.Size(66, 292);
             this.grAcceptLeft.TabIndex = 1;
             this.grAcceptLeft.TabStop = false;
             // 
-            // button4
+            // btn3tr
             // 
-            this.button4.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Location = new System.Drawing.Point(8, 225);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(50, 46);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn3tr.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
+            this.btn3tr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn3tr.Location = new System.Drawing.Point(8, 225);
+            this.btn3tr.Name = "btn3tr";
+            this.btn3tr.Size = new System.Drawing.Size(50, 46);
+            this.btn3tr.TabIndex = 3;
+            this.btn3tr.UseVisualStyleBackColor = true;
+            this.btn3tr.Click += new System.EventHandler(this.btn3tr_Click);
             // 
-            // button3
+            // btn4tr
             // 
-            this.button3.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(8, 157);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 46);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn4tr.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
+            this.btn4tr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn4tr.Location = new System.Drawing.Point(8, 157);
+            this.btn4tr.Name = "btn4tr";
+            this.btn4tr.Size = new System.Drawing.Size(50, 46);
+            this.btn4tr.TabIndex = 2;
+            this.btn4tr.UseVisualStyleBackColor = true;
+            this.btn4tr.Click += new System.EventHandler(this.btn4tr_Click);
             // 
-            // button2
+            // btn5tr
             // 
-            this.button2.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Location = new System.Drawing.Point(8, 91);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 46);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn5tr.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
+            this.btn5tr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn5tr.Location = new System.Drawing.Point(8, 91);
+            this.btn5tr.Name = "btn5tr";
+            this.btn5tr.Size = new System.Drawing.Size(50, 46);
+            this.btn5tr.TabIndex = 1;
+            this.btn5tr.UseVisualStyleBackColor = true;
+            this.btn5tr.Click += new System.EventHandler(this.btn5tr_Click);
             // 
-            // button1
+            // btn10tr
             // 
-            this.button1.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(8, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 46);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn10tr.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_next;
+            this.btn10tr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn10tr.Location = new System.Drawing.Point(8, 27);
+            this.btn10tr.Name = "btn10tr";
+            this.btn10tr.Size = new System.Drawing.Size(50, 46);
+            this.btn10tr.TabIndex = 0;
+            this.btn10tr.UseVisualStyleBackColor = true;
+            this.btn10tr.Click += new System.EventHandler(this.btn10tr_Click);
             // 
             // panel2
             // 
@@ -381,14 +428,14 @@
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.button12);
-            this.panel2.Controls.Add(this.button16);
-            this.panel2.Controls.Add(this.button15);
-            this.panel2.Controls.Add(this.button11);
-            this.panel2.Controls.Add(this.button14);
-            this.panel2.Controls.Add(this.button10);
-            this.panel2.Controls.Add(this.button13);
-            this.panel2.Controls.Add(this.button9);
+            this.panel2.Controls.Add(this.btnthreeminilon);
+            this.panel2.Controls.Add(this.btnDifferent);
+            this.panel2.Controls.Add(this.bt500);
+            this.panel2.Controls.Add(this.btnfourminilon);
+            this.panel2.Controls.Add(this.btnoneminilon);
+            this.panel2.Controls.Add(this.btnfiveminilon);
+            this.panel2.Controls.Add(this.btntwominilon);
+            this.panel2.Controls.Add(this.btnTenMinilon);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Location = new System.Drawing.Point(82, 3);
             this.panel2.Name = "panel2";
@@ -415,93 +462,93 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Xin vui lòng lựa chọn số tiền";
             // 
-            // button12
+            // btnthreeminilon
             // 
-            this.button12.Enabled = false;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(0, 354);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(154, 46);
-            this.button12.TabIndex = 4;
-            this.button12.Text = "3,000,000";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnthreeminilon.Enabled = false;
+            this.btnthreeminilon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnthreeminilon.Location = new System.Drawing.Point(0, 354);
+            this.btnthreeminilon.Name = "btnthreeminilon";
+            this.btnthreeminilon.Size = new System.Drawing.Size(154, 46);
+            this.btnthreeminilon.TabIndex = 4;
+            this.btnthreeminilon.Text = "3,000,000";
+            this.btnthreeminilon.UseVisualStyleBackColor = true;
             // 
-            // button16
+            // btnDifferent
             // 
-            this.button16.Enabled = false;
-            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(477, 354);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(154, 46);
-            this.button16.TabIndex = 4;
-            this.button16.Text = "Số khác";
-            this.button16.UseVisualStyleBackColor = true;
+            this.btnDifferent.Enabled = false;
+            this.btnDifferent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDifferent.Location = new System.Drawing.Point(477, 354);
+            this.btnDifferent.Name = "btnDifferent";
+            this.btnDifferent.Size = new System.Drawing.Size(154, 46);
+            this.btnDifferent.TabIndex = 4;
+            this.btnDifferent.Text = "Số khác";
+            this.btnDifferent.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // bt500
             // 
-            this.button15.Enabled = false;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(477, 286);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(154, 46);
-            this.button15.TabIndex = 4;
-            this.button15.Text = "500,000";
-            this.button15.UseVisualStyleBackColor = true;
+            this.bt500.Enabled = false;
+            this.bt500.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt500.Location = new System.Drawing.Point(477, 286);
+            this.bt500.Name = "bt500";
+            this.bt500.Size = new System.Drawing.Size(154, 46);
+            this.bt500.TabIndex = 4;
+            this.bt500.Text = "500,000";
+            this.bt500.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // btnfourminilon
             // 
-            this.button11.Enabled = false;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(0, 286);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(154, 46);
-            this.button11.TabIndex = 4;
-            this.button11.Text = "4,000,000";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnfourminilon.Enabled = false;
+            this.btnfourminilon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfourminilon.Location = new System.Drawing.Point(0, 286);
+            this.btnfourminilon.Name = "btnfourminilon";
+            this.btnfourminilon.Size = new System.Drawing.Size(154, 46);
+            this.btnfourminilon.TabIndex = 4;
+            this.btnfourminilon.Text = "4,000,000";
+            this.btnfourminilon.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // btnoneminilon
             // 
-            this.button14.Enabled = false;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(477, 220);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(154, 46);
-            this.button14.TabIndex = 4;
-            this.button14.Text = "1,000,000";
-            this.button14.UseVisualStyleBackColor = true;
+            this.btnoneminilon.Enabled = false;
+            this.btnoneminilon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnoneminilon.Location = new System.Drawing.Point(477, 220);
+            this.btnoneminilon.Name = "btnoneminilon";
+            this.btnoneminilon.Size = new System.Drawing.Size(154, 46);
+            this.btnoneminilon.TabIndex = 4;
+            this.btnoneminilon.Text = "1,000,000";
+            this.btnoneminilon.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnfiveminilon
             // 
-            this.button10.Enabled = false;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(0, 220);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(154, 46);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "5,000,000";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnfiveminilon.Enabled = false;
+            this.btnfiveminilon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfiveminilon.Location = new System.Drawing.Point(0, 220);
+            this.btnfiveminilon.Name = "btnfiveminilon";
+            this.btnfiveminilon.Size = new System.Drawing.Size(154, 46);
+            this.btnfiveminilon.TabIndex = 4;
+            this.btnfiveminilon.Text = "5,000,000";
+            this.btnfiveminilon.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // btntwominilon
             // 
-            this.button13.Enabled = false;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(477, 156);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(154, 46);
-            this.button13.TabIndex = 4;
-            this.button13.Text = "2,000,000";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btntwominilon.Enabled = false;
+            this.btntwominilon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btntwominilon.Location = new System.Drawing.Point(477, 156);
+            this.btntwominilon.Name = "btntwominilon";
+            this.btntwominilon.Size = new System.Drawing.Size(154, 46);
+            this.btntwominilon.TabIndex = 4;
+            this.btntwominilon.Text = "2,000,000";
+            this.btntwominilon.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnTenMinilon
             // 
-            this.button9.Enabled = false;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(0, 156);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(154, 46);
-            this.button9.TabIndex = 4;
-            this.button9.Text = "10,000,000";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnTenMinilon.Enabled = false;
+            this.btnTenMinilon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTenMinilon.Location = new System.Drawing.Point(0, 156);
+            this.btnTenMinilon.Name = "btnTenMinilon";
+            this.btnTenMinilon.Size = new System.Drawing.Size(154, 46);
+            this.btnTenMinilon.TabIndex = 4;
+            this.btnTenMinilon.Text = "10,000,000";
+            this.btnTenMinilon.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -523,45 +570,6 @@
             this.button25.TabIndex = 54;
             this.button25.UseVisualStyleBackColor = true;
             // 
-            // button21
-            // 
-            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button21.Location = new System.Drawing.Point(15, 177);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(101, 48);
-            this.button21.TabIndex = 16;
-            this.button21.Text = "ACCEPT";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
-            // button22
-            // 
-            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button22.Location = new System.Drawing.Point(15, 119);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(101, 48);
-            this.button22.TabIndex = 17;
-            this.button22.UseVisualStyleBackColor = true;
-            // 
-            // button23
-            // 
-            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.Location = new System.Drawing.Point(15, 64);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(101, 48);
-            this.button23.TabIndex = 18;
-            this.button23.Text = "CORECTION";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.Location = new System.Drawing.Point(15, 12);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(101, 48);
-            this.button24.TabIndex = 19;
-            this.button24.Text = "CANCEL";
-            this.button24.UseVisualStyleBackColor = true;
-            // 
             // frmWithdrawMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,9 +581,9 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button25);
-            this.Enabled = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmWithdrawMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ATM Techcombank";
             this.groupBox2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -610,27 +618,27 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox grAcceptRight;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnSoKhac;
+        private System.Windows.Forms.Button btn500;
+        private System.Windows.Forms.Button btn1tr;
+        private System.Windows.Forms.Button btn2tr;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox grAcceptLeft;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn3tr;
+        private System.Windows.Forms.Button btn4tr;
+        private System.Windows.Forms.Button btn5tr;
+        private System.Windows.Forms.Button btn10tr;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnthreeminilon;
+        private System.Windows.Forms.Button bt500;
+        private System.Windows.Forms.Button btnfourminilon;
+        private System.Windows.Forms.Button btnoneminilon;
+        private System.Windows.Forms.Button btnfiveminilon;
+        private System.Windows.Forms.Button btntwominilon;
+        private System.Windows.Forms.Button btnTenMinilon;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button btnDifferent;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button21;

@@ -1,5 +1,4 @@
-﻿using FITHAUI.ATMSystem.BULs.CheckBalance;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +14,7 @@ namespace FITHAUI.ATMSystem.UI
     {
         private static string _cardNo;
         public string CardNo { get => _cardNo; set => _cardNo = value; }
-        Balance_BUL balance_BUL = new Balance_BUL();
+        Account_BUL account_BUL = new Account_BUL();
         Account account = new Account();
         public frmBalanceScreen()
         {
@@ -23,8 +22,8 @@ namespace FITHAUI.ATMSystem.UI
         }
         public void DisplayScreen()
         {
-            txtBalance.Text =  balance_BUL.GetBalance(CardNo).ToString() + " VND";
-            txtBalanceRight.Text = balance_BUL.GetBalanceRight(CardNo).ToString() + " VND";
+            txtBalance.Text = account_BUL.GetBalance(CardNo).ToString() + " VND";
+            txtBalanceRight.Text = account_BUL.GetBalanceRight(CardNo).ToString() + " VND";
         }
         private void frmBalanceScreen_Load(object sender, EventArgs e)
         {
@@ -38,7 +37,10 @@ namespace FITHAUI.ATMSystem.UI
 
         private void btnYes_Click(object sender, EventArgs e)
         {
-            
+            frmListServices listServices = new frmListServices();
+            this.Close();
+            listServices.CardNo = CardNo;
+            listServices.Show();
         }
     }
 }

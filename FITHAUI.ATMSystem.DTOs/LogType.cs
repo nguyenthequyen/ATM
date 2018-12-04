@@ -27,5 +27,9 @@ namespace FITHAUI.ATMSystem
             LogTypeID = logTypeID;
             Description = description;
         }
+        public LogType(string description)
+        {
+            Description = description;
+        }
     }
 }
