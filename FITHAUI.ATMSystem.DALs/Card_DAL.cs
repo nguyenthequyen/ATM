@@ -16,7 +16,7 @@ namespace FITHAUI.ATMSystem.DALs
             try
             {
                 List<Card> listCard = new List<Card>();
-                string sql = "Select*From Card Where CardNo = @cardNo and Status = N'Normal'";
+                string sql = "Select*From Card Where CardNo = @cardNo and Status = N'normal'";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
                 cmd.Parameters.AddWithValue("cardNo", cardNo);
@@ -44,25 +44,36 @@ namespace FITHAUI.ATMSystem.DALs
                     return true;
                 }
             }
-            catch 
+            catch
             {
                 if (dbContext.CHECK_OPEN)
                 {
                     dbContext.CloseConnection();
-                }                
+                }
                 return false;
             }
-            
+
         }
+        //public void UpdateCard(string cardNo, string status, int attempt)
+        //{
+        //    dbContext.OpenConnection();
+        //    string sqlUpdate = "Update Card Set Attempt =@attempt, Status =@status Where CardNo=@cardNo";
+        //    SqlCommand cmd = new SqlCommand(sqlUpdate, dbContext.Connect);
+        //    cmd.Parameters.AddWithValue("cardNo", cardNo);
+        //    cmd.Parameters.AddWithValue("status", status);
+        //    cmd.Parameters.AddWithValue("attempt", attempt);
+        //    cmd.ExecuteNonQuery();
+        //    dbContext.CloseConnection();
+        //}
         public string CheckPIN(string cardNo, string pin)
         {
             try
             {
-                string PIN ="";
+                string PIN = "";
                 string sql = "Select PIN from Card where CardNo=@cardNo";
                 dbContext.OpenConnection();
-                SqlCommand cmd = new SqlCommand(sql,dbContext.Connect);
-                cmd.Parameters.AddWithValue("cardNo",cardNo);
+                SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
+                cmd.Parameters.AddWithValue("cardNo", cardNo);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -71,16 +82,16 @@ namespace FITHAUI.ATMSystem.DALs
                 dbContext.CloseConnection();
                 return PIN;
             }
-            catch 
+            catch
             {
-                if(dbContext.CHECK_OPEN)
+                if (dbContext.CHECK_OPEN)
                 {
                     dbContext.CloseConnection();
                 }
                 return "";
             }
         }
-        public void ChangePIN(string cardNo,string newPIN)
+        public void ChangePIN(string cardNo, string newPIN)
         {
             try
             {
@@ -102,127 +113,127 @@ namespace FITHAUI.ATMSystem.DALs
                 //return false;
             }
         }
-        public string GetStatus(string cardNo)
-        {
-            try
-            {
-                string status = "";
-                string sql = "Select Status From Card where CardNo =@cardNo";
-                dbContext.OpenConnection();
-                SqlCommand cmd = new SqlCommand(sql,dbContext.Connect);
-                cmd.Parameters.AddWithValue("cardNo",cardNo);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    status = dr["Status"].ToString();
-                }
-                dbContext.CloseConnection();
-                return status;
-            }
-            catch 
-            {
-                if(dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
-                return "";
-            }
-        }
-        public string GetExpiredDate(string cardNo)
-        {
-            try
-            {
-                string exDate = "";
-                string sql = "Select ExpiredDate from Card where CardNo = @cardNo";
-                dbContext.OpenConnection();
-                SqlCommand cmd = new SqlCommand(sql,dbContext.Connect);
-                cmd.Parameters.AddWithValue("cardNo",cardNo);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while(dr.Read())
-                {
-                    exDate = dr["ExpiredDate"].ToString();
-                }
-                dbContext.CloseConnection();
-                return exDate;
-            }
-            catch 
-            {
-                if (dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
-                return "";
-            }
-        }
-        public void UpdateAttempt(string cardNo)
-        {
-            try
-            {
-                int attempt = 0;
-                string sql = "Select Attempt From Card Where CardNo =@cardNo";
-                dbContext.OpenConnection();
-                SqlCommand cmd = new SqlCommand(sql,dbContext.Connect);
-                cmd.Parameters.AddWithValue("cardNo",cardNo);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    attempt = Convert.ToInt32(dr["Attempt"]);
-                }
-                attempt++;
-                dbContext.CloseConnection();
+        //public string GetStatus(string cardNo)
+        //{
+        //    try
+        //    {
+        //        string status = "";
+        //        string sql = "Select Status From Card where CardNo =@cardNo";
+        //        dbContext.OpenConnection();
+        //        SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
+        //        cmd.Parameters.AddWithValue("cardNo", cardNo);
+        //        SqlDataReader dr = cmd.ExecuteReader();
+        //        while (dr.Read())
+        //        {
+        //            status = dr["Status"].ToString();
+        //        }
+        //        dbContext.CloseConnection();
+        //        return status;
+        //    }
+        //    catch
+        //    {
+        //        if (dbContext.CHECK_OPEN)
+        //        {
+        //            dbContext.CloseConnection();
+        //        }
+        //        return "";
+        //    }
+        //}
+        //public string GetExpiredDate(string cardNo)
+        //{
+        //    try
+        //    {
+        //        string exDate = "";
+        //        string sql = "Select ExpiredDate from Card where CardNo = @cardNo";
+        //        dbContext.OpenConnection();
+        //        SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
+        //        cmd.Parameters.AddWithValue("cardNo", cardNo);
+        //        SqlDataReader dr = cmd.ExecuteReader();
+        //        while (dr.Read())
+        //        {
+        //            exDate = dr["ExpiredDate"].ToString();
+        //        }
+        //        dbContext.CloseConnection();
+        //        return exDate;
+        //    }
+        //    catch
+        //    {
+        //        if (dbContext.CHECK_OPEN)
+        //        {
+        //            dbContext.CloseConnection();
+        //        }
+        //        return "";
+        //    }
+        //}
+        //public void UpdateAttempt(string cardNo)
+        //{
+        //    try
+        //    {
+        //        int attempt = 0;
+        //        string sql = "Select Attempt From Card Where CardNo =@cardNo";
+        //        dbContext.OpenConnection();
+        //        SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
+        //        cmd.Parameters.AddWithValue("cardNo", cardNo);
+        //        SqlDataReader dr = cmd.ExecuteReader();
+        //        while (dr.Read())
+        //        {
+        //            attempt = Convert.ToInt32(dr["Attempt"]);
+        //        }
+        //        attempt++;
+        //        dbContext.CloseConnection();
 
-                string sqlUpdate = "Update Card set Attempt=@attempt where CardNo=@cardNo";
-                dbContext.OpenConnection();
-                SqlCommand cmd1 = new SqlCommand(sqlUpdate,dbContext.Connect);
-                cmd1.Parameters.AddWithValue("attempt", attempt);
-                cmd1.Parameters.AddWithValue("cardNo",cardNo);
-                cmd1.ExecuteNonQuery();
-                dbContext.CloseConnection();
-                //return true;
-            }
-            catch 
-            {
-                if (dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
-                //return false;
-            }
-        }
-        public int GetAttempt(string cardNo)
-        {
-            try
-            {
-                int attempt = 0;
-                string sql = "Select Attempt From Card Where CardNo=@cardNo";
-                dbContext.OpenConnection();
-                SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
-                cmd.Parameters.AddWithValue("cardNo", cardNo);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    attempt = Convert.ToInt32(dr["Attempt"]);
-                }
-                dbContext.CloseConnection();
-                if (attempt == 3)
-                {
-                    string sqlUpdate = "Update Card set Status = N'block' where CardNo =@cardNo";
-                    dbContext.OpenConnection();
-                    SqlCommand cmd1 = new SqlCommand(sqlUpdate, dbContext.Connect);
-                    cmd1.Parameters.AddWithValue("cardNo", cardNo);
-                    cmd1.ExecuteNonQuery();
-                    dbContext.CloseConnection();                    
-                }
-                return attempt;
-            }
-            catch 
-            {
-                if (dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
-                return -1;
-            }
-        }
+        //        string sqlUpdate = "Update Card set Attempt=@attempt where CardNo=@cardNo";
+        //        dbContext.OpenConnection();
+        //        SqlCommand cmd1 = new SqlCommand(sqlUpdate, dbContext.Connect);
+        //        cmd1.Parameters.AddWithValue("attempt", attempt);
+        //        cmd1.Parameters.AddWithValue("cardNo", cardNo);
+        //        cmd1.ExecuteNonQuery();
+        //        dbContext.CloseConnection();
+        //        //return true;
+        //    }
+        //    catch
+        //    {
+        //        if (dbContext.CHECK_OPEN)
+        //        {
+        //            dbContext.CloseConnection();
+        //        }
+        //        //return false;
+        //    }
+        //}
+        //public int GetAttempt(string cardNo)
+        //{
+        //    try
+        //    {
+        //        int attempt = 0;
+        //        string sql = "Select Attempt From Card Where CardNo=@cardNo";
+        //        dbContext.OpenConnection();
+        //        SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
+        //        cmd.Parameters.AddWithValue("cardNo", cardNo);
+        //        SqlDataReader dr = cmd.ExecuteReader();
+        //        while (dr.Read())
+        //        {
+        //            attempt = Convert.ToInt32(dr["Attempt"]);
+        //        }
+        //        dbContext.CloseConnection();
+        //        if (attempt == 3)
+        //        {
+        //            string sqlUpdate = "Update Card set Status = N'block' where CardNo =@cardNo";
+        //            dbContext.OpenConnection();
+        //            SqlCommand cmd1 = new SqlCommand(sqlUpdate, dbContext.Connect);
+        //            cmd1.Parameters.AddWithValue("cardNo", cardNo);
+        //            cmd1.ExecuteNonQuery();
+        //            dbContext.CloseConnection();
+        //        }
+        //        return attempt;
+        //    }
+        //    catch
+        //    {
+        //        if (dbContext.CHECK_OPEN)
+        //        {
+        //            dbContext.CloseConnection();
+        //        }
+        //        return -1;
+        //    }
+        //}
     }
 }

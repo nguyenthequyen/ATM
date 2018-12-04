@@ -10,48 +10,17 @@ namespace FITHAUI.ATMSystem.BULs
     public class Log_BUL
     {
         Log_DAL log_DAL = new Log_DAL();
-        /// <summary>
-        /// Xem lịch sử giao dịch
-        /// </summary>
-        /// <param name="cardNo"></param>
-        /// <returns></returns>
+        
         public List<Log> GetListLog(string cardNo)
         {
             return log_DAL.ViewHistory(cardNo);
         }
-        public void createLog(decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo)
+        public void CreateLog(decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo)
         {
-            string dateTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:sszzz");
-            string logid = "log" + dateTime;
-            string date = DateTime.Now.ToString("yyyy-MM-dd");
-            log_DAL.createLog(logid, date, amount, details, logTypeID, atmID, cardNo, cardNoTo);
-        }
-        public List<Log> getAllLog(string cardNo)
-        {
-            List<Log> listLog = log_DAL.getAllLog(cardNo);
-            List<Log> listLogNew = new List<Log>();
-            for(int i=0; i < listLog.Count; i++)
-            {
-                Log log = listLog[i];
-                if (log.LogTypeID.Equals("542ed769-f0d8-48b4-ba5c-ddf600a85be1"))
-                {
-                    log.LogTypeID = "Widthdraw";
-                }
-                else if (log.LogTypeID.Equals("ed52b1ad-47ed-48c3-a89e-79958250f402"))
-                {
-                    log.LogTypeID = "Transfer";
-                }
-                else if (log.LogTypeID.Equals("abcf9247-c548-45eb-9660-b6c8bc8c7f27"))
-                {
-                    log.LogTypeID = "checkBalance";
-                }
-                else if (log.LogTypeID.Equals("09da2d0c-dd3e-4530-bb8d-98445d6457ae"))
-                {
-                    log.LogTypeID = "changePIN";
-                }
-                listLogNew.Add(log);
-            }
-            return listLogNew;
-        }
+            //string dateTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ssZ");
+            //logID = "log" + dateTime;
+            //logDate = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ssZ");
+            log_DAL.CreateLog(amount, details, logTypeID, atmID, cardNo, cardNoTo);
+        }        
     }
 }

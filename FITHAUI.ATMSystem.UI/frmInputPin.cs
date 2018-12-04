@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FITHAUI.ATMSystem.BULs;
+using FITHAUI.ATMSystem.DTOs;
 namespace FITHAUI.ATMSystem.UI
 {
     public partial class frmInputPin : Form
     {
         SetTextInput setTextInput = new SetTextInput();
         Timer timer = new Timer();
-        Card_BUL card_BUL = new Card_BUL();        
+        Card_BUL card_BUL = new Card_BUL();
+        Card cardDTO = new Card(); 
         private static string _cardNo;
         public frmInputPin()
         {
@@ -27,7 +29,16 @@ namespace FITHAUI.ATMSystem.UI
         {
             //MessageBox.Show(_cardNo,"Card No");
         }
-
+        //private void UpdateCard()
+        //{
+        //    card_BUL.CheckCardNo(cardDTO.CardNo);
+        //    cardDTO.Attempt = cardDTO.Attempt + 1;
+        //    if (cardDTO.Attempt==3)
+        //    {
+        //        cardDTO.Status = "block";
+        //    }
+        //    card_BUL.UpdateCard(cardDTO.CardNo,cardDTO.Status,cardDTO.Attempt);
+        //}
         private void btnAccept_Click(object sender, EventArgs e)
         {
             frmListServices listServices = new frmListServices();            
@@ -40,6 +51,7 @@ namespace FITHAUI.ATMSystem.UI
             }
             else
             {
+                //UpdateCard();
                 frmInputPinFailed inputPINFailed = new frmInputPinFailed();
                 inputPINFailed.CardNo = CardNo;
                 inputPINFailed.Show();

@@ -34,15 +34,15 @@ namespace FITHAUI.ATMSystem.DALs
             dbContext.CloseConnection();
             return logs;
         }
-        public void createLog(string logID, string logDate, decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo )
+        public void CreateLog(decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo )
         {
             try
             {
-                string sqlInsert = "Insert into Log Values(Convert(UNIQUEIDENTIFIER,@logID), @logDate, @amount, @details, @logTypeID, @atmID, @cardNo, @cardNoTo)";
+                string sqlInsert = "Insert into Log (LogDate,Amount,Details,LogTypeID,ATMID,CardNo,CardNoTo) Values(GETDATE(), @amount, @details, CONVERT(UNIQUEIDENTIFIER,@logTypeID), CONVERT(UNIQUEIDENTIFIER,@atmID), @cardNo, @cardNoTo)";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(sqlInsert, dbContext.Connect);
-                cmd.Parameters.AddWithValue("logID", logID);
-                cmd.Parameters.AddWithValue("logDate", logDate);
+                //cmd.Parameters.AddWithValue("logID", logID);
+                //cmd.Parameters.AddWithValue("logDate", logDate);
                 cmd.Parameters.AddWithValue("amount", amount);
                 cmd.Parameters.AddWithValue("details", details);
                 cmd.Parameters.AddWithValue("logTypeID", logTypeID);
@@ -62,41 +62,41 @@ namespace FITHAUI.ATMSystem.DALs
                 //return false;
             }            
         }
-        public List<Log> getAllLog(string cardNo)
-        {
-            try
-            {
-                List<Log> listLog = new List<Log>();
-                string sql = "Select*From Log Where CardNo =@cardNo";
-                dbContext.OpenConnection();
-                SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
-                cmd.Parameters.AddWithValue("cardNo", cardNo);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    Log log = new Log(dr["LogID"].ToString(),
-                        DateTime.Parse(dr["LogDate"].ToString()),
-                        decimal.Parse(dr["Amount"].ToString()),
-                        dr["Details"].ToString(),
-                        dr["LogTypeID"].ToString(),
-                        dr["ATMID"].ToString(),
-                        dr["CardNo"].ToString(),
-                        dr["CardNoTo"].ToString());
-                    listLog.Add(log);
-                }
-                dbContext.CloseConnection();
-                return listLog;
-            }
-            catch 
-            {
-                if (dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
-                return null;
-            }
+        //public List<Log> getAllLog(string cardNo)
+        //{
+        //    try
+        //    {
+        //        List<Log> listLog = new List<Log>();
+        //        string sql = "Select*From Log Where CardNo =@cardNo";
+        //        dbContext.OpenConnection();
+        //        SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
+        //        cmd.Parameters.AddWithValue("cardNo", cardNo);
+        //        SqlDataReader dr = cmd.ExecuteReader();
+        //        while (dr.Read())
+        //        {
+        //            Log log = new Log(dr["LogID"].ToString(),
+        //                DateTime.Parse(dr["LogDate"].ToString()),
+        //                decimal.Parse(dr["Amount"].ToString()),
+        //                dr["Details"].ToString(),
+        //                dr["LogTypeID"].ToString(),
+        //                dr["ATMID"].ToString(),
+        //                dr["CardNo"].ToString(),
+        //                dr["CardNoTo"].ToString());
+        //            listLog.Add(log);
+        //        }
+        //        dbContext.CloseConnection();
+        //        return listLog;
+        //    }
+        //    catch 
+        //    {
+        //        if (dbContext.CHECK_OPEN)
+        //        {
+        //            dbContext.CloseConnection();
+        //        }
+        //        return null;
+        //    }
             
               
-        }
+        //}
     }
 }

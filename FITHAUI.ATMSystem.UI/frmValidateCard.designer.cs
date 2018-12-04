@@ -40,7 +40,6 @@
             this.btnNine = new System.Windows.Forms.Button();
             this.btnSix = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblExpiredCard = new System.Windows.Forms.Label();
             this.lblCheckCardNo = new System.Windows.Forms.Label();
             this.txtThanks = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -194,7 +193,6 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.techcombank_bg;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Controls.Add(this.lblExpiredCard);
             this.panel2.Controls.Add(this.lblCheckCardNo);
             this.panel2.Controls.Add(this.txtThanks);
             this.panel2.Controls.Add(this.panel4);
@@ -203,18 +201,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(946, 648);
             this.panel2.TabIndex = 0;
-            // 
-            // lblExpiredCard
-            // 
-            this.lblExpiredCard.AutoSize = true;
-            this.lblExpiredCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpiredCard.Location = new System.Drawing.Point(123, 488);
-            this.lblExpiredCard.Name = "lblExpiredCard";
-            this.lblExpiredCard.Size = new System.Drawing.Size(332, 32);
-            this.lblExpiredCard.TabIndex = 6;
-            this.lblExpiredCard.Text = "Thẻ của bạn đã bị khóa";
-            this.lblExpiredCard.Visible = false;
-            this.lblExpiredCard.Click += new System.EventHandler(this.lblExpiredCard_Click);
             // 
             // lblCheckCardNo
             // 
@@ -599,6 +585,5 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label txtThanks;
         private System.Windows.Forms.Label lblCheckCardNo;
-        private System.Windows.Forms.Label lblExpiredCard;
     }
 }
