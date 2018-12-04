@@ -45,25 +45,22 @@ namespace FITHAUI.ATMSystem.DALs
                     return true;
                 }
             }
-            catch 
+            catch (Exception ex)
             {
-                if (dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }                
+                Console.WriteLine(ex.Message);
                 return false;
             }
-            
+
         }
         public string CheckPIN(string cardNo, string pin)
         {
             try
             {
-                string PIN ="";
+                string PIN = "";
                 string sql = "Select PIN from Card where CardNo=@cardNo";
                 dbContext.OpenConnection();
-                SqlCommand cmd = new SqlCommand(sql,dbContext.Connect);
-                cmd.Parameters.AddWithValue("cardNo",cardNo);
+                SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
+                cmd.Parameters.AddWithValue("cardNo", cardNo);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -72,19 +69,17 @@ namespace FITHAUI.ATMSystem.DALs
                 dbContext.CloseConnection();
                 return PIN;
             }
-            catch 
+            catch (Exception ex)
             {
-                if(dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
+                Console.WriteLine(ex.Message);
                 return "";
             }
         }
-        public void ChangePIN(string cardNo,string newPIN)
+        public void ChangePIN(string cardNo, string newPIN)
         {
             try
             {
+                dbContext.CloseConnection();
                 string sqlUpdate = "Update Card set PIN = @newPin where CardNo=@cardNo";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(sqlUpdate, dbContext.Connect);
@@ -92,16 +87,11 @@ namespace FITHAUI.ATMSystem.DALs
                 cmd.Parameters.AddWithValue("cardNo", cardNo);
                 cmd.ExecuteNonQuery();
                 dbContext.CloseConnection();
-                log.createLog(DateTime.Now, 1100, "SUCCESS", "abcf9247-c548-45eb-9660-b6c8bc8c7f27", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
-                //return true;
+                log.CreateLog(DateTime.Now, 1100, "SUCCESS", "abcf9247-c548-45eb-9660-b6c8bc8c7f27", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
             }
-            catch
+            catch (Exception ex)
             {
-                if (dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
-                //return false;
+                Console.WriteLine(ex.Message);
             }
         }
         public string GetStatus(string cardNo)
@@ -111,8 +101,8 @@ namespace FITHAUI.ATMSystem.DALs
                 string status = "";
                 string sql = "Select Status From Card where CardNo =@cardNo";
                 dbContext.OpenConnection();
-                SqlCommand cmd = new SqlCommand(sql,dbContext.Connect);
-                cmd.Parameters.AddWithValue("cardNo",cardNo);
+                SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
+                cmd.Parameters.AddWithValue("cardNo", cardNo);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -121,15 +111,13 @@ namespace FITHAUI.ATMSystem.DALs
                 dbContext.CloseConnection();
                 return status;
             }
-            catch 
+            catch (Exception ex)
             {
-                if(dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
+                Console.WriteLine(ex.Message);
                 return "";
             }
         }
+
         public string GetExpiredDate(string cardNo)
         {
             try
@@ -137,22 +125,19 @@ namespace FITHAUI.ATMSystem.DALs
                 string exDate = "";
                 string sql = "Select ExpiredDate from Card where CardNo = @cardNo";
                 dbContext.OpenConnection();
-                SqlCommand cmd = new SqlCommand(sql,dbContext.Connect);
-                cmd.Parameters.AddWithValue("cardNo",cardNo);
+                SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
+                cmd.Parameters.AddWithValue("cardNo", cardNo);
                 SqlDataReader dr = cmd.ExecuteReader();
-                while(dr.Read())
+                while (dr.Read())
                 {
                     exDate = dr["ExpiredDate"].ToString();
                 }
                 dbContext.CloseConnection();
                 return exDate;
             }
-            catch 
+            catch (Exception ex)
             {
-                if (dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
+                Console.WriteLine(ex.Message);
                 return "";
             }
         }
@@ -163,8 +148,8 @@ namespace FITHAUI.ATMSystem.DALs
                 int attempt = 0;
                 string sql = "Select Attempt From Card Where CardNo =@cardNo";
                 dbContext.OpenConnection();
-                SqlCommand cmd = new SqlCommand(sql,dbContext.Connect);
-                cmd.Parameters.AddWithValue("cardNo",cardNo);
+                SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
+                cmd.Parameters.AddWithValue("cardNo", cardNo);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -175,20 +160,15 @@ namespace FITHAUI.ATMSystem.DALs
 
                 string sqlUpdate = "Update Card set Attempt=@attempt where CardNo=@cardNo";
                 dbContext.OpenConnection();
-                SqlCommand cmd1 = new SqlCommand(sqlUpdate,dbContext.Connect);
+                SqlCommand cmd1 = new SqlCommand(sqlUpdate, dbContext.Connect);
                 cmd1.Parameters.AddWithValue("attempt", attempt);
-                cmd1.Parameters.AddWithValue("cardNo",cardNo);
+                cmd1.Parameters.AddWithValue("cardNo", cardNo);
                 cmd1.ExecuteNonQuery();
                 dbContext.CloseConnection();
-                //return true;
             }
-            catch 
+            catch (Exception ex)
             {
-                if (dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
-                //return false;
+                Console.WriteLine(ex.Message);
             }
         }
         public int GetAttempt(string cardNo)
@@ -213,16 +193,13 @@ namespace FITHAUI.ATMSystem.DALs
                     SqlCommand cmd1 = new SqlCommand(sqlUpdate, dbContext.Connect);
                     cmd1.Parameters.AddWithValue("cardNo", cardNo);
                     cmd1.ExecuteNonQuery();
-                    dbContext.CloseConnection();                    
+                    dbContext.CloseConnection();
                 }
                 return attempt;
             }
-            catch 
+            catch (Exception ex)
             {
-                if (dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
+                Console.WriteLine(ex.Message);
                 return -1;
             }
         }
