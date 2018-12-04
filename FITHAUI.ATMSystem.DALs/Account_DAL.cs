@@ -1,5 +1,4 @@
-﻿using FITHAUI.ATMSystem.DALs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -42,6 +41,31 @@ namespace FITHAUI.ATMSystem
                 return balance;
             }
             return balance;
+        }
+
+        public void UpdateBalance(int money, string cardNo)
+        {
+            try
+            {
+                int balance = CheckBalance(cardNo);
+                int newBalance = balance - money - 1100;    // trừ thêm lệ phí là 1100 vnd
+
+                string queryUpdate = "update Account set Account.Balance = @newBalance " +
+                    "from Account inner join Card on Account.AccountID = Card.AccountID where Card.CardNo = @cardNo ";
+                dbContext.OpenConnection();
+                SqlCommand cmd1 = new SqlCommand(queryUpdate, dbContext.Connect);
+                cmd1.Parameters.AddWithValue("newBalance", newBalance);
+                cmd1.Parameters.AddWithValue("cardNo", cardNo);
+                cmd1.ExecuteNonQuery();
+
+                dbContext.CloseConnection();
+                return;
+            }
+            catch
+            {
+                dbContext.CloseConnection();
+                return;
+            }
         }
     }
 }

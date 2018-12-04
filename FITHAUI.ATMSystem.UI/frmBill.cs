@@ -16,5 +16,35 @@ namespace FITHAUI.ATMSystem.UI
         {
             InitializeComponent();
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            // In biên lai
+
+            frmWithDrawSuccess withDrawSuccess = new frmWithDrawSuccess();
+            this.Close();
+
+            Task delay = Task.Delay(3000);
+            withDrawSuccess.Show();
+            delay.Wait();
+            withDrawSuccess.Close();
+
+            frmValidateCard frmValidateCard = new frmValidateCard();
+            frmValidateCard.Show();
+        }
+
+        private void btnNoPrint_Click(object sender, EventArgs e)
+        {
+            frmWithDrawSuccess withDrawSuccess = new frmWithDrawSuccess();
+            this.Close();
+
+            Task delay = Task.Delay(3000);
+            withDrawSuccess.Show();
+            delay.Wait();
+            withDrawSuccess.Close();
+
+            frmValidateCard frmValidateCard = new frmValidateCard();
+            frmValidateCard.Show();
+        }
     }
 }

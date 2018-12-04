@@ -31,7 +31,13 @@ namespace FITHAUI.ATMSystem.UI
         {
 
         }
-
+        private void btnWithDraw_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmWithdrawMain withDraw = new frmWithdrawMain();
+            withDraw.CardNo = CardNo;
+            withDraw.Show();
+        }
         private void btnChangePIN_Click(object sender, EventArgs e)
         {
             this.Close();

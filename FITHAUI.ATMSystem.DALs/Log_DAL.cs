@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using FITHAUI.ATMSystem.DTOs;
-namespace FITHAUI.ATMSystem.DALs
+
+namespace FITHAUI.ATMSystem
 {
     public class Log_DAL
     {
@@ -81,7 +81,7 @@ namespace FITHAUI.ATMSystem.DALs
                 Console.WriteLine("Có lỗi" + ex.Message);
             }            
         }
-        public List<Log> getAllLog(string cardNo)
+        public List<Log> GetAllLog(string cardNo)
         {
             try
             {

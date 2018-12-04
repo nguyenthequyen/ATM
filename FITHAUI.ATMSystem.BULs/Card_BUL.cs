@@ -1,11 +1,10 @@
-﻿using FITHAUI.ATMSystem.DALs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FITHAUI.ATMSystem.BULs
+namespace FITHAUI.ATMSystem
 {
     public class Card_BUL
     {

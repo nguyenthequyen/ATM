@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using FITHAUI.ATMSystem.DTOs;
-namespace FITHAUI.ATMSystem.DALs
+
+namespace FITHAUI.ATMSystem
 {
     public class Card_DAL
     {

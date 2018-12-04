@@ -1,11 +1,11 @@
-﻿using FITHAUI.ATMSystem.DALs;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FITHAUI.ATMSystem.BULs
+namespace FITHAUI.ATMSystem
 {
     public class Log_BUL
     {
@@ -19,13 +19,13 @@ namespace FITHAUI.ATMSystem.BULs
         {
             return log_DAL.ViewHistory(cardNo);
         }
-        public void createLog(decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo)
+        public void CreateLog(decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo)
         {
             log_DAL.CreateLog(DateTime.Now, amount, details, logTypeID, atmID, cardNo, cardNoTo);
         }
-        public List<Log> getAllLog(string cardNo)
+        public List<Log> GetAllLog(string cardNo)
         {
-            List<Log> listLog = log_DAL.getAllLog(cardNo);
+            List<Log> listLog = log_DAL.GetAllLog(cardNo);
             List<Log> listLogNew = new List<Log>();
             for(int i=0; i < listLog.Count; i++)
             {
