@@ -21,7 +21,7 @@ namespace FITHAUI.ATMSystem.BULs
         }
         public void createLog(decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo)
         {
-            log_DAL.createLog(DateTime.Now, amount, details, logTypeID, atmID, cardNo, cardNoTo);
+            log_DAL.CreateLog(DateTime.Now, amount, details, logTypeID, atmID, cardNo, cardNoTo);
         }
         public List<Log> getAllLog(string cardNo)
         {
