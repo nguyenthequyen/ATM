@@ -34,6 +34,9 @@
     <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -47,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Account_DAL.cs" />
     <Compile Include="Config_DAL.cs" />
+    <Compile Include="Card_DAL.cs" />
     <Compile Include="DatabaseContext.cs" />
     <Compile Include="OverDraftLimitDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,15 +58,14 @@
     <Compile Include="StockDAL.cs" />
     <Compile Include="WithdrawLimitDAL.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FITHAUI.ATMSystem.DTOs\FITHAUI.ATMSystem.DTOs.csproj">
       <Project>{d291e3f8-a625-4bd6-85a9-e8ce6fac4aa7}</Project>
       <Name>FITHAUI.ATMSystem.DTOs</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -57,11 +57,11 @@ namespace FITHAUI.ATMSystem.UI
 
         private void setMultiples()
         {
-            int getMultiples = stockBUL.getMultiples();
+            int getMultiples = stockBUL.GetMultiples();
             if(getMultiples <= 50000)
                 lblShowMultiples.Text = "50,000 VND";
             else
-                lblShowMultiples.Text = moneyBUL.formatMoney(getMultiples) + " VND";
+                lblShowMultiples.Text = moneyBUL.FormatMoney(getMultiples) + " VND";
         }
     }
 }

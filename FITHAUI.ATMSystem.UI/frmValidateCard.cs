@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FITHAUI.ATMSystem.BULs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,13 +15,13 @@ namespace FITHAUI.ATMSystem.UI
     {
         SetTextInput setTextInput = new SetTextInput();
         Timer timer = new Timer();
+        Card_BUL card_BUL = new Card_BUL();
         private static string _message;
 
         public string Message { get => _message; set => _message = value; }
 
         public frmValidateCard()
         {
-            //this.ControlBox = false;
             InitializeComponent();
         }
         /// <summary>
@@ -46,11 +47,13 @@ namespace FITHAUI.ATMSystem.UI
         {
             timer.Stop();
             timer.Tick -= new EventHandler(checkCardNoFailed);
-            this.Hide();
-            frmInputPinFailed frmInputPinFailed = new frmInputPinFailed();
-            frmInputPinFailed.Show();
+            GetLabelCheckCardNo().Visible = true;
+            txtCardNo.Text = "";          
+        }         
+        public Label GetLabelCheckCardNo()
+        {
+            return lblCheckCardNo;            
         }
-
         private void btnOne_Click(object sender, EventArgs e)
         {
             var number = setTextInput.SetTextCardNo("1", txtCardNo.Text);
@@ -66,7 +69,7 @@ namespace FITHAUI.ATMSystem.UI
         private void btnThree_Click(object sender, EventArgs e)
         {
             var number = setTextInput.SetTextCardNo("3", txtCardNo.Text);
-            txtCardNo.Text = number;
+            txtCardNo.Text = number;           
         }
 
         private void btnFour_Click(object sender, EventArgs e)
@@ -110,12 +113,12 @@ namespace FITHAUI.ATMSystem.UI
             var number = setTextInput.SetTextCardNo("0", txtCardNo.Text);
             txtCardNo.Text = number;
         }
-
+        
         private void btnAccept_Click(object sender, EventArgs e)
         {
             timer.Interval = 10;
-            var maThe = "123456789";
-            if (txtCardNo.Text == maThe)
+            var checkCard = card_BUL.CheckCardNo(txtCardNo.Text);
+            if (checkCard)
             {
                 timer.Tick += new EventHandler(checkCardSuccess);
                 timer.Start();
@@ -130,6 +133,11 @@ namespace FITHAUI.ATMSystem.UI
         private void frmValidateCard_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCorrect_Click(object sender, EventArgs e)
+        {
+            txtCardNo.Text = "";
         }
     }
 }

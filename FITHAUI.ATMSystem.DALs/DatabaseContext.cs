@@ -17,7 +17,7 @@ namespace FITHAUI.ATMSystem
         /// Mở kết nối cơ sở dữ liệu
         /// </summary>
         /// 
-        public static bool CHECK_OPEN = false;
+        public  bool CHECK_OPEN = false;
 
         public SqlConnection Connect
         {

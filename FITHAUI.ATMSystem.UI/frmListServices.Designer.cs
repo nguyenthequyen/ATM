@@ -33,7 +33,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnChangePIN = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grAcceptLeft = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -66,7 +66,7 @@
             this.button21 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnCardNo = new System.Windows.Forms.TextBox();
             this.button25 = new System.Windows.Forms.Button();
@@ -85,7 +85,7 @@
             this.grAcceptRight.Controls.Add(this.button5);
             this.grAcceptRight.Controls.Add(this.button6);
             this.grAcceptRight.Controls.Add(this.button7);
-            this.grAcceptRight.Controls.Add(this.button8);
+            this.grAcceptRight.Controls.Add(this.btnChangePIN);
             this.grAcceptRight.Location = new System.Drawing.Point(719, 132);
             this.grAcceptRight.Name = "grAcceptRight";
             this.grAcceptRight.Size = new System.Drawing.Size(66, 292);
@@ -122,15 +122,16 @@
             this.button7.TabIndex = 1;
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnChangePIN
             // 
-            this.button8.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button8.Location = new System.Drawing.Point(9, 27);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(50, 46);
-            this.button8.TabIndex = 0;
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnChangePIN.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
+            this.btnChangePIN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChangePIN.Location = new System.Drawing.Point(9, 27);
+            this.btnChangePIN.Name = "btnChangePIN";
+            this.btnChangePIN.Size = new System.Drawing.Size(50, 46);
+            this.btnChangePIN.TabIndex = 0;
+            this.btnChangePIN.UseVisualStyleBackColor = true;
+            this.btnChangePIN.Click += new System.EventHandler(this.btnChangePIN_Click);
             // 
             // panel1
             // 
@@ -273,7 +274,6 @@
             // 
             this.button13.Enabled = false;
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button13.Location = new System.Drawing.Point(477, 156);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(154, 46);
@@ -444,7 +444,7 @@
             this.groupBox2.Controls.Add(this.button21);
             this.groupBox2.Controls.Add(this.button22);
             this.groupBox2.Controls.Add(this.button23);
-            this.groupBox2.Controls.Add(this.button24);
+            this.groupBox2.Controls.Add(this.btnCancel);
             this.groupBox2.Location = new System.Drawing.Point(251, 11);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(130, 237);
@@ -480,15 +480,16 @@
             this.button23.Text = "CORRECTION";
             this.button23.UseVisualStyleBackColor = true;
             // 
-            // button24
+            // btnCancel
             // 
-            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.Location = new System.Drawing.Point(15, 12);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(101, 48);
-            this.button24.TabIndex = 19;
-            this.button24.Text = "CANCEL";
-            this.button24.UseVisualStyleBackColor = true;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(15, 12);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(101, 48);
+            this.btnCancel.TabIndex = 19;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // panel5
             // 
@@ -565,7 +566,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnChangePIN;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox grAcceptLeft;
         private System.Windows.Forms.Button button4;
@@ -602,6 +603,6 @@
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

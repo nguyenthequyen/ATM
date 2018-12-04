@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FITHAUI.ATMSystem.BULs
+namespace FITHAUI.ATMSystem
 {
     public class MoneyBUL
     {
-        public string formatMoney(int money)
+        public string FormatMoney(int money)
         {
             string str = money + "";
             List<char> arrChar = new List<char>();

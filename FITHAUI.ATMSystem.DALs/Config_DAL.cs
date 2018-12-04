@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace FITHAUI.ATMSystem.DALs
+namespace FITHAUI.ATMSystem
 {
     public class Config_DAL
     {
         //lấy số tiền tối đa trong 1 lần rút của cây
         Databasecontext dbContext = new Databasecontext();
-        public int getMaxWithDraw()
+        public int GetMaxWithDraw()
         {
             int maxWithDraw = -1;
             string sql = "Select Config.MaxWithdraw from Config";

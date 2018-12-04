@@ -36,9 +36,8 @@
     <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp.pdfa, Version=5.4.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\thequ\Desktop\GettingStartediTextSharp\Bin\itextsharp.pdfa.dll</HintPath>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -83,6 +82,7 @@
     <Compile Include="frmSystemOutOfMoney.Designer.cs">
       <DependentUpon>frmSystemOutOfMoney.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckLengthPIN.cs" />
     <Compile Include="frmValidateCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +112,12 @@
     </Compile>
     <Compile Include="frmChangePIN.designer.cs">
       <DependentUpon>frmChangePIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePIN2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePIN2.Designer.cs">
+      <DependentUpon>frmChangePIN2.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChangePINFail.cs">
       <SubType>Form</SubType>
@@ -320,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmChangePIN.resx">
       <DependentUpon>frmChangePIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePIN2.resx">
+      <DependentUpon>frmChangePIN2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChangePINFail.resx">
       <DependentUpon>frmChangePINFail.cs</DependentUpon>

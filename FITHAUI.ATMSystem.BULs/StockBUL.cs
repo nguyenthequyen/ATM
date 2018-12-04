@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FITHAUI.ATMSystem.DALs;
 
-namespace FITHAUI.ATMSystem.BULs
+namespace FITHAUI.ATMSystem
 {
     public class StockBUL
     {
         StockDAL stockDAL = new StockDAL();
-        public string updateQuantity(int money)
+        public string UpdateQuantity(int money)
         {
-            int multiples = getMultiples();
+            int multiples = GetMultiples();
 
             if (multiples == 0) // Hết tiền (bội số bằng 0 -> Không có tờ tiền nào trong cây)
                 return "SystemError";
@@ -20,7 +19,7 @@ namespace FITHAUI.ATMSystem.BULs
                 return "ErrorMoneyType";
             else
             {
-                string totalMoney = customSheet(money);
+                string totalMoney = CustomSheet(money);
                 if (totalMoney.Equals("SystemError"))   // Hết tiền.(vd: có 1 tờ 10k => bội = 10k. Rút 100k => hệ thống chỉ có 10k để trả => Hết tiền)
                     return "SystemError";
 
@@ -35,8 +34,8 @@ namespace FITHAUI.ATMSystem.BULs
                     typeOne = arrMoney[i].Split('-');
                     count = Convert.ToInt32(typeOne[0]);
                     moneyValue = Convert.ToInt32(typeOne[1]);
-                    moneyID = getMoneyId(moneyValue);
-                    update = stockDAL.updateQuantity("b936bf52-94d0-488f-bcda-1e4f1ecc422f", moneyID, count);
+                    moneyID = GetMoneyId(moneyValue);
+                    update = stockDAL.UpdateQuantity("b936bf52-94d0-488f-bcda-1e4f1ecc422f", moneyID, count);
                     if (!update)
                         return "ErrorSystem";
                 }
@@ -44,12 +43,12 @@ namespace FITHAUI.ATMSystem.BULs
             }
         }
 
-        public int getMultiples()
+        public int GetMultiples()
         {
             int[] money = new int[] { 500000, 200000, 100000, 50000, 20000, 10000 };
             for (int i = money.Length - 1; i >= 0; i--)
             {
-                int quantity = getQuantity("b936bf52-94d0-488f-bcda-1e4f1ecc422f", getMoneyId(money[i]));
+                int quantity = GetQuantity("b936bf52-94d0-488f-bcda-1e4f1ecc422f", GetMoneyId(money[i]));
                 int currentMoney = quantity * money[i];
 
                 if (quantity > 0)
@@ -58,7 +57,7 @@ namespace FITHAUI.ATMSystem.BULs
             return 0;
         }
 
-        private string getMoneyId(int money)
+        private string GetMoneyId(int money)
         {
             if (money == 10000)
                 return "8d0df24b-a494-4d34-af1b-e67195080410";
@@ -76,12 +75,12 @@ namespace FITHAUI.ATMSystem.BULs
                 return "";
         }
 
-        private int getQuantity(string atmID, string moneyID)
+        private int GetQuantity(string atmID, string moneyID)
         {
-            return stockDAL.getQuantity(atmID, moneyID);
+            return stockDAL.GetQuantity(atmID, moneyID);
         }
 
-        private string customSheet(int mon)
+        private string CustomSheet(int mon)
         {
             int[] money = new int[] { 500000, 200000, 100000, 50000, 20000, 10000 };
             string ways = "";
@@ -97,7 +96,7 @@ namespace FITHAUI.ATMSystem.BULs
                 if (countSheet != 0)
                 {
                     int tienChan = countSheet * money[i];
-                    quantity = getQuantity("b936bf52-94d0-488f-bcda-1e4f1ecc422f", getMoneyId(money[i]));
+                    quantity = GetQuantity("b936bf52-94d0-488f-bcda-1e4f1ecc422f", GetMoneyId(money[i]));
                     currentMoney = quantity * money[i];
                     if (money[i] > currentMoney)
                         continue;
@@ -132,7 +131,7 @@ namespace FITHAUI.ATMSystem.BULs
                                 if (countSheet != 0)
                                 {
                                     tienChan = countSheet * money[j];
-                                    quantity = getQuantity("b936bf52-94d0-488f-bcda-1e4f1ecc422f", getMoneyId(money[j]));
+                                    quantity = GetQuantity("b936bf52-94d0-488f-bcda-1e4f1ecc422f", GetMoneyId(money[j]));
                                     currentMoney = quantity * money[j];
                                     if (money[j] > currentMoney)    //kiểm tra số tiền còn trong DB
                                     {

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FITHAUI.ATMSystem.BULs;
 
 namespace FITHAUI.ATMSystem.UI
 {
@@ -71,8 +70,8 @@ namespace FITHAUI.ATMSystem.UI
 
         public bool withdraw(int money, bool ortherMoney)
         {
-            bool checkOverMoneySystem = config_BUL.checkMoney(money);
-            bool checkBalanceAndOD = account_BUL.checkBalanceAndOverDraft(cardNo, money);    // Chưa vượt quá => true (ktra trong bảng OverDraft)
+            bool checkOverMoneySystem = config_BUL.CheckMoney(money);
+            bool checkBalanceAndOD = account_BUL.CheckBalanceAndOverDraft(cardNo, money);    // Chưa vượt quá => true (ktra trong bảng OverDraft)
             bool checkWithdrawLimit = true;// withdrawLimitBUL.checkWithdrawLimit(); // Chưa vượt quá => true (ktra trong bảng Withdraw Limit)
 
             if (!checkOverMoneySystem)   // Vượt quá số tiền rút của cây / 1 lần rút (Bảng Config)
@@ -117,7 +116,7 @@ namespace FITHAUI.ATMSystem.UI
             }
             else
             {
-                string updateStock = stockBUL.updateQuantity(money);    // ErrorMoneyType;  SystemError;    Success
+                string updateStock = stockBUL.UpdateQuantity(money);    // ErrorMoneyType;  SystemError;    Success
 
                 if (updateStock.Equals("ErrorMoneyType"))    // Không phải bội số
                 {
@@ -147,7 +146,7 @@ namespace FITHAUI.ATMSystem.UI
                 }
                 else  // Thành công
                 {
-                    account_BUL.updateBalance(money, cardNo);
+                    account_BUL.UpdateBalance(money, cardNo);
                     // Ghi log
                     frmBill bill = new frmBill();
                     bill.Show();

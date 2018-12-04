@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FITHAUI.ATMSystem.DALs
+namespace FITHAUI.ATMSystem
 {
     public class StockDAL
     {
         Databasecontext dbContext = new Databasecontext();
-        public bool updateQuantity(string atmID, string moneyID, int quantity)
+        public bool UpdateQuantity(string atmID, string moneyID, int quantity)
         {
             try
             {
-                int currenQuantity = getQuantity(atmID, moneyID);
+                int currenQuantity = GetQuantity(atmID, moneyID);
                 int newQuantity = currenQuantity - quantity;
 
                 if (newQuantity < 0)
@@ -38,7 +38,7 @@ namespace FITHAUI.ATMSystem.DALs
             }
         }
 
-        public int getQuantity(string atmID, string moneyID)
+        public int GetQuantity(string atmID, string moneyID)
         {
             try
             {

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FITHAUI.ATMSystem.DALs;
 
 namespace FITHAUI.ATMSystem
 {
@@ -96,19 +95,19 @@ namespace FITHAUI.ATMSystem
             }
         }
 
-        public bool checkBalanceAndOverDraft(string cardNo, int money)
+        public bool CheckBalanceAndOverDraft(string cardNo, int money)
         {
             int balance = account.CheckBalance(cardNo);
-            int overDraft = overDraftLimitDAL.getOverDraft(cardNo);
+            int overDraft = overDraftLimitDAL.GetOverDraft(cardNo);
             if (money <= balance + overDraft)
                 return true;
             else
                 return false;
         }
 
-        public void updateBalance(int money, string cardNo)
+        public void UpdateBalance(int money, string cardNo)
         {
-            account.updateBalance(money, cardNo);
+            account.UpdateBalance(money, cardNo);
         }
     }
 }

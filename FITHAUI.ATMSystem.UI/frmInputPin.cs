@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using FITHAUI.ATMSystem.BULs;
 namespace FITHAUI.ATMSystem.UI
 {
     public partial class frmInputPin : Form
     {
         SetTextInput setTextInput = new SetTextInput();
+        Timer timer = new Timer();
+        Card_BUL card_BUL = new Card_BUL();        
         private static string _cardNo;
         public frmInputPin()
         {
@@ -28,8 +30,9 @@ namespace FITHAUI.ATMSystem.UI
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            frmListServices listServices = new frmListServices();
-            if (txtPin.Text == "123")
+            frmListServices listServices = new frmListServices();            
+            string checkPIN = card_BUL.CheckPIN(CardNo, txtPin.Text);
+            if (txtPin.Text == checkPIN)
             {
                 listServices.CardNo = CardNo;
                 listServices.Show();
@@ -37,7 +40,10 @@ namespace FITHAUI.ATMSystem.UI
             }
             else
             {
-                Application.Exit();
+                frmInputPinFailed inputPINFailed = new frmInputPinFailed();
+                inputPINFailed.CardNo = CardNo;
+                inputPINFailed.Show();
+                this.Close();
             }
         }
 
@@ -99,6 +105,18 @@ namespace FITHAUI.ATMSystem.UI
         {
             var number = setTextInput.SetTextCardNo("0", txtPin.Text);
             txtPin.Text = number;
+        }
+
+        private void btnCorrection_Click(object sender, EventArgs e)
+        {
+            txtPin.Text = "";
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            frmValidateCard validateCard = new frmValidateCard();
+            validateCard.Show();
+            this.Close();
         }
     }
 }

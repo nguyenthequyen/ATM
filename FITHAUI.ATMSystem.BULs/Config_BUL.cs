@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FITHAUI.ATMSystem.DALs;
 
-namespace FITHAUI.ATMSystem.BULs
+namespace FITHAUI.ATMSystem
 {
     public class Config_BUL
     {
         Config_DAL configdal = new Config_DAL();
 
-        public bool checkMoney(int money)
+        public bool CheckMoney(int money)
         {
-            if (money <= configdal.getMaxWithDraw())
+            if (money <= configdal.GetMaxWithDraw())
                 return true;
             else
                 return false;

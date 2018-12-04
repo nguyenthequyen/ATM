@@ -40,6 +40,8 @@
             this.btnNine = new System.Windows.Forms.Button();
             this.btnSix = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblExpiredCard = new System.Windows.Forms.Label();
+            this.lblCheckCardNo = new System.Windows.Forms.Label();
             this.txtThanks = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnThree = new System.Windows.Forms.Button();
@@ -181,12 +183,38 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.techcombank_bg;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Controls.Add(this.lblExpiredCard);
+            this.panel2.Controls.Add(this.lblCheckCardNo);
             this.panel2.Controls.Add(this.txtThanks);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Location = new System.Drawing.Point(82, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(631, 421);
             this.panel2.TabIndex = 0;
+            // 
+            // lblExpiredCard
+            // 
+            this.lblExpiredCard.AutoSize = true;
+            this.lblExpiredCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpiredCard.Location = new System.Drawing.Point(82, 317);
+            this.lblExpiredCard.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblExpiredCard.Name = "lblExpiredCard";
+            this.lblExpiredCard.Size = new System.Drawing.Size(232, 24);
+            this.lblExpiredCard.TabIndex = 6;
+            this.lblExpiredCard.Text = "Thẻ của bạn đã bị khóa";
+            this.lblExpiredCard.Visible = false;
+            // 
+            // lblCheckCardNo
+            // 
+            this.lblCheckCardNo.AutoSize = true;
+            this.lblCheckCardNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckCardNo.Location = new System.Drawing.Point(82, 317);
+            this.lblCheckCardNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCheckCardNo.Name = "lblCheckCardNo";
+            this.lblCheckCardNo.Size = new System.Drawing.Size(531, 24);
+            this.lblCheckCardNo.TabIndex = 5;
+            this.lblCheckCardNo.Text = "Mã thẻ bạn nhập không đúng. Vui lòng nhập lại mã thẻ.";
+            this.lblCheckCardNo.Visible = false;
             // 
             // txtThanks
             // 
@@ -408,11 +436,11 @@
             this.btnCorrect.TabIndex = 18;
             this.btnCorrect.Text = "CORRECTION";
             this.btnCorrect.UseVisualStyleBackColor = true;
+            this.btnCorrect.Click += new System.EventHandler(this.btnCorrect_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.Location = new System.Drawing.Point(15, 12);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(101, 48);
@@ -527,5 +555,7 @@
         private System.Windows.Forms.Button btnCorrect;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label txtThanks;
+        private System.Windows.Forms.Label lblCheckCardNo;
+        private System.Windows.Forms.Label lblExpiredCard;
     }
 }

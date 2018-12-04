@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FITHAUI.ATMSystem.DALs
+namespace FITHAUI.ATMSystem
 {
     public class OverDraftLimitDAL
     {
         Databasecontext dbContext = new Databasecontext();
-        public int getOverDraft(string cardNo)
+        public int GetOverDraft(string cardNo)
         {
             int overDraft = -1;
             string sql = "select OverDraft.Value " +

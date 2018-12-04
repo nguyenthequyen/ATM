@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FITHAUI.ATMSystem.DALs
+namespace FITHAUI.ATMSystem
 {
     public class WithdrawLimitDAL
     {
         Databasecontext dbContext = new Databasecontext();
-        public int getWithdrawLimit(string cardNo)
+        public int GetWithdrawLimit(string cardNo)
         {
             int withdrawLimit = -1;
             string sql = "select WithdrawLimit.Value " +

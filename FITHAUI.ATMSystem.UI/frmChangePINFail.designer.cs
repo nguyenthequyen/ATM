@@ -37,7 +37,7 @@
             this.button21 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button20 = new System.Windows.Forms.Button();
             this.btnNine = new System.Windows.Forms.Button();
@@ -63,9 +63,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
@@ -121,7 +120,7 @@
             this.groupBox2.Controls.Add(this.button21);
             this.groupBox2.Controls.Add(this.button22);
             this.groupBox2.Controls.Add(this.button23);
-            this.groupBox2.Controls.Add(this.button24);
+            this.groupBox2.Controls.Add(this.btnCancel);
             this.groupBox2.Location = new System.Drawing.Point(251, 11);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(130, 237);
@@ -156,16 +155,18 @@
             this.button23.TabIndex = 14;
             this.button23.Text = "CORRECTION";
             this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
-            // button24
+            // btnCancel
             // 
-            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.Location = new System.Drawing.Point(15, 12);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(101, 48);
-            this.button24.TabIndex = 15;
-            this.button24.Text = "CANCEL";
-            this.button24.UseVisualStyleBackColor = true;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(15, 12);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(101, 48);
+            this.btnCancel.TabIndex = 15;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // groupBox1
             // 
@@ -423,57 +424,48 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Location = new System.Drawing.Point(82, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(631, 421);
             this.panel2.TabIndex = 0;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // textBox1
+            // label2
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Green;
-            this.textBox1.Location = new System.Drawing.Point(179, 194);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(273, 32);
-            this.textBox1.TabIndex = 12;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(239, 211);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(179, 25);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Vui lòng nhập lại.";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(134, 374);
+            this.label1.Location = new System.Drawing.Point(124, 374);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(390, 20);
+            this.label1.Size = new System.Drawing.Size(411, 20);
             this.label1.TabIndex = 11;
-            this.label1.Text = "(Ấn Change để nhập lại hoặc Cancel để hủy bỏ)";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(241, 114);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 25);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "sau đó ấn Enter";
+            this.label1.Text = "(Ấn Correction để nhập lại hoặc Cancel để hủy bỏ)";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(187, 84);
+            this.label9.Location = new System.Drawing.Point(221, 179);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(283, 25);
+            this.label9.Size = new System.Drawing.Size(216, 25);
             this.label9.TabIndex = 4;
-            this.label9.Text = "Vui lòng nhập lại số PIN mới";
+            this.label9.Text = "Số PIN không hợp lệ.";
             // 
             // panel4
             // 
@@ -489,7 +481,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Red;
-            this.ClientSize = new System.Drawing.Size(819, 682);
+            this.ClientSize = new System.Drawing.Size(819, 705);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button25);
             this.Controls.Add(this.panel5);
@@ -548,12 +540,11 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label label2;
     }
 }
