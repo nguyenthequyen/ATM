@@ -50,5 +50,13 @@ namespace FITHAUI.ATMSystem
             }
             return listLogNew;
         }
+
+        public int getTotalAmount(string logTypeID, string atmID, string cardNo)
+        {
+            string startTime, endTime;
+            startTime = DateTime.Today.ToString("yyyy-MM-dd") + " 00:00:00";
+            endTime = DateTime.Today.ToString("yyyy-MM-dd") + " 23:59:59";
+            return log_DAL.getTotalAmount(logTypeID, atmID, cardNo, startTime, endTime);
+        }
     }
 }
