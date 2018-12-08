@@ -11,6 +11,7 @@ namespace FITHAUI.ATMSystem
 {
     public class Databasecontext
     {
+
         //private static readonly log4net.ILog log =log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private static SqlConnection _sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ATMSystem"].ToString());
         /// <summary>

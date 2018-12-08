@@ -63,6 +63,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnBalance = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -336,6 +338,7 @@
             this.btnChooseNo.Size = new System.Drawing.Size(50, 46);
             this.btnChooseNo.TabIndex = 3;
             this.btnChooseNo.UseVisualStyleBackColor = true;
+            this.btnChooseNo.Click += new System.EventHandler(this.btnChooseNo_Click);
             // 
             // btnChooseYes
             // 
@@ -346,7 +349,7 @@
             this.btnChooseYes.Size = new System.Drawing.Size(50, 46);
             this.btnChooseYes.TabIndex = 2;
             this.btnChooseYes.UseVisualStyleBackColor = true;
-            this.btnChooseYes.Click += new System.EventHandler(this.btnChooseYes_Click);
+            this.btnChooseYes.Click += new System.EventHandler(this.btnChooseYes_Click_1);
             // 
             // button7
             // 
@@ -424,6 +427,8 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.button9);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
@@ -433,6 +438,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(631, 421);
             this.panel2.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(479, 354);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 46);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Không";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Enabled = false;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(477, 286);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(154, 46);
+            this.button9.TabIndex = 37;
+            this.button9.Text = "Có";
+            this.button9.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -452,9 +479,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(239, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 25);
+            this.label2.Size = new System.Drawing.Size(70, 25);
             this.label2.TabIndex = 6;
-            this.label2.Text = "1100.00 VNĐ";
+            this.label2.Text = "0 VNĐ";
             // 
             // label1
             // 
@@ -497,7 +524,6 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.btnCardNo);
             this.Controls.Add(this.panel3);
-            this.Enabled = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -557,5 +583,7 @@
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button9;
     }
 }

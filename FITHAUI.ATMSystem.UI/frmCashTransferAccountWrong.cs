@@ -10,12 +10,9 @@ using System.Windows.Forms;
 
 namespace FITHAUI.ATMSystem.UI
 {
-    public partial class frmWaitCashTransfer : Form
+    public partial class frmCashTransferAccountWrong : Form
     {
-        private static string _cardNo;
-        public string CardNo { get => _cardNo; set => _cardNo = value; }
-
-        public frmWaitCashTransfer()
+        public frmCashTransferAccountWrong()
         {
             InitializeComponent();
         }

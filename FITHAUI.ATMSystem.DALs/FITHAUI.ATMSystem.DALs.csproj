@@ -51,6 +51,8 @@
     <Compile Include="Account_DAL.cs" />
     <Compile Include="Config_DAL.cs" />
     <Compile Include="Card_DAL.cs" />
+    <Compile Include="CashTransferDAL.cs" />
+    <Compile Include="Balance.cs" />
     <Compile Include="DatabaseContext.cs" />
     <Compile Include="OverDraftLimitDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,5 +69,6 @@
       <Name>FITHAUI.ATMSystem.DTOs</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
