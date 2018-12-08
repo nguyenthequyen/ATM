@@ -86,7 +86,7 @@ namespace FITHAUI.ATMSystem.DALs.CashTransfer
             try
             {
 
-                int balance = -1;
+                int balance = 0;
                 string query = "SELECT Account.Balance FROM Account INNER JOIN Card ON Account.AccountID = Card.AccountID WHERE CardNo = @cardNo";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(query, dbContext.Connect);
@@ -125,7 +125,7 @@ namespace FITHAUI.ATMSystem.DALs.CashTransfer
             try
             {
 
-                int balance = -1;
+                int balance = 0;
                 string query = "SELECT Account.Balance FROM Account INNER JOIN Card ON Account.AccountID = Card.AccountID WHERE CardNo = @cardNo";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(query, dbContext.Connect);
@@ -161,7 +161,7 @@ namespace FITHAUI.ATMSystem.DALs.CashTransfer
         {
             try
             {
-                int balance = -1;
+                int balance = 0;
                 string query = "SELECT Account.Balance FROM Account INNER JOIN Card ON Account.AccountID = Card.AccountID WHERE CardNo = @cardNo";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(query, dbContext.Connect);
@@ -172,14 +172,22 @@ namespace FITHAUI.ATMSystem.DALs.CashTransfer
                     balance = Convert.ToInt32(dr["Balance"]);
                 }
                 dbContext.CloseConnection();
-                if ((money + transferFee) <= balance)
+                if (balance + GetOverDraft(cardNo) > 0)
                 {
-                    return true;
+                    if ((money + transferFee) <= (balance + GetOverDraft(cardNo)))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 else
                 {
                     return false;
                 }
+                
             }
             catch
             {
@@ -188,6 +196,33 @@ namespace FITHAUI.ATMSystem.DALs.CashTransfer
                     dbContext.CloseConnection();
                 }
                 return false;
+            }
+        }
+
+        public int GetOverDraft(string cardNo)
+        {
+            try
+            {
+                int overDraft = 0;
+                string query = "SELECT Value FROM OverDraft INNER JOIN Account ON Account.ODID = OverDraft.ODID INNER JOIN Card ON Account.AccountID = Card.AccountID WHERE CardNo = @cardNo";
+                dbContext.OpenConnection();
+                SqlCommand cmd = new SqlCommand(query, dbContext.Connect);
+                cmd.Parameters.AddWithValue("cardNo", cardNo);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    overDraft = Convert.ToInt32(dr["Value"]);
+                }
+                dbContext.CloseConnection();
+                return overDraft;
+            }
+            catch
+            {
+                if (dbContext.CHECK_OPEN)
+                {
+                    dbContext.CloseConnection();
+                }
+                return 0;
             }
         }
     }
