@@ -7,27 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FITHAUI.ATMSystem.BULs.CashTransfer;
 
 namespace FITHAUI.ATMSystem.UI
 {
-    public partial class frmInputAccountOtherBank : Form
+    public partial class frmInputAccountInBank : Form
     {
         SetTextInput setTextInput = new SetTextInput();
         private static string _cardNo;
         public string CardNo { get => _cardNo; set => _cardNo = value; }
-
-        public frmInputAccountOtherBank()
+        CashTransferBUL cashTransferBUL = new CashTransferBUL();
+        public frmInputAccountInBank()
         {
             InitializeComponent();
         }
 
-        private void btnChooseYes_Click(object sender, EventArgs e)
+        private void btnChooseTrue_Click(object sender, EventArgs e)
         {
-            var inputAmountMoneyOtherBank = new frmInputAmountMoneyOtherBank();
-            inputAmountMoneyOtherBank.CardNo = CardNo;
-            inputAmountMoneyOtherBank.CardNoAccountReceived = txtCardNoAccountReceived.Text;
-            inputAmountMoneyOtherBank.Show();
-            this.Hide();
+                var inputAmountMoneyInBank = new frmInputAmountMoneyInBank();
+                inputAmountMoneyInBank.CardNo = CardNo;
+                inputAmountMoneyInBank.CardNoAccountReceived = txtCardNoAccountReceived.Text;
+                inputAmountMoneyInBank.Show();
+                this.Hide();
         }
 
         private void btnOne_Click(object sender, EventArgs e)
@@ -88,6 +89,11 @@ namespace FITHAUI.ATMSystem.UI
         {
             var number = setTextInput.SetTextCardNo("0", txtCardNoAccountReceived.Text);
             txtCardNoAccountReceived.Text = number;
+        }
+
+        private void frmInputAccountInBank_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

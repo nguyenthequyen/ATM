@@ -436,7 +436,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(241, 50);
             this.label9.TabIndex = 4;
-            this.label9.Text = "Đang thực hiện giao dịch...\r\n           Xin vui long chờ";
+            this.label9.Text = "Đang thực hiện giao dịch...\r\n         Xin vui lòng chờ";
             // 
             // panel4
             // 
@@ -458,7 +458,6 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.btnCardNo);
             this.Controls.Add(this.panel3);
-            this.Enabled = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
