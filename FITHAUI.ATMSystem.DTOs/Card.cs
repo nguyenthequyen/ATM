@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//Thích using thì thêm đầy đủ namespace vào cái này t xóa bớt namesspace r 
-//thì m thêm luôn đi
 namespace FITHAUI.ATMSystem
 {
     public class Card

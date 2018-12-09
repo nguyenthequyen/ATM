@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FITHAUI.ATMSystem.UI
 {
-    public partial class frmChangePINSuccess : Form
+    public partial class frmBlockCard : Form
     {
-        public frmChangePINSuccess()
+        public frmBlockCard()
         {
             InitializeComponent();
         }
@@ -22,17 +22,6 @@ namespace FITHAUI.ATMSystem.UI
             frmValidateCard validateCard = new frmValidateCard();
             validateCard.Show();
             this.Close();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void frmChangePINSuccess_Load(object sender, EventArgs e)
-        {
-            
-
         }
     }
 }

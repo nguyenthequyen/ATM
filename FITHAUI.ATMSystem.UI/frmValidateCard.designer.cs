@@ -40,7 +40,8 @@
             this.btnNine = new System.Windows.Forms.Button();
             this.btnSix = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblExpiredCard = new System.Windows.Forms.Label();
+            this.lblExpired = new System.Windows.Forms.Label();
+            this.lblCardBlock = new System.Windows.Forms.Label();
             this.lblCheckCardNo = new System.Windows.Forms.Label();
             this.txtThanks = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -183,7 +184,8 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.techcombank_bg;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Controls.Add(this.lblExpiredCard);
+            this.panel2.Controls.Add(this.lblExpired);
+            this.panel2.Controls.Add(this.lblCardBlock);
             this.panel2.Controls.Add(this.lblCheckCardNo);
             this.panel2.Controls.Add(this.txtThanks);
             this.panel2.Controls.Add(this.panel4);
@@ -192,23 +194,33 @@
             this.panel2.Size = new System.Drawing.Size(631, 421);
             this.panel2.TabIndex = 0;
             // 
-            // lblExpiredCard
+            // lblExpired
             // 
-            this.lblExpiredCard.AutoSize = true;
-            this.lblExpiredCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpiredCard.Location = new System.Drawing.Point(82, 317);
-            this.lblExpiredCard.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblExpiredCard.Name = "lblExpiredCard";
-            this.lblExpiredCard.Size = new System.Drawing.Size(232, 24);
-            this.lblExpiredCard.TabIndex = 6;
-            this.lblExpiredCard.Text = "Thẻ của bạn đã bị khóa";
-            this.lblExpiredCard.Visible = false;
+            this.lblExpired.AutoSize = true;
+            this.lblExpired.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpired.Location = new System.Drawing.Point(165, 376);
+            this.lblExpired.Name = "lblExpired";
+            this.lblExpired.Size = new System.Drawing.Size(322, 24);
+            this.lblExpired.TabIndex = 8;
+            this.lblExpired.Text = "Thẻ của bạn đã hết hạn sử dụng.";
+            this.lblExpired.Visible = false;
+            // 
+            // lblCardBlock
+            // 
+            this.lblCardBlock.AutoSize = true;
+            this.lblCardBlock.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCardBlock.Location = new System.Drawing.Point(202, 338);
+            this.lblCardBlock.Name = "lblCardBlock";
+            this.lblCardBlock.Size = new System.Drawing.Size(238, 24);
+            this.lblCardBlock.TabIndex = 7;
+            this.lblCardBlock.Text = "Thẻ của bạn đã bị khóa.";
+            this.lblCardBlock.Visible = false;
             // 
             // lblCheckCardNo
             // 
             this.lblCheckCardNo.AutoSize = true;
             this.lblCheckCardNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckCardNo.Location = new System.Drawing.Point(82, 317);
+            this.lblCheckCardNo.Location = new System.Drawing.Point(81, 295);
             this.lblCheckCardNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCheckCardNo.Name = "lblCheckCardNo";
             this.lblCheckCardNo.Size = new System.Drawing.Size(531, 24);
@@ -503,7 +515,6 @@
             this.Name = "frmValidateCard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ATM Techcombank";
-            this.Load += new System.EventHandler(this.frmValidateCard_Load);
             this.grAcceptLeft.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -556,6 +567,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label txtThanks;
         private System.Windows.Forms.Label lblCheckCardNo;
-        private System.Windows.Forms.Label lblExpiredCard;
+        private System.Windows.Forms.Label lblCardBlock;
+        private System.Windows.Forms.Label lblExpired;
     }
 }

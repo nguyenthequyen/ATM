@@ -12,12 +12,13 @@ namespace FITHAUI.ATMSystem
     {
         Log_DAL log = new Log_DAL();
         Databasecontext dbContext = new Databasecontext();
+
         public bool CheckCardNo(string cardNo)
         {
             try
             {
                 List<Card> listCard = new List<Card>();
-                string sql = "Select*From Card Where CardNo = @cardNo and Status = N'Normal'";
+                string sql = "Select*From Card Where CardNo = @cardNo and Status = N'normal'";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
                 cmd.Parameters.AddWithValue("cardNo", cardNo);
@@ -50,7 +51,17 @@ namespace FITHAUI.ATMSystem
                 Console.WriteLine(ex.Message);
                 return false;
             }
-
+        }
+        public void UpdateCard(string cardNo, string status, int attempt)
+        {
+            dbContext.OpenConnection();
+            string sqlUpdate = "Update Card Set Attempt =@attempt, Status =@status Where CardNo=@cardNo";
+            SqlCommand cmd = new SqlCommand(sqlUpdate, dbContext.Connect);
+            cmd.Parameters.AddWithValue("cardNo", cardNo);
+            cmd.Parameters.AddWithValue("status", status);
+            cmd.Parameters.AddWithValue("attempt", attempt);
+            cmd.ExecuteNonQuery();
+            dbContext.CloseConnection();
         }
         public string CheckPIN(string cardNo, string pin)
         {
@@ -67,11 +78,13 @@ namespace FITHAUI.ATMSystem
                     PIN = dr["PIN"].ToString();
                 }
                 dbContext.CloseConnection();
+                UpdateCard(cardNo, "normal", 0);
                 return PIN;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                UpdateCard(cardNo, GetStatus(cardNo), GetAttempt(cardNo));
                 return "";
             }
         }
@@ -88,10 +101,12 @@ namespace FITHAUI.ATMSystem
                 cmd.ExecuteNonQuery();
                 dbContext.CloseConnection();
                 log.CreateLog(DateTime.Now, 1100, "SUCCESS", "abcf9247-c548-45eb-9660-b6c8bc8c7f27", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                log.CreateLog(DateTime.Now, 1100, "ERROR", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
             }
         }
         public string GetStatus(string cardNo)
