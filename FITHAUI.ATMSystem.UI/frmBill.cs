@@ -19,6 +19,7 @@ namespace FITHAUI.ATMSystem.UI
     {
         Account_BUL account_BUL = new Account_BUL();
         SubStringDate sub = new SubStringDate();
+        Log_BUL log = new Log_BUL();
         public frmBill()
         {
             InitializeComponent();
@@ -110,7 +111,7 @@ namespace FITHAUI.ATMSystem.UI
             withDrawSuccess.Show();
             delay.Wait();
             withDrawSuccess.Close();
-
+            log.CreateLog(DateTime.Now, Money + 1100, "SUCCESS", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", CardNo, "");
             frmValidateCard frmValidateCard = new frmValidateCard();
             frmValidateCard.Show();
             try
@@ -136,6 +137,7 @@ namespace FITHAUI.ATMSystem.UI
             withDrawSuccess.Close();
 
             frmValidateCard frmValidateCard = new frmValidateCard();
+            log.CreateLog(DateTime.Now, Money + 1100, "SUCCESS", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", CardNo, "");
             frmValidateCard.Show();
         }
     }

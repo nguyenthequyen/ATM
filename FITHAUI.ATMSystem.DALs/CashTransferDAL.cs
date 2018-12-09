@@ -141,7 +141,6 @@ namespace FITHAUI.ATMSystem.DALs
                 string queryUpdate = "UPDATE Account SET Account.Balance = @newBalance FROM Account INNER JOIN Card ON Account.AccountID = Card.AccountID WHERE Card.CardNo = @cardNo ";
                 dbContext.OpenConnection();
                 SqlCommand cmd1 = new SqlCommand(queryUpdate, dbContext.Connect);
-                cmd1.Parameters.AddWithValue("newBalance", newBalance);
                 cmd1.Parameters.AddWithValue("cardNo", cardNo);
                 cmd1.ExecuteNonQuery();
 
