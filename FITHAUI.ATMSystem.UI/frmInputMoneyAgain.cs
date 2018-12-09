@@ -16,5 +16,22 @@ namespace FITHAUI.ATMSystem.UI
         {
             InitializeComponent();
         }
+
+        private void btnTrue_Click(object sender, EventArgs e)
+        {
+            frmBill bill = new frmBill();
+            bill.Show();
+        }
+
+        private void btnIgnore_Click(object sender, EventArgs e)
+        {
+            frmListServices listServices = new frmListServices();
+            listServices.Show();
+        }
+
+        private void btnFalse_Click(object sender, EventArgs e)
+        {
+            textInpMoney.Clear();
+        }
     }
 }

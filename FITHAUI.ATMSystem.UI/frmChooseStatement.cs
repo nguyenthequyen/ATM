@@ -60,15 +60,17 @@ namespace FITHAUI.ATMSystem.UI
             doc.Open();
             iTextSharp.text.Font headerFont = FontFactory.GetFont("Verdana", 8);
             iTextSharp.text.Font emptyFont = FontFactory.GetFont("Verdana", 5);
-            string imageURL = @"F:\SystemATM\FITHAUI.ATMSystem\FITHAUI.ATMSystem.UI\Content\Images\logo-tech.png";
+            //Ảnh header
+            string imageURL = @"F:\SystemATM\FITHAUI.ATMSystem\FITHAUI.ATMSystem.UI\Content\Images\Logo.png";
             iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(imageURL);
             jpg.Alignment = Element.ALIGN_CENTER;
-            jpg.ScaleToFit(240f, 120f);
+            jpg.ScaleToFit(80f, 120f);
             Paragraph receiptNamePara =
                 new Paragraph("LIET KE GIAO DICH", headerFont);
             Paragraph emptyPara = new Paragraph("    ", emptyFont);
             receiptNamePara.Alignment = Element.ALIGN_CENTER;
             doc.Add(jpg);
+
             doc.Add(receiptNamePara);
             doc.Add(emptyPara);
             PdfPTable table = new PdfPTable(3);
@@ -108,7 +110,7 @@ namespace FITHAUI.ATMSystem.UI
             foreach (var item in history)
             {
                 var dateFomat = sub.SubDate(item.LogDate.ToString());
-                PdfPCell pHistory = new PdfPCell(new Phrase(String.Format("{0} {1} {2}\n", dateFomat, item.Description.ToString(), item.Amount.ToString()), headerFont));
+                PdfPCell pHistory = new PdfPCell(new Phrase(String.Format("{0}             {1}             {2}\n", dateFomat, item.Description.ToString(), item.Amount.ToString()), headerFont));
                 pHistory.Colspan = 3;
                 pHistory.Border = iTextSharp.text.Rectangle.NO_BORDER;
                 table.AddCell(pHistory);
@@ -116,22 +118,16 @@ namespace FITHAUI.ATMSystem.UI
             table.AddCell(cFee);
             table.AddCell(cVAT);
             doc.Add(table);
-            
+
             FileStream fs1 = new FileStream(@"F:\SystemATM\FITHAUI.ATMSystem\FITHAUI.ATMSystem.UI\Content\Images\techcombank_bg.png", FileMode.Open);
             iTextSharp.text.Image watermark = iTextSharp.text.Image.GetInstance(System.Drawing.Image.FromStream(fs1), ImageFormat.Png);
-            watermark.ScalePercent(50f);
-            watermark.SetAbsolutePosition(60f, 70f);
+            watermark.ScalePercent(40f, 43f);
+            watermark.SetAbsolutePosition(-10f, 0f);
             fs1.Close();
-            FileStream fs2 = new FileStream(@"F:\SystemATM\FITHAUI.ATMSystem\FITHAUI.ATMSystem.UI\Content\Images\Techcombank_logo.png", FileMode.Open);
-
-            iTextSharp.text.Image footer = iTextSharp.text.Image.GetInstance(System.Drawing.Image.FromStream(fs2), ImageFormat.Png);
-            footer.ScalePercent(75f);
-            footer.SetAbsolutePosition(3f, 20f);
-            fs2.Close();
-            doc.Add(footer);
             doc.Add(watermark);
             doc.Close();
             MessageBox.Show("GIAO DỊCH THÀNH CÔNG");
+            Application.Exit();
             try
             {
                 Process myProcess = new Process();

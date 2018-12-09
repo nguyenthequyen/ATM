@@ -1,6 +1,4 @@
-﻿using FITHAUI.ATMSystem.BULs;
-using FITHAUI.ATMSystem.DTOs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -117,76 +115,34 @@ namespace FITHAUI.ATMSystem.UI
             timer.Interval = 10;
             string cardNo = txtCardNo.Text;
             var checkCard = card_BUL.CheckCardNo(cardNo);
-            var checkStatus = card_BUL.CheckStatus(cardNo);
             var checkAttempt = card_BUL.CheckAttempt(cardNo);
-            var checkExpired = card_BUL.CheckExpiredDate(cardNo);
-            //if (!String.IsNullOrEmpty(cardNo))
-            //{
-
-            if (checkStatus == false || checkAttempt == false)
+            if (checkCard)
             {
-                lblCardBlock.Visible = true;
-                txtCardNo.Text = "";
-                //frmBlockCard blockCard = new frmBlockCard();
-                //blockCard.Show();
-                //this.Hide();
-            }
-            else if (checkExpired==false)
-            {
-                lblExpired.Visible = true;
-                txtCardNo.Text = "";
+                timer.Tick += new EventHandler(CheckCardSuccess);
+                timer.Start();
+                var checkStatus = card_BUL.CheckStatus(cardNo);
+                if (checkStatus == false || checkAttempt == false)
+                {
+                    lblCardBlock.Visible = true;
+                    txtCardNo.Text = "";
+                    var checkExpired = card_BUL.CheckExpiredDate(cardNo);
+                    if (checkExpired == false)
+                    {
+                        lblExpired.Visible = true;
+                        txtCardNo.Text = "";
+                    }
+                }
             }
             else
             {
-                if (checkCard)
-                {
-                    timer.Tick += new EventHandler(CheckCardSuccess);
-                    timer.Start();
-                }
-
-                else
-                {
-                    timer.Tick += new EventHandler(CheckCardNoFailed);
-                    timer.Start();
-                }
+                timer.Tick += new EventHandler(CheckCardNoFailed);
+                timer.Start();
             }
-
-            //}
-            //else
-            //{
-            //    timer.Tick += new EventHandler(CheckCardNoFailed);
-            //    timer.Start();
-            //}
-        }
-
-        private void frmValidateCard_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnCorrect_Click(object sender, EventArgs e)
         {
             txtCardNo.Text = "";
-        }
-
-        private void lblCheckCardNo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblExpiredCard_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

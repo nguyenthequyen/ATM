@@ -10,6 +10,8 @@ namespace FITHAUI.ATMSystem
     public class Account_BUL
     {
         Account_DAL account = new Account_DAL();
+        OverDraftLimitDAL overDraftLimitDAL = new OverDraftLimitDAL();
+
         /// <summary>
         /// Số dư thực tế
         /// </summary>
@@ -91,6 +93,21 @@ namespace FITHAUI.ATMSystem
                 }
                 return String.Join("", arrChar);
             }
+        }
+
+        public bool CheckBalanceAndOverDraft(string cardNo, int money)
+        {
+            int balance = account.CheckBalance(cardNo);
+            int overDraft = overDraftLimitDAL.GetOverDraft(cardNo);
+            if (money <= balance + overDraft)
+                return true;
+            else
+                return false;
+        }
+
+        public void UpdateBalance(int money, string cardNo)
+        {
+            account.UpdateBalance(money, cardNo);
         }
     }
 }

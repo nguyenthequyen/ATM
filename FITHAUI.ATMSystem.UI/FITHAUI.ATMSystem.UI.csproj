@@ -36,6 +36,9 @@
     <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,6 +52,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmMultiplesError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMultiplesError.Designer.cs">
+      <DependentUpon>frmMultiplesError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOverdraftAndBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOverdraftAndBalance.Designer.cs">
+      <DependentUpon>frmOverdraftAndBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOverMoneyInDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOverMoneyInDay.Designer.cs">
+      <DependentUpon>frmOverMoneyInDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOverMoneySystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOverMoneySystem.Designer.cs">
+      <DependentUpon>frmOverMoneySystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSystemOutOfMoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSystemOutOfMoney.Designer.cs">
+      <DependentUpon>frmSystemOutOfMoney.cs</DependentUpon>
+    </Compile>
     <Compile Include="CheckLengthPIN.cs" />
     <Compile Include="frmBlockCard.cs">
       <SubType>Form</SubType>
@@ -79,6 +112,18 @@
     </Compile>
     <Compile Include="frmCancel.designer.cs">
       <DependentUpon>frmCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCashTransferAccountReceivedOtherBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCashTransferAccountReceivedOtherBank.Designer.cs">
+      <DependentUpon>frmCashTransferAccountReceivedOtherBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCashTransferAccountWrong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCashTransferAccountWrong.Designer.cs">
+      <DependentUpon>frmCashTransferAccountWrong.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChangePIN.cs">
       <SubType>Form</SubType>
@@ -122,11 +167,17 @@
     <Compile Include="frmChooseKindTransfer.designer.cs">
       <DependentUpon>frmChooseKindTransfer.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChoosePrintReceipt.cs">
+    <Compile Include="frmChoosePrintReceiptInBank.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChoosePrintReceipt.designer.cs">
-      <DependentUpon>frmChoosePrintReceipt.cs</DependentUpon>
+    <Compile Include="frmChoosePrintReceiptInBank.designer.cs">
+      <DependentUpon>frmChoosePrintReceiptInBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChoosePrintReceiptOtherBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChoosePrintReceiptOtherBank.Designer.cs">
+      <DependentUpon>frmChoosePrintReceiptOtherBank.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChooseStatement.cs">
       <SubType>Form</SubType>
@@ -140,17 +191,17 @@
     <Compile Include="frmInputAccountOtherBank.designer.cs">
       <DependentUpon>frmInputAccountOtherBank.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInputAccountReceiver.cs">
+    <Compile Include="frmInputAccountInBank.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInputAccountReceiver.designer.cs">
-      <DependentUpon>frmInputAccountReceiver.cs</DependentUpon>
+    <Compile Include="frmInputAccountInBank.designer.cs">
+      <DependentUpon>frmInputAccountInBank.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInputAccountValid.cs">
+    <Compile Include="frmCashTransferAccountReceivedInBank.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInputAccountValid.Designer.cs">
-      <DependentUpon>frmInputAccountValid.cs</DependentUpon>
+    <Compile Include="frmCashTransferAccountReceivedInBank.Designer.cs">
+      <DependentUpon>frmCashTransferAccountReceivedInBank.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInputAccountWrong.cs">
       <SubType>Form</SubType>
@@ -260,9 +311,30 @@
     <Compile Include="frmWithdrawMain.Designer.cs">
       <DependentUpon>frmWithdrawMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmWithDrawSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWithDrawSuccess.Designer.cs">
+      <DependentUpon>frmWithDrawSuccess.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetTextInput.cs" />
+    <EmbeddedResource Include="frmMultiplesError.resx">
+      <DependentUpon>frmMultiplesError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOverdraftAndBalance.resx">
+      <DependentUpon>frmOverdraftAndBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOverMoneyInDay.resx">
+      <DependentUpon>frmOverMoneyInDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOverMoneySystem.resx">
+      <DependentUpon>frmOverMoneySystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSystemOutOfMoney.resx">
+      <DependentUpon>frmSystemOutOfMoney.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="SubStringDate.cs" />
     <EmbeddedResource Include="frmBlockCard.resx">
       <DependentUpon>frmBlockCard.cs</DependentUpon>
@@ -278,6 +350,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCancel.resx">
       <DependentUpon>frmCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCashTransferAccountReceivedOtherBank.resx">
+      <DependentUpon>frmCashTransferAccountReceivedOtherBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCashTransferAccountWrong.resx">
+      <DependentUpon>frmCashTransferAccountWrong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChangePIN.resx">
       <DependentUpon>frmChangePIN.cs</DependentUpon>
@@ -300,8 +378,11 @@
     <EmbeddedResource Include="frmChooseKindTransfer.resx">
       <DependentUpon>frmChooseKindTransfer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChoosePrintReceipt.resx">
-      <DependentUpon>frmChoosePrintReceipt.cs</DependentUpon>
+    <EmbeddedResource Include="frmChoosePrintReceiptInBank.resx">
+      <DependentUpon>frmChoosePrintReceiptInBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChoosePrintReceiptOtherBank.resx">
+      <DependentUpon>frmChoosePrintReceiptOtherBank.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChooseStatement.resx">
       <DependentUpon>frmChooseStatement.cs</DependentUpon>
@@ -309,11 +390,11 @@
     <EmbeddedResource Include="frmInputAccountOtherBank.resx">
       <DependentUpon>frmInputAccountOtherBank.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInputAccountReceiver.resx">
-      <DependentUpon>frmInputAccountReceiver.cs</DependentUpon>
+    <EmbeddedResource Include="frmInputAccountInBank.resx">
+      <DependentUpon>frmInputAccountInBank.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInputAccountValid.resx">
-      <DependentUpon>frmInputAccountValid.cs</DependentUpon>
+    <EmbeddedResource Include="frmCashTransferAccountReceivedInBank.resx">
+      <DependentUpon>frmCashTransferAccountReceivedInBank.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInputAccountWrong.resx">
       <DependentUpon>frmInputAccountWrong.cs</DependentUpon>
@@ -369,6 +450,9 @@
     <EmbeddedResource Include="frmWithdrawMain.resx">
       <DependentUpon>frmWithdrawMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmWithDrawSuccess.resx">
+      <DependentUpon>frmWithDrawSuccess.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -391,7 +475,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\btnEight.PNG" />

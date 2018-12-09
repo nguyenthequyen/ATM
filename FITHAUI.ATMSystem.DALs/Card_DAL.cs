@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using FITHAUI.ATMSystem.DTOs;
-namespace FITHAUI.ATMSystem.DALs
+
+namespace FITHAUI.ATMSystem
 {
     public class Card_DAL
     {
-        Databasecontext dbContext = new Databasecontext();
         Log_DAL log = new Log_DAL();
+        Databasecontext dbContext = new Databasecontext();
 
         public bool CheckCardNo(string cardNo)
         {
@@ -51,7 +51,6 @@ namespace FITHAUI.ATMSystem.DALs
                 Console.WriteLine(ex.Message);
                 return false;
             }
-
         }
         public void UpdateCard(string cardNo, string status, int attempt)
         {
@@ -85,8 +84,7 @@ namespace FITHAUI.ATMSystem.DALs
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                UpdateCard(cardNo,GetStatus(cardNo),GetAttempt(cardNo));
-                //return CheckPIN(cardNo,pin);
+                UpdateCard(cardNo, GetStatus(cardNo), GetAttempt(cardNo));
                 return "";
             }
         }
@@ -102,7 +100,8 @@ namespace FITHAUI.ATMSystem.DALs
                 cmd.Parameters.AddWithValue("cardNo", cardNo);
                 cmd.ExecuteNonQuery();
                 dbContext.CloseConnection();
-                log.CreateLog(DateTime.Now, 1100, "SUCCESS", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
+                log.CreateLog(DateTime.Now, 1100, "SUCCESS", "abcf9247-c548-45eb-9660-b6c8bc8c7f27", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
+
             }
             catch (Exception ex)
             {
@@ -127,15 +126,13 @@ namespace FITHAUI.ATMSystem.DALs
                 dbContext.CloseConnection();
                 return status;
             }
-            catch
+            catch (Exception ex)
             {
-                if (dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
+                Console.WriteLine(ex.Message);
                 return "";
             }
         }
+
         public string GetExpiredDate(string cardNo)
         {
             try
@@ -153,12 +150,9 @@ namespace FITHAUI.ATMSystem.DALs
                 dbContext.CloseConnection();
                 return exDate;
             }
-            catch
+            catch (Exception ex)
             {
-                if (dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
+                Console.WriteLine(ex.Message);
                 return "";
             }
         }
@@ -187,12 +181,9 @@ namespace FITHAUI.ATMSystem.DALs
                 cmd1.ExecuteNonQuery();
                 dbContext.CloseConnection();
             }
-            catch
+            catch (Exception ex)
             {
-                if (dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
+                Console.WriteLine(ex.Message);
             }
         }
         public int GetAttempt(string cardNo)
@@ -219,13 +210,11 @@ namespace FITHAUI.ATMSystem.DALs
                     cmd1.ExecuteNonQuery();
                     dbContext.CloseConnection();
                 }
-                //UpdateAttempt(cardNo);
                 return attempt;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                //UpdateAttempt(cardNo);
                 return -1;
             }
         }

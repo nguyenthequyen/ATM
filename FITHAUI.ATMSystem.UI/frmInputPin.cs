@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FITHAUI.ATMSystem.BULs;
-using FITHAUI.ATMSystem.DTOs;
 namespace FITHAUI.ATMSystem.UI
 {
     public partial class frmInputPin : Form

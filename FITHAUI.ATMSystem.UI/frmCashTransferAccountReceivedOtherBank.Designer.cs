@@ -1,6 +1,6 @@
 ﻿namespace FITHAUI.ATMSystem.UI
 {
-    partial class frmInputAccountValid
+    partial class frmCashTransferAccountReceivedOtherBank
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInputAccountValid));
             this.button25 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnCardNo = new System.Windows.Forms.TextBox();
@@ -53,7 +52,7 @@
             this.btnOne = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grAcceptRight = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnChooseCancel = new System.Windows.Forms.Button();
             this.btnChooseAccept = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -63,6 +62,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnBalance = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.lblMoney = new System.Windows.Forms.Label();
             this.lblCardNumber = new System.Windows.Forms.Label();
             this.lblCustomerName = new System.Windows.Forms.Label();
@@ -321,7 +322,7 @@
             // 
             // grAcceptRight
             // 
-            this.grAcceptRight.Controls.Add(this.button5);
+            this.grAcceptRight.Controls.Add(this.btnChooseCancel);
             this.grAcceptRight.Controls.Add(this.btnChooseAccept);
             this.grAcceptRight.Controls.Add(this.button7);
             this.grAcceptRight.Controls.Add(this.button8);
@@ -331,15 +332,15 @@
             this.grAcceptRight.TabIndex = 4;
             this.grAcceptRight.TabStop = false;
             // 
-            // button5
+            // btnChooseCancel
             // 
-            this.button5.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.Location = new System.Drawing.Point(9, 225);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(50, 46);
-            this.button5.TabIndex = 3;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnChooseCancel.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.icon_prev;
+            this.btnChooseCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChooseCancel.Location = new System.Drawing.Point(9, 225);
+            this.btnChooseCancel.Name = "btnChooseCancel";
+            this.btnChooseCancel.Size = new System.Drawing.Size(50, 46);
+            this.btnChooseCancel.TabIndex = 3;
+            this.btnChooseCancel.UseVisualStyleBackColor = true;
             // 
             // btnChooseAccept
             // 
@@ -428,6 +429,8 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.button15);
             this.panel2.Controls.Add(this.lblMoney);
             this.panel2.Controls.Add(this.lblCardNumber);
             this.panel2.Controls.Add(this.lblCustomerName);
@@ -440,6 +443,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(631, 421);
             this.panel2.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(477, 354);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 46);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Bỏ qua";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Enabled = false;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.Location = new System.Drawing.Point(477, 286);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(154, 46);
+            this.button15.TabIndex = 11;
+            this.button15.Text = "Đồng ý";
+            this.button15.UseVisualStyleBackColor = true;
             // 
             // lblMoney
             // 
@@ -463,6 +488,7 @@
             // 
             this.lblCustomerName.AutoSize = true;
             this.lblCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerName.ForeColor = System.Drawing.Color.Black;
             this.lblCustomerName.Location = new System.Drawing.Point(251, 122);
             this.lblCustomerName.Name = "lblCustomerName";
             this.lblCustomerName.Size = new System.Drawing.Size(0, 17);
@@ -521,7 +547,7 @@
             this.panel4.Size = new System.Drawing.Size(631, 63);
             this.panel4.TabIndex = 3;
             // 
-            // frmInputAccountValid
+            // frmCashTransferAccountReceivedOtherBank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -532,12 +558,12 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.btnCardNo);
             this.Controls.Add(this.panel3);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmInputAccountValid";
+            this.Name = "frmCashTransferAccountReceivedOtherBank";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ATM Techcombank";
+            this.Load += new System.EventHandler(this.frmCashTransferAccountReceivedOtherBank_Load);
             this.panel3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -572,7 +598,7 @@
         private System.Windows.Forms.Button btnOne;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox grAcceptRight;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnChooseCancel;
         private System.Windows.Forms.Button btnChooseAccept;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
@@ -594,5 +620,7 @@
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button15;
     }
 }
