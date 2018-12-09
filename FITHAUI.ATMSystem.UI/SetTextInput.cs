@@ -18,5 +18,10 @@ namespace FITHAUI.ATMSystem
         {
             return cardNo += number;
         }
+        
+        public string SetTextInputMoney(string number, string money)
+        {
+            return money += number;
+        }
     }
 }

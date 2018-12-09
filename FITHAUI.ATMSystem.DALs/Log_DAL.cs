@@ -80,39 +80,5 @@ namespace FITHAUI.ATMSystem
                 Console.WriteLine(ex.Message);
             }
         }
-        //public List<Log> getAllLog(string cardNo)
-        //{
-        //    try
-        //    {
-        //        List<Log> listLog = new List<Log>();
-        //        string sql = "Select*From Log Where CardNo =@cardNo";
-        //        dbContext.OpenConnection();
-        //        SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
-        //        cmd.Parameters.AddWithValue("cardNo", cardNo);
-        //        SqlDataReader dr = cmd.ExecuteReader();
-        //        while (dr.Read())
-        //        {
-        //            Log log = new Log(dr["LogID"].ToString(),
-        //                DateTime.Parse(dr["LogDate"].ToString()),
-        //                decimal.Parse(dr["Amount"].ToString()),
-        //                dr["Details"].ToString(),
-        //                dr["LogTypeID"].ToString(),
-        //                dr["ATMID"].ToString(),
-        //                dr["CardNo"].ToString(),
-        //                dr["CardNoTo"].ToString());
-        //            listLog.Add(log);
-        //        }
-        //        dbContext.CloseConnection();
-        //        return listLog;
-        //    }
-        //    catch 
-        //    {
-        //        if (dbContext.CHECK_OPEN)
-        //        {
-        //            dbContext.CloseConnection();
-        //        }
-        //        return null;
-        //    }
-        //Console.WriteLine("Có lỗi" + ex.Message);
     }
 }

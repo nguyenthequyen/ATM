@@ -149,6 +149,8 @@ namespace FITHAUI.ATMSystem.UI
                     account_BUL.UpdateBalance(money, cardNo);
                     // Ghi log
                     frmBill bill = new frmBill();
+                    bill.Money = money;
+                    bill.CardNo = cardNo;
                     bill.Show();
                     this.Close();
                     return true;
