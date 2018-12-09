@@ -21,7 +21,7 @@ namespace FITHAUI.ATMSystem
             card_DAL.UpdateCard(cardNo, status, attempt);
         }
         //Validate PIN
-        public string CheckPIN(string cardNo, String pin)
+        public bool CheckPIN(string cardNo, String pin)
         {
             return card_DAL.CheckPIN(cardNo, pin);
         }

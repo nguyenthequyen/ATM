@@ -118,19 +118,25 @@ namespace FITHAUI.ATMSystem.UI
             var checkAttempt = card_BUL.CheckAttempt(cardNo);
             if (checkCard)
             {
-                timer.Tick += new EventHandler(CheckCardSuccess);
-                timer.Start();
                 var checkStatus = card_BUL.CheckStatus(cardNo);
-                if (checkStatus == false || checkAttempt == false)
+                if (checkStatus == true && checkAttempt == true)
                 {
-                    lblCardBlock.Visible = true;
-                    txtCardNo.Text = "";
                     var checkExpired = card_BUL.CheckExpiredDate(cardNo);
                     if (checkExpired == false)
                     {
                         lblExpired.Visible = true;
                         txtCardNo.Text = "";
                     }
+                    else
+                    {
+                        timer.Tick += new EventHandler(CheckCardSuccess);
+                        timer.Start();
+                    }
+                }
+                else
+                {
+                    lblCardBlock.Visible = true;
+                    txtCardNo.Text = "";
                 }
             }
             else
