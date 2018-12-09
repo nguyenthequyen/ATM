@@ -20,8 +20,8 @@ namespace FITHAUI.ATMSystem.UI
         private static string _cardNo;
         public string CardNo { get => _cardNo; set => _cardNo = value; }
 
-        private static string _cardNoAccountReceived;
-        public string CardNoAccountReceived { get => _cardNoAccountReceived; set => _cardNoAccountReceived = value; }
+        private static string _accountNOReceived;
+        public string AccountNOReceived { get => _accountNOReceived; set => _accountNOReceived = value; }
 
         private static string _money;
         public string Money { get => _money; set => _money = value; }
@@ -30,9 +30,10 @@ namespace FITHAUI.ATMSystem.UI
         {
             var payTransactionOtherBank = new frmPayTransactionOtherBank();
             payTransactionOtherBank.CardNo = CardNo;
-            payTransactionOtherBank.CardNoAccountReceived = CardNoAccountReceived;
+            payTransactionOtherBank.AccountNOReceived = AccountNOReceived;
             payTransactionOtherBank.Money = Money;
             payTransactionOtherBank.TransferFee = 11000;
+            payTransactionOtherBank.DoesPrintReceipt = true;
             payTransactionOtherBank.Show();
             this.Hide();
         }
@@ -40,8 +41,20 @@ namespace FITHAUI.ATMSystem.UI
         private void btnChooseDontPrintReceipt_Click(object sender, EventArgs e)
         {
             var payTransactionOtherBank = new frmPayTransactionOtherBank();
+            payTransactionOtherBank.CardNo = CardNo;
+            payTransactionOtherBank.AccountNOReceived = AccountNOReceived;
+            payTransactionOtherBank.Money = Money;
+            payTransactionOtherBank.TransferFee = 0;
+            payTransactionOtherBank.DoesPrintReceipt = false;
             payTransactionOtherBank.Show();
             this.Hide();
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            frmValidateCard validateCard = new frmValidateCard();
+            validateCard.Show();
+            this.Close();
         }
     }
 }
