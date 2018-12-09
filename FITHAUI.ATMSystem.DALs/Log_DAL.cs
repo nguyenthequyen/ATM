@@ -28,13 +28,16 @@ namespace FITHAUI.ATMSystem
                     var description = sqlDataReader["Description"].ToString();
                     switch (description)
                     {
-                        case "Widthdraw":
+                        case "widthdraw":
+                            description = "-";
+                            break;
+                        case "transfer":
                             description = "-";
                             break;
                         case "receiveMoney":
                             description = "+";
                             break;
-                        case "Transfer":
+                        case "checkBalance":
                             description = "-";
                             break;
                         default:
@@ -48,11 +51,11 @@ namespace FITHAUI.ATMSystem
                     logs.Add(log);
                 }
                 dbContext.CloseConnection();
-                CreateLog(DateTime.Now, 1100, "SUCCESS", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
+                
             }
             catch (Exception ex)
             {
-                CreateLog(DateTime.Now, 1100, "ERROR", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
+                CreateLog(DateTime.Now, 0, "ERROR", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
                 Console.WriteLine("Có lỗi xảy ra: " + ex.Message);
             }
 

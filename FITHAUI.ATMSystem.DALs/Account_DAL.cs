@@ -32,12 +32,11 @@ namespace FITHAUI.ATMSystem
                     balance = Convert.ToInt32(sqlDataReader["Balance"]);
                 }
                 dbContext.CloseConnection();
-                log_DAL.CreateLog(DateTime.Now, 1100, "SUCCESS", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Có lỗi xảy ra: " + ex.Message);
-                log_DAL.CreateLog(DateTime.Now, 1100, "ERROR", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
+                log_DAL.CreateLog(DateTime.Now, 0, "ERROR", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
                 return balance;
             }
             return balance;
@@ -57,7 +56,6 @@ namespace FITHAUI.ATMSystem
                 cmd1.Parameters.AddWithValue("newBalance", newBalance);
                 cmd1.Parameters.AddWithValue("cardNo", cardNo);
                 cmd1.ExecuteNonQuery();
-
                 dbContext.CloseConnection();
                 return;
             }

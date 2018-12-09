@@ -118,7 +118,6 @@ namespace FITHAUI.ATMSystem
                 cmd.ExecuteNonQuery();
                 dbContext.CloseConnection();
                 log.CreateLog(DateTime.Now, 1100, "SUCCESS", "abcf9247-c548-45eb-9660-b6c8bc8c7f27", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
-
             }
             catch (Exception ex)
             {

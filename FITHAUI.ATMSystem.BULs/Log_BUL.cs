@@ -15,7 +15,7 @@ namespace FITHAUI.ATMSystem
         {
             return log_DAL.ViewHistory(cardNo);
         }
-        public void CreateLog(decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo)
+        public void CreateLog(DateTime logDate, decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo)
         {
             log_DAL.CreateLog(DateTime.Now, amount, details, logTypeID, atmID, cardNo, cardNoTo);
         }

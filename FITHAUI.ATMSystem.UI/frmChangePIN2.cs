@@ -25,14 +25,13 @@ namespace FITHAUI.ATMSystem.UI
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-             
+
             if (int.Parse(txtNewPINAgain.Text) == Pin)
             {
-                //Log_BUL.CreateLog(0, "New PIN", "09da2d0c-dd3e-4530-bb8d-98445d6457ae", "b936bf52-94d0-488f-bcda-1e4f1ecc422f", txtCardNo.Text, "NULL");
-                Log_BUL.CreateLog(0, "new pin:" + txtNewPINAgain, "09da2d0c-dd3e-4530-bb8d-98445d6457ae", "b936bf52-94d0-488f-bcda-1e4f1ecc422f", txtCardNo.Text, "");
                 frmChangePINSuccess changePINSuccess = new frmChangePINSuccess();
                 Card_BUL.ChangePIN(CardNo, Pin.ToString());
                 changePINSuccess.Show();
+                Log_BUL.CreateLog(DateTime.Now, 0, "", "09da2d0c-dd3e-4530-bb8d-98445d6457ae", "b936bf52-94d0-488f-bcda-1e4f1ecc422f", txtCardNo.Text, "");
                 this.Close();
             }
             else
@@ -41,7 +40,7 @@ namespace FITHAUI.ATMSystem.UI
                 changePINFail.Show();
                 this.Close();
             }
-            
+
         }
 
         private void btnCorrection_Click(object sender, EventArgs e)

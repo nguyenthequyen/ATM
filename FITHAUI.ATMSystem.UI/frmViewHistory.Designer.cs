@@ -62,6 +62,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblBalance = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvHistory = new System.Windows.Forms.DataGridView();
             this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
@@ -69,8 +71,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button25 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblBalance = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -433,15 +433,34 @@
             this.panel2.Size = new System.Drawing.Size(631, 421);
             this.panel2.TabIndex = 0;
             // 
+            // lblBalance
+            // 
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBalance.Location = new System.Drawing.Point(353, 119);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(0, 31);
+            this.lblBalance.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(66, 119);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(202, 31);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Số dư hạn mức:";
+            // 
             // dgvHistory
             // 
             this.dgvHistory.AllowUserToAddRows = false;
             this.dgvHistory.AllowUserToDeleteRows = false;
             this.dgvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistory.Location = new System.Drawing.Point(72, 173);
+            this.dgvHistory.Location = new System.Drawing.Point(147, 156);
             this.dgvHistory.Name = "dgvHistory";
             this.dgvHistory.ReadOnly = true;
-            this.dgvHistory.Size = new System.Drawing.Size(483, 104);
+            this.dgvHistory.Size = new System.Drawing.Size(466, 121);
             this.dgvHistory.TabIndex = 8;
             // 
             // button16
@@ -505,25 +524,6 @@
             this.button25.Size = new System.Drawing.Size(233, 35);
             this.button25.TabIndex = 54;
             this.button25.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(66, 139);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 31);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Số dư hạn mức:";
-            // 
-            // lblBalance
-            // 
-            this.lblBalance.AutoSize = true;
-            this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalance.Location = new System.Drawing.Point(353, 139);
-            this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(0, 31);
-            this.lblBalance.TabIndex = 9;
             // 
             // frmViewHistory
             // 
