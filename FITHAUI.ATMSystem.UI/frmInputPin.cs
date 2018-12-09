@@ -42,8 +42,8 @@ namespace FITHAUI.ATMSystem.UI
         private void btnAccept_Click(object sender, EventArgs e)
         {
             frmListServices listServices = new frmListServices();            
-            string checkPIN = card_BUL.CheckPIN(CardNo, txtPin.Text);
-            if (txtPin.Text == checkPIN)
+            bool checkPIN = card_BUL.CheckPIN(CardNo, txtPin.Text);
+            if (checkPIN)
             {
                 listServices.CardNo = CardNo;
                 listServices.Show();
@@ -51,12 +51,21 @@ namespace FITHAUI.ATMSystem.UI
             }
             else
             {
-               
-                frmInputPinFailed inputPINFailed = new frmInputPinFailed();
-                inputPINFailed.CardNo = CardNo;
-                inputPINFailed.Show();
-                UpdateCard(CardNo);
-                this.Close();
+                var attemp = card_BUL.GetAttempt(CardNo);
+                if (attemp == 3)
+                {
+                    frmBlockCard frmBlock = new frmBlockCard();
+                    frmBlock.Show();
+                    this.Close();
+                }
+                else
+                {
+                    frmInputPinFailed inputPINFailed = new frmInputPinFailed();
+                    inputPINFailed.CardNo = CardNo;
+                    inputPINFailed.Show();
+                    UpdateCard(CardNo);
+                    this.Close();
+                }
             }
         }
 
