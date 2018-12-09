@@ -18,7 +18,7 @@ namespace FITHAUI.ATMSystem
             try
             {
                 List<Card> listCard = new List<Card>();
-                string sql = "Select*From Card Where CardNo = @cardNo and Status = N'normal'";
+                string sql = "Select*From Card Where CardNo = @cardNo";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
                 cmd.Parameters.AddWithValue("cardNo", cardNo);
@@ -54,8 +54,9 @@ namespace FITHAUI.ATMSystem
         }
         public void UpdateCard(string cardNo, string status, int attempt)
         {
-            dbContext.OpenConnection();
+            dbContext.CloseConnection();
             string sqlUpdate = "Update Card Set Attempt =@attempt, Status =@status Where CardNo=@cardNo";
+            dbContext.OpenConnection();
             SqlCommand cmd = new SqlCommand(sqlUpdate, dbContext.Connect);
             cmd.Parameters.AddWithValue("cardNo", cardNo);
             cmd.Parameters.AddWithValue("status", status);
@@ -63,29 +64,45 @@ namespace FITHAUI.ATMSystem
             cmd.ExecuteNonQuery();
             dbContext.CloseConnection();
         }
-        public string CheckPIN(string cardNo, string pin)
+        public bool CheckPIN(string cardNo, string pin)
         {
             try
             {
                 string PIN = "";
-                string sql = "Select PIN from Card where CardNo=@cardNo";
+                string sql = "Select PIN from Card where CardNo=@cardNo and PIN = @pin";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
                 cmd.Parameters.AddWithValue("cardNo", cardNo);
+                cmd.Parameters.AddWithValue("PIN", pin);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     PIN = dr["PIN"].ToString();
                 }
                 dbContext.CloseConnection();
-                UpdateCard(cardNo, "normal", 0);
-                return PIN;
+                if (string.IsNullOrEmpty(PIN))
+                {
+                    var attemp = GetAttempt(cardNo);
+                    attemp = attemp + 1;
+                    if(attemp >= 3)
+                    {
+                        UpdateCard(cardNo, "block", attemp);
+                        return false;
+                    }
+                    UpdateCard(cardNo, "normal", attemp);
+                    return false;
+                }
+                else
+                {
+                    UpdateCard(cardNo, "normal", 0);
+                    return true;
+                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 UpdateCard(cardNo, GetStatus(cardNo), GetAttempt(cardNo));
-                return "";
+                return false;
             }
         }
         public void ChangePIN(string cardNo, string newPIN)
