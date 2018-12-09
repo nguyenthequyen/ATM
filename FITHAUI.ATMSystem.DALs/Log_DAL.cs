@@ -31,13 +31,16 @@ namespace FITHAUI.ATMSystem
                     var description = sqlDataReader["Description"].ToString();
                     switch (description)
                     {
-                        case "Widthdraw":
+                        case "widthdraw":
+                            description = "-";
+                            break;
+                        case "transfer":
                             description = "-";
                             break;
                         case "receiveMoney":
                             description = "+";
                             break;
-                        case "Transfer":
+                        case "checkBalance":
                             description = "-";
                             break;
                         default:

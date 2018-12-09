@@ -37,7 +37,7 @@ namespace FITHAUI.ATMSystem.UI
             dgvHistory.Columns["LogDate"].Width = 200;
             dgvHistory.Columns["Description"].DisplayIndex = 2;
             dgvHistory.Columns["Description"].HeaderText = "Chi tiết giao dịch";
-            dgvHistory.Columns["Description"].Width = 50;
+            dgvHistory.Columns["Description"].Width = 90;
             dgvHistory.Columns["Amount"].DisplayIndex = 3;
             dgvHistory.Columns["Amount"].HeaderText = "Số tiền";
             dgvHistory.Columns["Amount"].Width = 200;

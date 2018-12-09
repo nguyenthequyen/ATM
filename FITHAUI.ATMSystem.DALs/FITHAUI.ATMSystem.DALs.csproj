@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account_DAL.cs" />
+    <Compile Include="ATM_DAL.cs" />
     <Compile Include="Config_DAL.cs" />
     <Compile Include="Card_DAL.cs" />
     <Compile Include="CashTransferDAL.cs" />

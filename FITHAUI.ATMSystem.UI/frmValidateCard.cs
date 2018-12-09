@@ -112,6 +112,7 @@ namespace FITHAUI.ATMSystem.UI
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
+            string MachineName1 = Environment.MachineName;
             timer.Interval = 10;
             string cardNo = txtCardNo.Text;
             var checkCard = card_BUL.CheckCardNo(cardNo);
