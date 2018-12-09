@@ -23,6 +23,7 @@ namespace FITHAUI.ATMSystem.UI
         Log_BUL log_BUL = new Log_BUL();
         Account_BUL account_BUL = new Account_BUL();
         SubStringDate sub = new SubStringDate();
+        ATM_BUL aTM = new ATM_BUL();
         public frmChooseStatement()
         {
             InitializeComponent();
@@ -48,6 +49,7 @@ namespace FITHAUI.ATMSystem.UI
         //In lịch sử giao dịch
         private void btnPrintPdf_Click(object sender, EventArgs e)
         {
+            var atm = aTM.GetATMName();
             string path = "F:/YEN/ATM/FITHAUI.ATMSystem.UI";
             var history = DisplayHistory();
             var balance = account_BUL.GetBalance(CardNo).ToString() + " VND";
@@ -80,10 +82,10 @@ namespace FITHAUI.ATMSystem.UI
             PdfPCell pDay = new PdfPCell(new Phrase(string.Format("NGAY                       :  {0}        GIO     {1}\n", dateNow, time), headerFont));
             pDay.Colspan = 3;
             pDay.Border = iTextSharp.text.Rectangle.NO_BORDER;
-            PdfPCell pNameATM = new PdfPCell(new Phrase(string.Format("TEN MAY                       :  {0}", "ATM1"), headerFont));
+            PdfPCell pNameATM = new PdfPCell(new Phrase(string.Format("TEN MAY                       :  {0}", atm[0].ATMID), headerFont));
             pNameATM.Colspan = 3;
             pNameATM.Border = iTextSharp.text.Rectangle.NO_BORDER;
-            PdfPCell pAddressATM = new PdfPCell(new Phrase(string.Format("DIA CHI                       :  {0}", "HA NOI"), headerFont));
+            PdfPCell pAddressATM = new PdfPCell(new Phrase(string.Format("DIA CHI                       :  {0}", atm[0].Address), headerFont));
             pAddressATM.Colspan = 3;
             pAddressATM.Border = iTextSharp.text.Rectangle.NO_BORDER;
             PdfPCell pCardNoATM = new PdfPCell(new Phrase(string.Format("SO THE                       :  {0}", CardNo), headerFont));

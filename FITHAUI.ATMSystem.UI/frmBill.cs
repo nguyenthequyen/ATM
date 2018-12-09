@@ -19,6 +19,7 @@ namespace FITHAUI.ATMSystem.UI
     {
         Account_BUL account_BUL = new Account_BUL();
         SubStringDate sub = new SubStringDate();
+        Log_BUL log = new Log_BUL();
         public frmBill()
         {
             InitializeComponent();
@@ -59,6 +60,7 @@ namespace FITHAUI.ATMSystem.UI
             PdfPTable table = new PdfPTable(3);
             table.HorizontalAlignment = Element.ALIGN_CENTER;
             table.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+
             table.WidthPercentage = 95f;
             Paragraph emptyPara = new Paragraph("    ", emptyFont);
             var dateNow = sub.SubDate(DateTime.Now.ToString().Trim());
@@ -66,15 +68,19 @@ namespace FITHAUI.ATMSystem.UI
             PdfPCell pDay = new PdfPCell(new Phrase(string.Format("NGAY                       :  {0}        GIO     {1}\n", dateNow, time), headerFont));
             pDay.Colspan = 3;
             pDay.Border = iTextSharp.text.Rectangle.NO_BORDER;
+
             PdfPCell pNameATM = new PdfPCell(new Phrase(string.Format("TEN MAY                       :  {0}", "ATM1"), headerFont));
             pNameATM.Colspan = 3;
             pNameATM.Border = iTextSharp.text.Rectangle.NO_BORDER;
+
             PdfPCell pAddressATM = new PdfPCell(new Phrase(string.Format("DIA CHI                       :  {0}", "HA NOI"), headerFont));
             pAddressATM.Colspan = 3;
             pAddressATM.Border = iTextSharp.text.Rectangle.NO_BORDER;
+
             PdfPCell pCardNoATM = new PdfPCell(new Phrase(string.Format("SO THE                       :  {0}", CardNo), headerFont));
             pCardNoATM.Colspan = 3;
             pCardNoATM.Border = iTextSharp.text.Rectangle.NO_BORDER;
+
             PdfPCell pTrace = new PdfPCell(new Phrase(string.Format("SO TRACE                       :  {0}", "12345689"), headerFont));
             pTrace.Colspan = 3;
             pTrace.Border = iTextSharp.text.Rectangle.NO_BORDER;
@@ -121,9 +127,6 @@ namespace FITHAUI.ATMSystem.UI
             doc.Add(table);
 
             doc.Close();
-            MessageBox.Show("GIAO DỊCH THÀNH CÔNG");
-            Application.Exit();
-
             frmWithDrawSuccess withDrawSuccess = new frmWithDrawSuccess();
             this.Close();
 
@@ -131,9 +134,10 @@ namespace FITHAUI.ATMSystem.UI
             withDrawSuccess.Show();
             delay.Wait();
             withDrawSuccess.Close();
-
+            log.CreateLog(DateTime.Now, Money + 1100, "SUCCESS", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", CardNo, "");
             frmValidateCard frmValidateCard = new frmValidateCard();
             frmValidateCard.Show();
+
             try
             {
                 Process myProcess = new Process();
@@ -157,6 +161,7 @@ namespace FITHAUI.ATMSystem.UI
             withDrawSuccess.Close();
 
             frmValidateCard frmValidateCard = new frmValidateCard();
+            log.CreateLog(DateTime.Now, Money + 1100, "SUCCESS", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", CardNo, "");
             frmValidateCard.Show();
         }
     }

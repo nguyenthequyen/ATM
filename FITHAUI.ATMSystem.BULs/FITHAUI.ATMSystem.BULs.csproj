@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account_BUL.cs" />
+    <Compile Include="ATM_BUL.cs" />
     <Compile Include="Config_BUL.cs" />
     <Compile Include="MoneyBUL.cs" />
     <Compile Include="Card_BUL.cs" />

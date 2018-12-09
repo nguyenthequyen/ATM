@@ -28,6 +28,8 @@ namespace FITHAUI.ATMSystem.UI
 
             if (int.Parse(txtNewPINAgain.Text) == Pin)
             {
+                //TODO: Thêm số cây ATM
+                //Log_BUL.CreateLog(DateTime.Now, 0, "09da2d0c-dd3e-4530-bb8d-98445d6457ae", "b936bf52-94d0-488f-bcda-1e4f1ecc422f", "", txtCardNo.Text, "");
                 frmChangePINSuccess changePINSuccess = new frmChangePINSuccess();
                 Card_BUL.ChangePIN(CardNo, Pin.ToString());
                 changePINSuccess.Show();

@@ -62,9 +62,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -428,26 +428,6 @@
             this.panel2.Size = new System.Drawing.Size(631, 421);
             this.panel2.TabIndex = 0;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(164, 164);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(314, 25);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Thực hiện giao dịch thành công";
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.Logo;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(631, 63);
-            this.panel4.TabIndex = 3;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -458,6 +438,26 @@
             this.label1.Size = new System.Drawing.Size(233, 25);
             this.label1.TabIndex = 5;
             this.label1.Text = "Xin chân thành cảm ơn";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(188, 164);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(217, 25);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Giao dịch hoàn thành\r\n";
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = global::FITHAUI.ATMSystem.UI.Properties.Resources.Logo;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(631, 63);
+            this.panel4.TabIndex = 3;
             // 
             // frmWithDrawSuccess
             // 

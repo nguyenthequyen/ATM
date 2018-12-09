@@ -17,11 +17,15 @@ namespace FITHAUI.ATMSystem
         /// </summary>
         /// <param name="cardNo"></param>
         /// <returns></returns>
+        /// 
+
         public int CheckBalance(string cardNo)
         {
             int balance = -1;
+
             try
             {
+
                 SqlCommand sqlCommand = new SqlCommand("Proc_CheckBalance", dbContext.Connect);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Parameters.Add("@CardNo", SqlDbType.NVarChar).Value = cardNo.Trim();
@@ -32,10 +36,12 @@ namespace FITHAUI.ATMSystem
                     balance = Convert.ToInt32(sqlDataReader["Balance"]);
                 }
                 dbContext.CloseConnection();
+                //log_DAL.CreateLog(DateTime.Now, 550, "SUCCESS", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Có lỗi xảy ra: " + ex.Message);
+                //log_DAL.CreateLog(DateTime.Now, 550, "ERROR", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
                 log_DAL.CreateLog(DateTime.Now, 0, "ERROR", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
                 return balance;
             }
@@ -44,11 +50,11 @@ namespace FITHAUI.ATMSystem
 
         public void UpdateBalance(int money, string cardNo)
         {
+           
             try
             {
                 int balance = CheckBalance(cardNo);
                 int newBalance = balance - money - 1100;    // trừ thêm lệ phí là 1100 vnd
-
                 string queryUpdate = "update Account set Account.Balance = @newBalance " +
                     "from Account inner join Card on Account.AccountID = Card.AccountID where Card.CardNo = @cardNo ";
                 dbContext.OpenConnection();
@@ -57,11 +63,13 @@ namespace FITHAUI.ATMSystem
                 cmd1.Parameters.AddWithValue("cardNo", cardNo);
                 cmd1.ExecuteNonQuery();
                 dbContext.CloseConnection();
-                return;
+                int newMoney = money + 1100;
+               
             }
-            catch
+            catch(Exception ex)
             {
-                dbContext.CloseConnection();
+                Console.WriteLine("Có lỗi xảy ra: " + ex.Message);
+                log_DAL.CreateLog(DateTime.Now, 0, "ERROR", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
                 return;
             }
         }
