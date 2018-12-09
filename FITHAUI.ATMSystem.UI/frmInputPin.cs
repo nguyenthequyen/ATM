@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FITHAUI.ATMSystem.BULs;
 namespace FITHAUI.ATMSystem.UI
 {
     public partial class frmInputPin : Form
     {
         SetTextInput setTextInput = new SetTextInput();
         Timer timer = new Timer();
-        Card_BUL card_BUL = new Card_BUL();        
+        Card_BUL card_BUL = new Card_BUL();
+        Card cardDTO = new Card(); 
         private static string _cardNo;
         public frmInputPin()
         {
@@ -27,12 +27,23 @@ namespace FITHAUI.ATMSystem.UI
         {
             //MessageBox.Show(_cardNo,"Card No");
         }
-
+        private void UpdateCard(string cardNo)
+        {
+            card_BUL.CheckCardNo(cardNo);
+            cardDTO.Attempt = cardDTO.Attempt + 1;
+            var status = "normal";
+            var attempt = card_BUL.GetAttempt(cardNo);
+            if (cardDTO.Attempt == 3)
+            {
+                status = "block";
+            }
+            card_BUL.UpdateCard(cardNo, status, attempt);
+        }
         private void btnAccept_Click(object sender, EventArgs e)
         {
             frmListServices listServices = new frmListServices();            
-            string checkPIN = card_BUL.CheckPIN(CardNo, txtPin.Text);
-            if (txtPin.Text == checkPIN)
+            bool checkPIN = card_BUL.CheckPIN(CardNo, txtPin.Text);
+            if (checkPIN)
             {
                 listServices.CardNo = CardNo;
                 listServices.Show();
@@ -40,10 +51,21 @@ namespace FITHAUI.ATMSystem.UI
             }
             else
             {
-                frmInputPinFailed inputPINFailed = new frmInputPinFailed();
-                inputPINFailed.CardNo = CardNo;
-                inputPINFailed.Show();
-                this.Close();
+                var attemp = card_BUL.GetAttempt(CardNo);
+                if (attemp == 3)
+                {
+                    frmBlockCard frmBlock = new frmBlockCard();
+                    frmBlock.Show();
+                    this.Close();
+                }
+                else
+                {
+                    frmInputPinFailed inputPINFailed = new frmInputPinFailed();
+                    inputPINFailed.CardNo = CardNo;
+                    inputPINFailed.Show();
+                    UpdateCard(CardNo);
+                    this.Close();
+                }
             }
         }
 
