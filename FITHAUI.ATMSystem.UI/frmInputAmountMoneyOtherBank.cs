@@ -15,8 +15,8 @@ namespace FITHAUI.ATMSystem.UI
         SetTextInput setTextInput = new SetTextInput();
         private static string _cardNo;
         public string CardNo { get => _cardNo; set => _cardNo = value; }
-        private static string _cardNoAccountReceived;
-        public string CardNoAccountReceived { get => _cardNoAccountReceived; set => _cardNoAccountReceived = value; }
+        private static string _accountNOReceived;
+        public string AccountNOReceived { get => _accountNOReceived; set => _accountNOReceived = value; }
         public frmInputAmountMoneyOtherBank()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace FITHAUI.ATMSystem.UI
         {
             var cashTransferAccountReceivedOtherBank = new frmCashTransferAccountReceivedOtherBank();
             cashTransferAccountReceivedOtherBank.CardNo = CardNo;
-            cashTransferAccountReceivedOtherBank.CardNoAccountReceived = CardNoAccountReceived;
+            cashTransferAccountReceivedOtherBank.AccountNOReceived = AccountNOReceived;
             cashTransferAccountReceivedOtherBank.Money = txtMoney.Text;
             cashTransferAccountReceivedOtherBank.Show();
             this.Hide();
@@ -90,6 +90,26 @@ namespace FITHAUI.ATMSystem.UI
         {
             var number = setTextInput.SetTextCardNo("0", txtMoney.Text);
             txtMoney.Text = number;
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            frmValidateCard validateCard = new frmValidateCard();
+            validateCard.Show();
+            this.Close();
+        }
+
+        private void btnChooseNo_Click(object sender, EventArgs e)
+        {
+            txtMoney.Text = "";
+        }
+
+        private void btnChooseUndo_Click(object sender, EventArgs e)
+        {
+            frmInputAccountOtherBank inputAccountOtherBank = new frmInputAccountOtherBank();
+            inputAccountOtherBank.CardNo = CardNo;
+            this.Close();
+            inputAccountOtherBank.Show();
         }
     }
 }

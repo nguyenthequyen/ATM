@@ -10,15 +10,15 @@ namespace FITHAUI.ATMSystem.DALs
     public class CashTransferDAL
     {
         Databasecontext dbContext = new Databasecontext();
-        public string GetNameCustomer(string cardNo)
+        public string GetNameCustomer(string accountNo)
         {
             try
             {
                 string name = "TECHCOMBANK ACCOUNT";
-                string query = "SELECT Customer.Name FROM Account INNER JOIN Customer on Account.CustID = Customer.CustomerID INNER JOIN Card on Account.AccountID = Card.AccountID WHERE CardNo = @cardNo";
+                string query = "SELECT Customer.Name FROM Account INNER JOIN Customer on Account.CustID = Customer.CustomerID WHERE AccountNo = @accountNo";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(query, dbContext.Connect);
-                cmd.Parameters.AddWithValue("cardNo", cardNo);
+                cmd.Parameters.AddWithValue("accountNo", accountNo);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -37,15 +37,15 @@ namespace FITHAUI.ATMSystem.DALs
             }
         }
 
-        public bool CheckCardNo(string cardNo)
+        public bool CheckCardNo(string accountNo)
         {
             try
             {
                 List<Card> listCard = new List<Card>();
-                string sql = "SELECT * FROM Card WHERE CardNo = @cardNo";
+                string sql = "SELECT * FROM Card INNER JOIN Account ON Card.AccountID = Account.AccountID WHERE AccountNo = @accountNo";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
-                cmd.Parameters.AddWithValue("cardNo", cardNo);
+                cmd.Parameters.AddWithValue("accountNo", accountNo);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -81,7 +81,7 @@ namespace FITHAUI.ATMSystem.DALs
 
         }
 
-        public void UpdateBalance(int money, string cardNo, string cardNoTo, int transferFee)
+        public void UpdateBalance(int money, string cardNo, string accountNo, int transferFee)
         {
             try
             {
@@ -108,7 +108,7 @@ namespace FITHAUI.ATMSystem.DALs
 
                 dbContext.CloseConnection();
 
-                UpdateBalanceTo(money, cardNoTo);
+                UpdateBalanceTo(money, accountNo);
 
             }
             catch
@@ -120,16 +120,16 @@ namespace FITHAUI.ATMSystem.DALs
             }
         }
 
-        public void UpdateBalanceTo(int money, string cardNo)
+        public void UpdateBalanceTo(int money, string accountNo)
         {
             try
             {
 
                 int balance = 0;
-                string query = "SELECT Account.Balance FROM Account INNER JOIN Card ON Account.AccountID = Card.AccountID WHERE CardNo = @cardNo";
+                string query = "SELECT Account.Balance FROM Account WHERE AccountNo = @accountNo";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(query, dbContext.Connect);
-                cmd.Parameters.AddWithValue("cardNo", cardNo);
+                cmd.Parameters.AddWithValue("accountNo", accountNo);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -138,11 +138,11 @@ namespace FITHAUI.ATMSystem.DALs
                 dbContext.CloseConnection();
                 int newBalance = balance + money;
 
-                string queryUpdate = "UPDATE Account SET Account.Balance = @newBalance FROM Account INNER JOIN Card ON Account.AccountID = Card.AccountID WHERE Card.CardNo = @cardNo ";
+                string queryUpdate = "UPDATE Account SET Account.Balance = @newBalance FROM Account WHERE AccountNo = @accountNo ";
                 dbContext.OpenConnection();
                 SqlCommand cmd1 = new SqlCommand(queryUpdate, dbContext.Connect);
                 cmd1.Parameters.AddWithValue("newBalance", newBalance);
-                cmd1.Parameters.AddWithValue("cardNo", cardNo);
+                cmd1.Parameters.AddWithValue("accountNo", accountNo);
                 cmd1.ExecuteNonQuery();
 
                 dbContext.CloseConnection();
@@ -223,6 +223,59 @@ namespace FITHAUI.ATMSystem.DALs
                     dbContext.CloseConnection();
                 }
                 return 0;
+            }
+        }
+        public string GetAccountIDByCardNo(string cardNo)
+        {
+            try
+            {
+                string accountNo = "";
+                string query = "SELECT Account.AccountNo FROM Account INNER JOIN Card on Account.AccountID = Card.AccountID WHERE CardNo = @cardNo";
+                dbContext.OpenConnection();
+                SqlCommand cmd = new SqlCommand(query, dbContext.Connect);
+                cmd.Parameters.AddWithValue("cardNo", cardNo);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    accountNo = dr["AccountNo"].ToString();
+                }
+                dbContext.CloseConnection();
+                return accountNo;
+            }
+            catch
+            {
+                if (dbContext.CHECK_OPEN)
+                {
+                    dbContext.CloseConnection();
+                }
+                return "";
+            }
+        }
+
+        public string GetCardNoByAccountNo(string accountNo)
+        {
+            try
+            {
+                string cardNo = "";
+                string query = "SELECT Card.CardNo FROM Account INNER JOIN Card on Account.AccountID = Card.AccountID WHERE AccountNo = @accountNo";
+                dbContext.OpenConnection();
+                SqlCommand cmd = new SqlCommand(query, dbContext.Connect);
+                cmd.Parameters.AddWithValue("accountNo", accountNo);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    cardNo = dr["CardNo"].ToString();
+                }
+                dbContext.CloseConnection();
+                return cardNo;
+            }
+            catch
+            {
+                if (dbContext.CHECK_OPEN)
+                {
+                    dbContext.CloseConnection();
+                }
+                return "";
             }
         }
     }

@@ -66,7 +66,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.txtCardNoAccountReceived = new System.Windows.Forms.TextBox();
+            this.txtAccountNOReceived = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -169,6 +169,7 @@
             this.button24.TabIndex = 19;
             this.button24.Text = "CANCEL";
             this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // groupBox1
             // 
@@ -349,6 +350,7 @@
             this.btnChooseCancel.Size = new System.Drawing.Size(50, 46);
             this.btnChooseCancel.TabIndex = 3;
             this.btnChooseCancel.UseVisualStyleBackColor = true;
+            this.btnChooseCancel.Click += new System.EventHandler(this.btnChooseCancel_Click);
             // 
             // btnChooseNo
             // 
@@ -359,6 +361,7 @@
             this.btnChooseNo.Size = new System.Drawing.Size(50, 46);
             this.btnChooseNo.TabIndex = 2;
             this.btnChooseNo.UseVisualStyleBackColor = true;
+            this.btnChooseNo.Click += new System.EventHandler(this.btnChooseNo_Click);
             // 
             // btnChooseYes
             // 
@@ -440,7 +443,7 @@
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button9);
-            this.panel2.Controls.Add(this.txtCardNoAccountReceived);
+            this.panel2.Controls.Add(this.txtAccountNOReceived);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.panel4);
@@ -482,16 +485,16 @@
             this.button9.Text = "Đúng";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // txtCardNoAccountReceived
+            // txtAccountNOReceived
             // 
-            this.txtCardNoAccountReceived.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtCardNoAccountReceived.Enabled = false;
-            this.txtCardNoAccountReceived.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCardNoAccountReceived.Location = new System.Drawing.Point(177, 129);
-            this.txtCardNoAccountReceived.Multiline = true;
-            this.txtCardNoAccountReceived.Name = "txtCardNoAccountReceived";
-            this.txtCardNoAccountReceived.Size = new System.Drawing.Size(273, 32);
-            this.txtCardNoAccountReceived.TabIndex = 8;
+            this.txtAccountNOReceived.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtAccountNOReceived.Enabled = false;
+            this.txtAccountNOReceived.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccountNOReceived.Location = new System.Drawing.Point(177, 129);
+            this.txtAccountNOReceived.Multiline = true;
+            this.txtAccountNOReceived.Name = "txtAccountNOReceived";
+            this.txtAccountNOReceived.Size = new System.Drawing.Size(273, 32);
+            this.txtAccountNOReceived.TabIndex = 8;
             // 
             // label1
             // 
@@ -588,7 +591,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCardNoAccountReceived;
+        private System.Windows.Forms.TextBox txtAccountNOReceived;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;

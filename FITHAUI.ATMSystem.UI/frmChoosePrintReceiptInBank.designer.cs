@@ -166,6 +166,7 @@
             this.button24.TabIndex = 19;
             this.button24.Text = "CANCEL";
             this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // groupBox1
             // 
@@ -476,7 +477,7 @@
             this.panel4.Size = new System.Drawing.Size(631, 63);
             this.panel4.TabIndex = 3;
             // 
-            // frmChoosePrintReceipt
+            // frmChoosePrintReceiptInBank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -490,7 +491,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmChoosePrintReceipt";
+            this.Name = "frmChoosePrintReceiptInBank";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CORRECTION";
             this.panel3.ResumeLayout(false);

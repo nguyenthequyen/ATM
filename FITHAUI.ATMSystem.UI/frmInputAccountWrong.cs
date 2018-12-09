@@ -12,9 +12,35 @@ namespace FITHAUI.ATMSystem.UI
 {
     public partial class frmInputAccountWrong : Form
     {
+        private static string _cardNo;
+        public string CardNo { get => _cardNo; set => _cardNo = value; }
+
         public frmInputAccountWrong()
         {
             InitializeComponent();
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            frmValidateCard validateCard = new frmValidateCard();
+            validateCard.Show();
+            this.Close();
+        }
+
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            frmInputAccountInBank inputAccountInBank = new frmInputAccountInBank();
+            inputAccountInBank.CardNo = CardNo;
+            this.Close();
+            inputAccountInBank.Show();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            frmListServices frmList = new frmListServices();
+            frmList.CardNo = CardNo;
+            this.Close();
+            frmList.Show();
         }
     }
 }

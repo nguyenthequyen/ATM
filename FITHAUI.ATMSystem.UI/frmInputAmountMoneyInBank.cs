@@ -17,8 +17,8 @@ namespace FITHAUI.ATMSystem.UI
         private static string _cardNo;
         public string CardNo { get => _cardNo; set => _cardNo = value; }
 
-        private static string _cardNoAccountReceived;
-        public string CardNoAccountReceived { get => _cardNoAccountReceived; set => _cardNoAccountReceived = value; }
+        private static string _accountNOReceived;
+        public string AccountNOReceived { get => _accountNOReceived; set => _accountNOReceived = value; }
 
         public frmInputAmountMoneyInBank()
         {
@@ -29,7 +29,7 @@ namespace FITHAUI.ATMSystem.UI
         {
             var transferAccountReceived = new frmCashTransferAccountReceivedInBank();
             transferAccountReceived.Money = txtMoney.Text;
-            transferAccountReceived.CardNoAccountReceived = CardNoAccountReceived;
+            transferAccountReceived.AccountNOReceived = AccountNOReceived;
             transferAccountReceived.CardNo = CardNo;
             transferAccountReceived.Show();
             this.Hide();
@@ -93,6 +93,26 @@ namespace FITHAUI.ATMSystem.UI
         {
             var number = setTextInput.SetTextCardNo("0", txtMoney.Text);
             txtMoney.Text = number;
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            frmValidateCard validateCard = new frmValidateCard();
+            validateCard.Show();
+            this.Close();
+        }
+
+        private void btnFalse_Click(object sender, EventArgs e)
+        {
+            txtMoney.Text = "";
+        }
+
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            frmInputAccountInBank inputAccountInBank = new frmInputAccountInBank();
+            inputAccountInBank.CardNo = CardNo;
+            this.Close();
+            inputAccountInBank.Show();
         }
     }
 }

@@ -25,69 +25,89 @@ namespace FITHAUI.ATMSystem.UI
         {
             var inputAmountMoneyOtherBank = new frmInputAmountMoneyOtherBank();
             inputAmountMoneyOtherBank.CardNo = CardNo;
-            inputAmountMoneyOtherBank.CardNoAccountReceived = txtCardNoAccountReceived.Text;
+            inputAmountMoneyOtherBank.AccountNOReceived = txtAccountNOReceived.Text;
             inputAmountMoneyOtherBank.Show();
             this.Hide();
         }
 
         private void btnOne_Click(object sender, EventArgs e)
         {
-            var number = setTextInput.SetTextCardNo("1", txtCardNoAccountReceived.Text);
-            txtCardNoAccountReceived.Text = number;
+            var number = setTextInput.SetTextCardNo("1", txtAccountNOReceived.Text);
+            txtAccountNOReceived.Text = number;
         }
 
         private void btnTwo_Click(object sender, EventArgs e)
         {
-            var number = setTextInput.SetTextCardNo("2", txtCardNoAccountReceived.Text);
-            txtCardNoAccountReceived.Text = number;
+            var number = setTextInput.SetTextCardNo("2", txtAccountNOReceived.Text);
+            txtAccountNOReceived.Text = number;
         }
 
         private void btnThree_Click(object sender, EventArgs e)
         {
-            var number = setTextInput.SetTextCardNo("3", txtCardNoAccountReceived.Text);
-            txtCardNoAccountReceived.Text = number;
+            var number = setTextInput.SetTextCardNo("3", txtAccountNOReceived.Text);
+            txtAccountNOReceived.Text = number;
         }
 
         private void btnFour_Click(object sender, EventArgs e)
         {
-            var number = setTextInput.SetTextCardNo("4", txtCardNoAccountReceived.Text);
-            txtCardNoAccountReceived.Text = number;
+            var number = setTextInput.SetTextCardNo("4", txtAccountNOReceived.Text);
+            txtAccountNOReceived.Text = number;
         }
 
         private void btnFive_Click(object sender, EventArgs e)
         {
-            var number = setTextInput.SetTextCardNo("5", txtCardNoAccountReceived.Text);
-            txtCardNoAccountReceived.Text = number;
+            var number = setTextInput.SetTextCardNo("5", txtAccountNOReceived.Text);
+            txtAccountNOReceived.Text = number;
         }
 
         private void btnSix_Click(object sender, EventArgs e)
         {
-            var number = setTextInput.SetTextCardNo("6", txtCardNoAccountReceived.Text);
-            txtCardNoAccountReceived.Text = number;
+            var number = setTextInput.SetTextCardNo("6", txtAccountNOReceived.Text);
+            txtAccountNOReceived.Text = number;
         }
 
         private void btnSeven_Click(object sender, EventArgs e)
         {
-            var number = setTextInput.SetTextCardNo("7", txtCardNoAccountReceived.Text);
-            txtCardNoAccountReceived.Text = number;
+            var number = setTextInput.SetTextCardNo("7", txtAccountNOReceived.Text);
+            txtAccountNOReceived.Text = number;
         }
 
         private void btnEight_Click(object sender, EventArgs e)
         {
-            var number = setTextInput.SetTextCardNo("8", txtCardNoAccountReceived.Text);
-            txtCardNoAccountReceived.Text = number;
+            var number = setTextInput.SetTextCardNo("8", txtAccountNOReceived.Text);
+            txtAccountNOReceived.Text = number;
         }
 
         private void btnNine_Click(object sender, EventArgs e)
         {
-            var number = setTextInput.SetTextCardNo("9", txtCardNoAccountReceived.Text);
-            txtCardNoAccountReceived.Text = number;
+            var number = setTextInput.SetTextCardNo("9", txtAccountNOReceived.Text);
+            txtAccountNOReceived.Text = number;
         }
 
         private void btnZero_Click(object sender, EventArgs e)
         {
-            var number = setTextInput.SetTextCardNo("0", txtCardNoAccountReceived.Text);
-            txtCardNoAccountReceived.Text = number;
+            var number = setTextInput.SetTextCardNo("0", txtAccountNOReceived.Text);
+            txtAccountNOReceived.Text = number;
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            frmValidateCard validateCard = new frmValidateCard();
+            validateCard.Show();
+            this.Close();
+        }
+
+        private void btnChooseNo_Click(object sender, EventArgs e)
+        {
+            txtAccountNOReceived.Text = "";
+        }
+
+        private void btnChooseCancel_Click(object sender, EventArgs e)
+        {
+            frmListServices frmList = new frmListServices();
+            frmList.CardNo = CardNo;
+            this.Close();
+            frmList.Show();
         }
     }
 }

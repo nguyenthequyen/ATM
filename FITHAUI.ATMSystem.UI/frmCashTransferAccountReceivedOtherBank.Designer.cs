@@ -171,6 +171,7 @@
             this.button24.TabIndex = 19;
             this.button24.Text = "CANCEL";
             this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // groupBox1
             // 
@@ -341,6 +342,7 @@
             this.btnChooseCancel.Size = new System.Drawing.Size(50, 46);
             this.btnChooseCancel.TabIndex = 3;
             this.btnChooseCancel.UseVisualStyleBackColor = true;
+            this.btnChooseCancel.Click += new System.EventHandler(this.btnChooseCancel_Click);
             // 
             // btnChooseAccept
             // 

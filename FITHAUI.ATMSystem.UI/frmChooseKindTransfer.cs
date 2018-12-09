@@ -35,5 +35,12 @@ namespace FITHAUI.ATMSystem.UI
             inputAccountOtherBank.Show();
             this.Hide();
         }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            frmValidateCard validateCard = new frmValidateCard();
+            validateCard.Show();
+            this.Close();
+        }
     }
 }

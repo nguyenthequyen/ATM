@@ -11,14 +11,14 @@ namespace FITHAUI.ATMSystem.BULs.CashTransfer
     {
         CashTransferDAL cashTransferDAL = new CashTransferDAL();
 
-        public string GetNameCustomer(string cardNo)
+        public string GetNameCustomer(string accountNo)
         {
-            return cashTransferDAL.GetNameCustomer(cardNo);
+            return cashTransferDAL.GetNameCustomer(accountNo);
         }
 
-        public void UpdateBalance(int money, string cardNo, string cardNoTo, int transferFee)
+        public void UpdateBalance(int money, string cardNo, string accountNo, int transferFee)
         {
-            cashTransferDAL.UpdateBalance(money, cardNo, cardNoTo, transferFee);
+            cashTransferDAL.UpdateBalance(money, cardNo, accountNo, transferFee);
         }
 
         public bool CompareBalance(int money, string cardNo, int transferFee)
@@ -26,9 +26,19 @@ namespace FITHAUI.ATMSystem.BULs.CashTransfer
             return cashTransferDAL.CompareBalance(money, cardNo, transferFee);
         }
 
-        public bool CheckCardNo(string cardNo)
+        public bool CheckCardNo(string accountNo)
         {
-            return cashTransferDAL.CheckCardNo(cardNo);
+            return cashTransferDAL.CheckCardNo(accountNo);
+        }
+
+        public string GetAccountIDByCardNo(string cardNo)
+        {
+            return cashTransferDAL.GetAccountIDByCardNo(cardNo);
+        }
+
+        public string GetCardNoByAccountNo(string accountNo)
+        {
+            return cashTransferDAL.GetCardNoByAccountNo(accountNo);
         }
     }
 }

@@ -464,6 +464,7 @@
             this.Name = "frmWaitCashTransfer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ATM Techcombank";
+            this.Load += new System.EventHandler(this.frmWaitCashTransfer_Load);
             this.panel3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

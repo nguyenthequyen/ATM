@@ -66,7 +66,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.txtCardNoAccountReceived = new System.Windows.Forms.TextBox();
+            this.txtAccountNOReceived = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
@@ -168,6 +168,7 @@
             this.button24.TabIndex = 19;
             this.button24.Text = "CANCEL";
             this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // groupBox1
             // 
@@ -348,6 +349,7 @@
             this.btnChooseCancel.Size = new System.Drawing.Size(50, 46);
             this.btnChooseCancel.TabIndex = 3;
             this.btnChooseCancel.UseVisualStyleBackColor = true;
+            this.btnChooseCancel.Click += new System.EventHandler(this.btnChooseCancel_Click);
             // 
             // btnChooseFalse
             // 
@@ -358,6 +360,7 @@
             this.btnChooseFalse.Size = new System.Drawing.Size(50, 46);
             this.btnChooseFalse.TabIndex = 2;
             this.btnChooseFalse.UseVisualStyleBackColor = true;
+            this.btnChooseFalse.Click += new System.EventHandler(this.btnChooseFalse_Click);
             // 
             // btnChooseTrue
             // 
@@ -439,7 +442,7 @@
             this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button9);
-            this.panel2.Controls.Add(this.txtCardNoAccountReceived);
+            this.panel2.Controls.Add(this.txtAccountNOReceived);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Location = new System.Drawing.Point(82, 3);
@@ -480,17 +483,17 @@
             this.button9.Text = "Đúng";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // txtCardNoAccountReceived
+            // txtAccountNOReceived
             // 
-            this.txtCardNoAccountReceived.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtCardNoAccountReceived.Enabled = false;
-            this.txtCardNoAccountReceived.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCardNoAccountReceived.ForeColor = System.Drawing.Color.Black;
-            this.txtCardNoAccountReceived.Location = new System.Drawing.Point(185, 106);
-            this.txtCardNoAccountReceived.Multiline = true;
-            this.txtCardNoAccountReceived.Name = "txtCardNoAccountReceived";
-            this.txtCardNoAccountReceived.Size = new System.Drawing.Size(273, 32);
-            this.txtCardNoAccountReceived.TabIndex = 6;
+            this.txtAccountNOReceived.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtAccountNOReceived.Enabled = false;
+            this.txtAccountNOReceived.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccountNOReceived.ForeColor = System.Drawing.Color.Black;
+            this.txtAccountNOReceived.Location = new System.Drawing.Point(185, 106);
+            this.txtAccountNOReceived.Multiline = true;
+            this.txtAccountNOReceived.Name = "txtAccountNOReceived";
+            this.txtAccountNOReceived.Size = new System.Drawing.Size(273, 32);
+            this.txtAccountNOReceived.TabIndex = 6;
             // 
             // label9
             // 
@@ -576,7 +579,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtCardNoAccountReceived;
+        private System.Windows.Forms.TextBox txtAccountNOReceived;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
