@@ -40,7 +40,7 @@ namespace FITHAUI.ATMSystem.UI
             frmInputPin.CardNo = txtCardNo.Text;
             frmInputPin.Show();
         }
-        
+
         public void CheckCardNoFailed(object sender, EventArgs e)
         {
             timer.Stop();
@@ -117,35 +117,45 @@ namespace FITHAUI.ATMSystem.UI
             timer.Interval = 10;
             string cardNo = txtCardNo.Text;
             var checkCard = card_BUL.CheckCardNo(cardNo);
+            var checkStatus = card_BUL.CheckStatus(cardNo);
+            var checkAttempt = card_BUL.CheckAttempt(cardNo);
+            var checkExpired = card_BUL.CheckExpiredDate(cardNo);
             //if (!String.IsNullOrEmpty(cardNo))
             //{
 
-            //if (carDTO.Status=="block" || carDTO.Attempt>=3)
-            //{
-            //    frmBlockCard blockCard = new frmBlockCard();
-            //    blockCard.Show();
-            //    this.Close();
-            //}
-            //else
-            //{
-            if (checkCard)
+            if (checkStatus == false || checkAttempt == false)
             {
-                timer.Tick += new EventHandler(CheckCardSuccess);
-                timer.Start();
+                lblCardBlock.Visible = true;
+                txtCardNo.Text = "";
+                //frmBlockCard blockCard = new frmBlockCard();
+                //blockCard.Show();
+                //this.Hide();
             }
-
+            else if (checkExpired==false)
+            {
+                lblExpired.Visible = true;
+                txtCardNo.Text = "";
+            }
             else
             {
-                timer.Tick += new EventHandler(CheckCardNoFailed);
-                timer.Start();
+                if (checkCard)
+                {
+                    timer.Tick += new EventHandler(CheckCardSuccess);
+                    timer.Start();
+                }
+
+                else
+                {
+                    timer.Tick += new EventHandler(CheckCardNoFailed);
+                    timer.Start();
+                }
             }
-            //}
 
             //}
             //else
             //{
             //    timer.Tick += new EventHandler(CheckCardNoFailed);
-            //            timer.Start();
+            //    timer.Start();
             //}
         }
 

@@ -17,10 +17,10 @@ namespace FITHAUI.ATMSystem.BULs
             return card_DAL.CheckCardNo(cardNo);
         }
 
-        //public void UpdateCard(string cardNo, string status, int attempt)
-        //{
-        //    card_DAL.UpdateCard(cardNo, status, attempt);
-        //}
+        public void UpdateCard(string cardNo, string status, int attempt)
+        {
+            card_DAL.UpdateCard(cardNo, status, attempt);
+        }
         //Validate PIN
         public string CheckPIN(string cardNo, String pin)
         {
@@ -32,31 +32,36 @@ namespace FITHAUI.ATMSystem.BULs
             card_DAL.UpdateAttempt(cardNo);
         }
         //Get Attempt
-        //public bool CheckAttempt(string cardNo)
-        //{
-        //    if(card_DAL.GetAttempt(cardNo)>=0 && card_DAL.GetAttempt(cardNo)<3)
-        //    {
-        //        return true;
-        //    }
-        //    else if(card_DAL.GetAttempt(cardNo)==-1 || card_DAL.GetAttempt(cardNo) == 3)
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
-        ////Check status
-        //public bool CheckStatus(string cardNo)
-        //{
-        //    if (card_DAL.GetAttempt(cardNo).Equals("normal"))
-        //    {
-        //        return true;
-        //    }
-        //    else if (card_DAL.GetAttempt(cardNo).Equals("block"))
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
+        public int GetAttempt(string cardNo)
+        {
+            return card_DAL.GetAttempt(cardNo);
+        }
+        //Check Attempt
+        public bool CheckAttempt(string cardNo)
+        {
+            if (GetAttempt(cardNo) >= 0 && GetAttempt(cardNo) < 3)
+            {
+                return true;
+            }
+            else if (GetAttempt(cardNo) == -1 || GetAttempt(cardNo) == 3)
+            {
+                return false;
+            }
+            return true;
+        }
+        //Check status
+        public bool CheckStatus(string cardNo)
+        {
+            if (card_DAL.GetStatus(cardNo).Equals("normal"))
+            {
+                return true;
+            }
+            else if (card_DAL.GetStatus(cardNo).Equals("block"))
+            {
+                return false;
+            }
+            return true;
+        }
         //Change PIN
         public void ChangePIN(string cardNo,string newPIN)
         {            
@@ -84,7 +89,7 @@ namespace FITHAUI.ATMSystem.BULs
                 {
                     return false;
                 }
-                else if (currentMonth < exMonth)
+                else if (currentMonth == exMonth)
                 {
                     if (currentDay > exDay)
                     {
@@ -99,12 +104,16 @@ namespace FITHAUI.ATMSystem.BULs
                         return true;
                     }
                 }
+                else
+                {
+                    return true;
+                }
             }
             else
             {
                 return true;
             }
-            return false;
+            //return false;
         }
     }
 }

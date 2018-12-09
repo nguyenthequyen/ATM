@@ -29,16 +29,18 @@ namespace FITHAUI.ATMSystem.UI
         {
             //MessageBox.Show(_cardNo,"Card No");
         }
-        //private void UpdateCard()
-        //{
-        //    card_BUL.CheckCardNo(cardDTO.CardNo);
-        //    cardDTO.Attempt = cardDTO.Attempt + 1;
-        //    if (cardDTO.Attempt==3)
-        //    {
-        //        cardDTO.Status = "block";
-        //    }
-        //    card_BUL.UpdateCard(cardDTO.CardNo,cardDTO.Status,cardDTO.Attempt);
-        //}
+        private void UpdateCard(string cardNo)
+        {
+            card_BUL.CheckCardNo(cardNo);
+            cardDTO.Attempt = cardDTO.Attempt + 1;
+            var status = "normal";
+            var attempt = card_BUL.GetAttempt(cardNo);
+            if (cardDTO.Attempt == 3)
+            {
+                status = "block";
+            }
+            card_BUL.UpdateCard(cardNo, status, attempt);
+        }
         private void btnAccept_Click(object sender, EventArgs e)
         {
             frmListServices listServices = new frmListServices();            
@@ -51,10 +53,11 @@ namespace FITHAUI.ATMSystem.UI
             }
             else
             {
-                //UpdateCard();
+               
                 frmInputPinFailed inputPINFailed = new frmInputPinFailed();
                 inputPINFailed.CardNo = CardNo;
                 inputPINFailed.Show();
+                UpdateCard(CardNo);
                 this.Close();
             }
         }

@@ -17,10 +17,7 @@ namespace FITHAUI.ATMSystem.BULs
         }
         public void CreateLog(decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo)
         {
-            //string dateTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ssZ");
-            //logID = "log" + dateTime;
-            //logDate = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ssZ");
-            log_DAL.CreateLog(amount, details, logTypeID, atmID, cardNo, cardNoTo);
-        }        
+            log_DAL.CreateLog(DateTime.Now, amount, details, logTypeID, atmID, cardNo, cardNoTo);
+        }
     }
 }

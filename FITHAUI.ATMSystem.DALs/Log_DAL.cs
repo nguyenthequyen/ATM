@@ -34,15 +34,14 @@ namespace FITHAUI.ATMSystem.DALs
             dbContext.CloseConnection();
             return logs;
         }
-        public void CreateLog(decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo )
+        public void CreateLog(DateTime logDate, decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo )
         {
             try
             {
-                string sqlInsert = "Insert into Log (LogDate,Amount,Details,LogTypeID,ATMID,CardNo,CardNoTo) Values(GETDATE(), @amount, @details, CONVERT(UNIQUEIDENTIFIER,@logTypeID), CONVERT(UNIQUEIDENTIFIER,@atmID), @cardNo, @cardNoTo)";
+                string sqlInsert = "insert into Log(LogDate, Amount, Details, LogTypeID, ATMID, CardNo, CardNoTo) Values(@logDate, @amount, @details, @logTypeID, @atmID, @cardNo, @cardNoTo)";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(sqlInsert, dbContext.Connect);
-                //cmd.Parameters.AddWithValue("logID", logID);
-                //cmd.Parameters.AddWithValue("logDate", logDate);
+                cmd.Parameters.AddWithValue("logDate", logDate);
                 cmd.Parameters.AddWithValue("amount", amount);
                 cmd.Parameters.AddWithValue("details", details);
                 cmd.Parameters.AddWithValue("logTypeID", logTypeID);
@@ -53,12 +52,9 @@ namespace FITHAUI.ATMSystem.DALs
                 dbContext.CloseConnection();
                 //return true;
             }
-            catch 
+            catch (Exception ex)
             {
-                if (dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
+                Console.WriteLine(ex.Message);
                 //return false;
             }            
         }
