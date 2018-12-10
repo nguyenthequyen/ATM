@@ -12,6 +12,7 @@ namespace FITHAUI.ATMSystem.UI
 {
     public partial class frmChangePIN2 : Form
     {
+        SetTextInput st = new SetTextInput();
         Card_BUL Card_BUL = new Card_BUL();
         Log_BUL Log_BUL = new Log_BUL();
         private static string _cardNo;
@@ -55,6 +56,66 @@ namespace FITHAUI.ATMSystem.UI
             frmValidateCard validateCard = new frmValidateCard();
             validateCard.Show();
             this.Close();
+        }
+
+        private void btnOne_Click(object sender, EventArgs e)
+        {
+            var number = st.SetTextCardNo("1", txtNewPINAgain.Text);
+            txtNewPINAgain.Text = number;
+        }
+
+        private void btnTwo_Click(object sender, EventArgs e)
+        {
+            var number = st.SetTextCardNo("2", txtNewPINAgain.Text);
+            txtNewPINAgain.Text = number;
+        }
+
+        private void btnThree_Click(object sender, EventArgs e)
+        {
+            var number = st.SetTextCardNo("3", txtNewPINAgain.Text);
+            txtNewPINAgain.Text = number;
+        }
+
+        private void btnFour_Click(object sender, EventArgs e)
+        {
+            var number = st.SetTextCardNo("4", txtNewPINAgain.Text);
+            txtNewPINAgain.Text = number;
+        }
+
+        private void btnFive_Click(object sender, EventArgs e)
+        {
+            var number = st.SetTextCardNo("5", txtNewPINAgain.Text);
+            txtNewPINAgain.Text = number;
+        }
+
+        private void btnSix_Click(object sender, EventArgs e)
+        {
+            var number = st.SetTextCardNo("6", txtNewPINAgain.Text);
+            txtNewPINAgain.Text = number;
+        }
+
+        private void btnSeven_Click(object sender, EventArgs e)
+        {
+            var number = st.SetTextCardNo("7", txtNewPINAgain.Text);
+            txtNewPINAgain.Text = number;
+        }
+
+        private void btnEight_Click(object sender, EventArgs e)
+        {
+            var number = st.SetTextCardNo("8", txtNewPINAgain.Text);
+            txtNewPINAgain.Text = number;
+        }
+
+        private void btnNine_Click(object sender, EventArgs e)
+        {
+            var number = st.SetTextCardNo("9", txtNewPINAgain.Text);
+            txtNewPINAgain.Text = number;
+        }
+
+        private void btnZero_Click(object sender, EventArgs e)
+        {
+            var number = st.SetTextCardNo("0", txtNewPINAgain.Text);
+            txtNewPINAgain.Text = number;
         }
     }
 }
