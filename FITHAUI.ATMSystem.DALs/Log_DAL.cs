@@ -86,5 +86,38 @@ namespace FITHAUI.ATMSystem
                 Console.WriteLine(ex.Message);
             }
         }
+
+        public int getTotalAmount(string logTypeID, string atmID, string cardNo, string startTime, string endTime)
+        {
+            int totalAmount = 0;
+            try
+            {
+                string query = "select sum(Log.Amount) from Card inner join Log on Card.CardNo = Log.CardNo " +
+                    "inner join ATM on ATM.ATMID = Log.ATMID " +
+                    "inner join LogType on LogType.LogTypeID = Log.LogTypeID " +
+                    "where LogType.LogTypeID = @logTypeID And ATM.ATMID = @atmID And Card.CardNo = @cardNo And " +
+                    "LogDate >= @startDate and LogDate <= @endDate";
+                dbContext.OpenConnection();
+                SqlCommand cmd = new SqlCommand(query, dbContext.Connect);
+                cmd.Parameters.AddWithValue("logTypeID", logTypeID);
+                cmd.Parameters.AddWithValue("atmID", atmID);
+                cmd.Parameters.AddWithValue("cardNo", cardNo);
+                cmd.Parameters.AddWithValue("startDate", startTime);
+                cmd.Parameters.AddWithValue("endDate", endTime);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    totalAmount = int.Parse(dr[0].ToString());
+                }
+
+                dbContext.CloseConnection();
+                return totalAmount;
+            }
+            catch (Exception)
+            {
+                dbContext.CloseConnection();
+                return -1;
+            }
+        }
     }
 }

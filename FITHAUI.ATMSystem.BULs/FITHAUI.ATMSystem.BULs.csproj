@@ -54,8 +54,8 @@
     <Compile Include="CashTransferBUL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Log_BUL.cs" />
-    <Compile Include="StockBUL.cs" />
     <Compile Include="WithdrawLimitBUL.cs" />
+    <Compile Include="StockBUL.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

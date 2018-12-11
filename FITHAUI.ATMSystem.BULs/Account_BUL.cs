@@ -97,7 +97,7 @@ namespace FITHAUI.ATMSystem
 
         public bool CheckBalanceAndOverDraft(string cardNo, int money)
         {
-            int balance = account.CheckBalance(cardNo);
+            int balance = account.getBalance(cardNo);
             int overDraft = overDraftLimitDAL.GetOverDraft(cardNo);
             if (money <= balance + overDraft)
                 return true;
@@ -108,6 +108,11 @@ namespace FITHAUI.ATMSystem
         public void UpdateBalance(int money, string cardNo)
         {
             account.UpdateBalance(money, cardNo);
+        }
+
+        public int CheckBalance(string cardNo)
+        {
+            return account.CheckBalance(cardNo);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using iTextSharp.text;
+﻿using FITHAUI.ATMSystem.BULs;
+using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace FITHAUI.ATMSystem.UI
         Account_BUL account_BUL = new Account_BUL();
         SubStringDate sub = new SubStringDate();
         Log_BUL log = new Log_BUL();
+        ATM_BUL atm_BUL = new ATM_BUL();
         public frmBill()
         {
             InitializeComponent();
@@ -33,9 +35,12 @@ namespace FITHAUI.ATMSystem.UI
         private void btnPrint_Click(object sender, EventArgs e)
         {
             // In biên lai
-            string path = "F:/YEN/ATM/FITHAUI.ATMSystem.UI";
+            string path = @"D:\09-12-2018-ATM\ATM\FITHAUI.ATMSystem.UI";
             var balance = account_BUL.GetBalance(CardNo).ToString() + " VND";
             var balanceRight = account_BUL.GetBalanceRight(CardNo).ToString() + " VND";
+            var newBalance = account_BUL.CheckBalance(CardNo).ToString() + "VND";
+            var atm = atm_BUL.GetATMName();
+
             FileStream fs = new
                 FileStream(path + "/pdf/Withdraw.pdf", FileMode.Create, FileAccess.Write, FileShare.None);
             iTextSharp.text.Rectangle rec =
@@ -69,11 +74,11 @@ namespace FITHAUI.ATMSystem.UI
             pDay.Colspan = 3;
             pDay.Border = iTextSharp.text.Rectangle.NO_BORDER;
 
-            PdfPCell pNameATM = new PdfPCell(new Phrase(string.Format("TEN MAY                       :  {0}", "ATM1"), headerFont));
+            PdfPCell pNameATM = new PdfPCell(new Phrase(string.Format("TEN MAY                       :  {0}", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb"), headerFont));
             pNameATM.Colspan = 3;
             pNameATM.Border = iTextSharp.text.Rectangle.NO_BORDER;
 
-            PdfPCell pAddressATM = new PdfPCell(new Phrase(string.Format("DIA CHI                       :  {0}", "HA NOI"), headerFont));
+            PdfPCell pAddressATM = new PdfPCell(new Phrase(string.Format("DIA CHI                       :  {0}", "DIEN CO HA NOI"), headerFont));
             pAddressATM.Colspan = 3;
             pAddressATM.Border = iTextSharp.text.Rectangle.NO_BORDER;
 
@@ -92,7 +97,7 @@ namespace FITHAUI.ATMSystem.UI
             common.AddCell(pTrace);
             doc.Add(common);
 
-            Paragraph receiptNamePara = new Paragraph("RU TIEN", headerFont);
+            Paragraph receiptNamePara = new Paragraph("RUT TIEN", headerFont);
             receiptNamePara.Alignment = Element.ALIGN_CENTER;
             doc.Add(receiptNamePara);
             doc.Add(emptyPara);
@@ -109,7 +114,7 @@ namespace FITHAUI.ATMSystem.UI
             cAvailBal.Colspan = 3;
             cAvailBal.Border = iTextSharp.text.Rectangle.NO_BORDER;
 
-            PdfPCell cFee = new PdfPCell(new Phrase(String.Format("SO DU CHO PHEP                        :  {0}", "" + balanceRight.ToString() + ""), headerFont));
+            PdfPCell cFee = new PdfPCell(new Phrase(String.Format("SO DU CHO PHEP                        :  {0}", "" + newBalance + ""), headerFont));
             cFee.Colspan = 3;
             cFee.Border = iTextSharp.text.Rectangle.NO_BORDER;
 

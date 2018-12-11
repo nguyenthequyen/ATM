@@ -53,7 +53,7 @@ namespace FITHAUI.ATMSystem
            
             try
             {
-                int balance = CheckBalance(cardNo);
+                int balance = getBalance(cardNo);
                 int newBalance = balance - money - 1100;    // trừ thêm lệ phí là 1100 vnd
                 string queryUpdate = "update Account set Account.Balance = @newBalance " +
                     "from Account inner join Card on Account.AccountID = Card.AccountID where Card.CardNo = @cardNo ";
@@ -71,6 +71,30 @@ namespace FITHAUI.ATMSystem
                 Console.WriteLine("Có lỗi xảy ra: " + ex.Message);
                 log_DAL.CreateLog(DateTime.Now, 0, "ERROR", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
                 return;
+            }
+        }
+
+        public int getBalance(string cardNo)
+        {
+            int balance = -1;
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand("Proc_CheckBalance", dbContext.Connect);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add("@CardNo", SqlDbType.NVarChar).Value = cardNo.Trim();
+                dbContext.OpenConnection();
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    balance = Convert.ToInt32(sqlDataReader["Balance"]);
+                }
+                dbContext.CloseConnection();
+                return balance;
+            }
+            catch (Exception)
+            {
+                dbContext.CloseConnection();
+                return -1;
             }
         }
     }

@@ -23,6 +23,8 @@ namespace FITHAUI.ATMSystem.UI
         Config_BUL config_BUL = new Config_BUL();
         Account_BUL account_BUL = new Account_BUL();
         StockBUL stockBUL = new StockBUL();
+        WithdrawLimitBUL withdrawLimitBUL = new WithdrawLimitBUL();
+        Log_BUL log_BUL = new Log_BUL();
 
         private void btn10tr_Click(object sender, EventArgs e)
         {
@@ -72,7 +74,8 @@ namespace FITHAUI.ATMSystem.UI
         {
             bool checkOverMoneySystem = config_BUL.CheckMoney(money);
             bool checkBalanceAndOD = account_BUL.CheckBalanceAndOverDraft(cardNo, money);    // Chưa vượt quá => true (ktra trong bảng OverDraft)
-            bool checkWithdrawLimit = true;// withdrawLimitBUL.checkWithdrawLimit(); // Chưa vượt quá => true (ktra trong bảng Withdraw Limit)
+            // Chưa vượt quá => true (ktra trong bảng Withdraw Limit)
+            bool checkWithdrawLimit = withdrawLimitBUL.checkWithdrawLimit("542ed769 - f0d8 - 48b4 - ba5c - ddf600a85be1", "b936bf52-94d0-488f-bcda-1e4f1ecc422f", cardNo, money);
 
             if (!checkOverMoneySystem)   // Vượt quá số tiền rút của cây / 1 lần rút (Bảng Config)
             {
@@ -148,6 +151,8 @@ namespace FITHAUI.ATMSystem.UI
                 {
                     account_BUL.UpdateBalance(money, cardNo);
                     // Ghi log
+                    log_BUL.CreateLog(DateTime.Now,decimal.Parse(money.ToString()), "SUCCESS", "542ed769-f0d8-48b4-ba5c-ddf600a85be1", "b936bf52-94d0-488f-bcda-1e4f1ecc422f", cardNo, "");
+
                     frmBill bill = new frmBill();
                     bill.Money = money;
                     bill.CardNo = cardNo;
