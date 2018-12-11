@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FITHAUI.ATMSystem.DALs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,13 @@ namespace FITHAUI.ATMSystem
         {
             return card_DAL.CheckCardNo(cardNo);
         }
+
+        public void UpdateCard(string cardNo, string status, int attempt)
+        {
+            card_DAL.UpdateCard(cardNo, status, attempt);
+        }
         //Validate PIN
-        public string CheckPIN(string cardNo, String pin)
+        public bool CheckPIN(string cardNo, String pin)
         {
             return card_DAL.CheckPIN(cardNo, pin);
         }
@@ -25,13 +31,18 @@ namespace FITHAUI.ATMSystem
             card_DAL.UpdateAttempt(cardNo);
         }
         //Get Attempt
+        public int GetAttempt(string cardNo)
+        {
+            return card_DAL.GetAttempt(cardNo);
+        }
+        //Check Attempt
         public bool CheckAttempt(string cardNo)
         {
-            if(card_DAL.GetAttempt(cardNo)>=0 && card_DAL.GetAttempt(cardNo)<3)
+            if (GetAttempt(cardNo) >= 0 && GetAttempt(cardNo) < 3)
             {
                 return true;
             }
-            else if(card_DAL.GetAttempt(cardNo)==-1 || card_DAL.GetAttempt(cardNo) == 3)
+            else if (GetAttempt(cardNo) == -1 || GetAttempt(cardNo) == 3)
             {
                 return false;
             }
@@ -40,11 +51,11 @@ namespace FITHAUI.ATMSystem
         //Check status
         public bool CheckStatus(string cardNo)
         {
-            if (card_DAL.GetAttempt(cardNo).Equals("normal"))
+            if (card_DAL.GetStatus(cardNo).Equals("normal"))
             {
                 return true;
             }
-            else if (card_DAL.GetAttempt(cardNo).Equals("block"))
+            else if (card_DAL.GetStatus(cardNo).Equals("block"))
             {
                 return false;
             }
@@ -77,7 +88,7 @@ namespace FITHAUI.ATMSystem
                 {
                     return false;
                 }
-                else if (currentMonth < exMonth)
+                else if (currentMonth == exMonth)
                 {
                     if (currentDay > exDay)
                     {
@@ -92,12 +103,16 @@ namespace FITHAUI.ATMSystem
                         return true;
                     }
                 }
+                else
+                {
+                    return true;
+                }
             }
             else
             {
                 return true;
             }
-            return false;
+            //return false;
         }
     }
 }

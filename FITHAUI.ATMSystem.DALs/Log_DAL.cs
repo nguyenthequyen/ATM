@@ -13,6 +13,9 @@ namespace FITHAUI.ATMSystem
         /// </summary>
         /// <param name="cardNo"></param>
         /// <returns></returns>
+        private static int _money;
+
+        public int Money { get => _money; set => _money = value; }
         public List<Log> ViewHistory(string cardNo)
         {
             List<Log> logs = new List<Log>();
@@ -28,13 +31,16 @@ namespace FITHAUI.ATMSystem
                     var description = sqlDataReader["Description"].ToString();
                     switch (description)
                     {
-                        case "Widthdraw":
+                        case "widthdraw":
+                            description = "-";
+                            break;
+                        case "transfer":
                             description = "-";
                             break;
                         case "receiveMoney":
                             description = "+";
                             break;
-                        case "Transfer":
+                        case "checkBalance":
                             description = "-";
                             break;
                         default:
@@ -48,17 +54,17 @@ namespace FITHAUI.ATMSystem
                     logs.Add(log);
                 }
                 dbContext.CloseConnection();
-                CreateLog(DateTime.Now, 1100, "SUCCESS", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
+                //CreateLog(DateTime.Now, 0, "SUCCESS", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
             }
             catch (Exception ex)
             {
-                CreateLog(DateTime.Now, 1100, "ERROR", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
+                CreateLog(DateTime.Now, 0, "ERROR", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
                 Console.WriteLine("Có lỗi xảy ra: " + ex.Message);
             }
-            
+
             return logs;
         }
-        public void CreateLog(DateTime logDate, decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo )
+        public void CreateLog(DateTime logDate, decimal amount, string details, string logTypeID, string atmID, string cardNo, string cardNoTo)
         {
             try
             {
@@ -74,48 +80,11 @@ namespace FITHAUI.ATMSystem
                 cmd.Parameters.AddWithValue("cardNoTo", cardNoTo);
                 cmd.ExecuteNonQuery();
                 dbContext.CloseConnection();
-                //return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Có lỗi" + ex.Message);
-            }            
-        }
-        public List<Log> GetAllLog(string cardNo)
-        {
-            try
-            {
-                List<Log> listLog = new List<Log>();
-                string sql = "Select*From Log Where CardNo =@cardNo";
-                dbContext.OpenConnection();
-                SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
-                cmd.Parameters.AddWithValue("cardNo", cardNo);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    Log log = new Log(dr["LogID"].ToString(),
-                        DateTime.Parse(dr["LogDate"].ToString()),
-                        decimal.Parse(dr["Amount"].ToString()),
-                        dr["Details"].ToString(),
-                        dr["LogTypeID"].ToString(),
-                        dr["ATMID"].ToString(),
-                        dr["CardNo"].ToString(),
-                        dr["CardNoTo"].ToString());
-                    listLog.Add(log);
-                }
-                dbContext.CloseConnection();
-                return listLog;
+                Console.WriteLine(ex.Message);
             }
-            catch 
-            {
-                if (dbContext.CHECK_OPEN)
-                {
-                    dbContext.CloseConnection();
-                }
-                return null;
-            }
-            
-              
         }
 
         public int getTotalAmount(string logTypeID, string atmID, string cardNo, string startTime, string endTime)

@@ -23,5 +23,16 @@ namespace FITHAUI.ATMSystem.UI
             validateCard.Show();
             this.Close();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmChangePINSuccess_Load(object sender, EventArgs e)
+        {
+            
+
+        }
     }
 }

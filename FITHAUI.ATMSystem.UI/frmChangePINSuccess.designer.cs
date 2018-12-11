@@ -312,6 +312,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(794, 434);
             this.panel1.TabIndex = 25;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // grAcceptRight
             // 
@@ -465,6 +466,7 @@
             this.Name = "frmChangePINSuccess";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ATM Techcombank";
+            this.Load += new System.EventHandler(this.frmChangePINSuccess_Load);
             this.panel3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

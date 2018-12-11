@@ -151,9 +151,11 @@ namespace FITHAUI.ATMSystem.UI
                 {
                     account_BUL.UpdateBalance(money, cardNo);
                     // Ghi log
-                    log_BUL.CreateLog(decimal.Parse(money.ToString()), "Rút tiền thành công", "542ed769-f0d8-48b4-ba5c-ddf600a85be1", "b936bf52-94d0-488f-bcda-1e4f1ecc422f", cardNo, "");
+                    log_BUL.CreateLog(DateTime.Now,decimal.Parse(money.ToString()), "SUCCESS", "542ed769-f0d8-48b4-ba5c-ddf600a85be1", "b936bf52-94d0-488f-bcda-1e4f1ecc422f", cardNo, "");
 
                     frmBill bill = new frmBill();
+                    bill.Money = money;
+                    bill.CardNo = cardNo;
                     bill.Show();
                     this.Close();
                     return true;

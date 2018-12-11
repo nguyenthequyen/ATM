@@ -12,12 +12,13 @@ namespace FITHAUI.ATMSystem
     {
         Log_DAL log = new Log_DAL();
         Databasecontext dbContext = new Databasecontext();
+
         public bool CheckCardNo(string cardNo)
         {
             try
             {
                 List<Card> listCard = new List<Card>();
-                string sql = "Select*From Card Where CardNo = @cardNo and Status = N'Normal'";
+                string sql = "Select*From Card Where CardNo = @cardNo";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
                 cmd.Parameters.AddWithValue("cardNo", cardNo);
@@ -50,29 +51,58 @@ namespace FITHAUI.ATMSystem
                 Console.WriteLine(ex.Message);
                 return false;
             }
-
         }
-        public string CheckPIN(string cardNo, string pin)
+        public void UpdateCard(string cardNo, string status, int attempt)
+        {
+            dbContext.CloseConnection();
+            string sqlUpdate = "Update Card Set Attempt =@attempt, Status =@status Where CardNo=@cardNo";
+            dbContext.OpenConnection();
+            SqlCommand cmd = new SqlCommand(sqlUpdate, dbContext.Connect);
+            cmd.Parameters.AddWithValue("cardNo", cardNo);
+            cmd.Parameters.AddWithValue("status", status);
+            cmd.Parameters.AddWithValue("attempt", attempt);
+            cmd.ExecuteNonQuery();
+            dbContext.CloseConnection();
+        }
+        public bool CheckPIN(string cardNo, string pin)
         {
             try
             {
                 string PIN = "";
-                string sql = "Select PIN from Card where CardNo=@cardNo";
+                string sql = "Select PIN from Card where CardNo=@cardNo and PIN = @pin";
                 dbContext.OpenConnection();
                 SqlCommand cmd = new SqlCommand(sql, dbContext.Connect);
                 cmd.Parameters.AddWithValue("cardNo", cardNo);
+                cmd.Parameters.AddWithValue("PIN", pin);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     PIN = dr["PIN"].ToString();
                 }
                 dbContext.CloseConnection();
-                return PIN;
+                if (string.IsNullOrEmpty(PIN))
+                {
+                    var attemp = GetAttempt(cardNo);
+                    attemp = attemp + 1;
+                    if(attemp >= 3)
+                    {
+                        UpdateCard(cardNo, "block", attemp);
+                        return false;
+                    }
+                    UpdateCard(cardNo, "normal", attemp);
+                    return false;
+                }
+                else
+                {
+                    UpdateCard(cardNo, "normal", 0);
+                    return true;
+                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return "";
+                UpdateCard(cardNo, GetStatus(cardNo), GetAttempt(cardNo));
+                return false;
             }
         }
         public void ChangePIN(string cardNo, string newPIN)
@@ -92,6 +122,7 @@ namespace FITHAUI.ATMSystem
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                log.CreateLog(DateTime.Now, 1100, "ERROR", "39137be2-0446-4688-be5a-862e94b8a6b9", "fc57dd25-0a60-427a-aaa5-f9d2059c8abb", cardNo, "");
             }
         }
         public string GetStatus(string cardNo)
