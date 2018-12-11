@@ -109,5 +109,10 @@ namespace FITHAUI.ATMSystem
         {
             account.UpdateBalance(money, cardNo);
         }
+
+        public int CheckBalance(string cardNo)
+        {
+            return account.CheckBalance(cardNo);
+        }
     }
 }
